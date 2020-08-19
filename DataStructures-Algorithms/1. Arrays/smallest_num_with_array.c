@@ -1,6 +1,7 @@
 /* Given an Array of positive numbers, find the smallest number that can't be formed with the sum of numbers in that Array....
  Time Complexity :: O(n*logn)+O(n)
 */
+/* Added comment */
 #include<stdio.h>
 #include<stdlib.h>
 void Display(int *arr,int n)
