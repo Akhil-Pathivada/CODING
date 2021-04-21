@@ -1,0 +1,6 @@
+
+1. Can we use a 'switch' statement to switch on strings?
+	
+   No. The cases in a switch must either have integer constants or constant expressions.
+
+2.  
