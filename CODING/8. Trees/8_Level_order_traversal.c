@@ -69,7 +69,7 @@ void getLevelOrder(struct node *root, int N) {
 
 int sizeOfTree(struct node *root) {
 
-	return root ? (1+sizeOfTree(root->left)+sizeOfTree(root->right)) : 0;
+	return root ? (1 + sizeOfTree(root->left) + sizeOfTree(root->right)) : 0;
 }
 
 int main() {
