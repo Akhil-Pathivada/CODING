@@ -5,76 +5,73 @@ Time Complexity : O(n)
 Space Complexity : O(1)
 */ 
 
-class Node
-{
+class Node {
+
 	int data;
 	Node next;
 	
-	Node(int data)
-	{
+	Node(int data) {
+
 		this.data = data;
-		
 		next = null;
 	}
 }
 
-class LinkedList
-{
+class LinkedList {
+
 	Node head;
-	
-	void swapTwoNodes(int x, int y)
-	{
+
+	void swapTwoNodes(int x, int y) {
+
 		Node currX, currY, prevX, prevY;
 		
 		currX = currY = head;
-		
 		prevX = prevY = null;
 		
-		while(currX != null && currX.data != x)
-		{
+		while(currX != null && currX.data != x) {
+
 			prevX = currX;
-			
 			currX = currX.next;
 		}
 
-		while(currY != null && currY.data != y)
-		{
+		while(currY != null && currY.data != y) {
+
 			prevY = currY;
-			
 			currY = currY.next;
 		}
 		
-		if(currX == null || currY == null)
+		if(currX == null || currY == null) {
 			return;
+		}
 		
-		if(prevX == null)
-			head = currY;	
-		else
+		if(prevX == null) {
+			head = currY; 
+		}	
+		else {
 			prevX.next = currY;
+		}
 		
-		if(prevY == null)
+		if(prevY == null) {
 			head = currX;
-		else
+		}
+		else {
 			prevY.next = currX;
-		
+		}
+
 		Node temp = currX.next;
-		
 		currX.next = currY.next;
-		
 		currY.next = temp;
 	}
 	
-	void push(int data)
-	{
+	void push(int data) {
+
 		Node nn = new Node(data);
-		
 		nn.next = head;
-		
 		head = nn;
 	}
 	
-	public static void main(String args[])
-	{		
+	public static void main(String args[]) {		
+
 		LinkedList ob = new LinkedList();
 		
 		ob.push(7);
@@ -88,8 +85,8 @@ class LinkedList
 		ob.swapTwoNodes(5, 7);
 		
 		Node curr = ob.head;
-;		
-		for( ; curr != null; curr=curr.next)
+		
+		for( ; curr != null; curr = curr.next)
 			System.out.print(curr.data + " ");
 	}
 }
