@@ -10,56 +10,48 @@ Space Complexity : O(1)
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct node
-{
+typedef struct node {
+
 	int data;
 	struct node *next;
-}Node;
+} Node;
 
-void Push(Node **head, int data)
-{
+void Push(Node **head, int data) {
+
 	Node *temp = (Node*) malloc(sizeof(Node));
-	
 	temp->data = data;
-	
 	temp->next = *head;
-	
 	*head = temp;
 }
 
-Node* detectLoop(Node *head)
-{
+Node* detectLoop(Node *head) {
+
 	Node *slow, *fast;
-	
 	slow = fast = head;
 	
-	while(fast && fast->next)
-	{
+	while(fast && fast->next) {
+
 		slow = slow->next;
-		
 		fast = fast->next->next;
 		
 		if(slow == fast)
 			 return slow;
 	}
-	
 	return NULL;
 }
 
-void startNodeOfLoop(Node *slowPtr, Node *fastPtr)
-{	
-	while(slowPtr != fastPtr) 
-	{
+void startNodeOfLoop(Node *slowPtr, Node *fastPtr) {	
+
+	while(slowPtr != fastPtr) {
+
 		slowPtr = slowPtr->next;
-			
 		fastPtr = fastPtr->next;
 	}
-		
 	printf(" Starting node of the Loop = %d ", fastPtr->data);
 }
 
-int main()
-{
+int main() {
+
 	Node *head = NULL;
 	
 	Push(&head, 10);
