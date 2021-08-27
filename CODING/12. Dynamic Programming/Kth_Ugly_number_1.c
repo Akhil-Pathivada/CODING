@@ -9,36 +9,41 @@ Space Complexity : O(1)
 #include<stdio.h>
 #include<stdbool.h>
 
-int Divide( int a, int b)
-{
-	while(a%b ==0)
+int Divide(int a, int b) {
+
+	while(a % b == 0) {
+
 		a /= b;
-		
+	}
 	return a;
 }
 
-bool isUgly( int num)
-{
-	num = Divide(num,2);
-	num = Divide(num,3);
-	num = Divide(num,5);
+bool isUgly(int num) {
+
+	num = Divide(num, 2);
+	num = Divide(num, 3);
+	num = Divide(num, 5);
 	
-	return (num==1) ? true: false;
+	return (num == 1) ? true : false;
 }
 
-int getKthUglyNumber( int K)
-{
-	int i=1,count=1;
+int getKthUglyNumber(int K) {
+
+	int i = 1;
 	
-	for( ; count<=K; ++i)
-		count =	isUgly(i) ? count+1 : count;
+	for(int count = 1; count <= K; ++i) {
+
+		if(isUgly(i)) {
+
+			++count;
+		}
+	}
 		
-	return i-1;
+	return i - 1;
 }
 
-void main()
-{
-	int K=12;
-	
+int main() {
+
+	int K = 12;
 	printf(" %d th Ugly Number : %d ", K, getKthUglyNumber(K));
 }
