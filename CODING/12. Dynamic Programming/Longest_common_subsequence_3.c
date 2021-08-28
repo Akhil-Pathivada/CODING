@@ -14,42 +14,42 @@ Space Complexity : O(n)
 #include<string.h>
 #include<stdbool.h>
 
-#define max(a,b)  (a > b) ? a : b 
+#define max(a, b)  (a > b) ? a : b 
 
-int getLCS( char X[], char Y[], int m, int n)
-{
+int getLCS( char X[], char Y[], int m, int n) {
+
 	int mat[2][n+1];
-	
 	bool bi;
 		
-	for(int i=0; i<=m; ++i)
-	{
+	for(int i = 0; i <= m; ++i) {
+
 		bi = i & 1;
-		
-		for(int j=0; j<=n; ++j)
-		{
+		for(int j = 0; j <= n; ++j) {
 			
-			if(i==0 || j==0)
+			if(i == 0 || j == 0) {
+
 				mat[bi][j] = 0;
-			
-			else if(X[i-1] == Y[j-1])
-				mat[bi][j] = 1 + mat[1-bi][j-1];
-			
-			else
-				mat[bi][j] = max(mat[1-bi][j], mat[bi][j-1]);
+			}
+			else if(X[i - 1] == Y[j - 1]) {
+
+				mat[bi][j] = 1 + mat[1 - bi][j - 1];
+			}
+			else {
+				mat[bi][j] = max(mat[1 - bi][j], mat[bi][j - 1]);
+				
+			}
 		}
 	}
-	
 	return mat[bi][n];	
 }
 
-void main()
-{	
+int main() {	
+
 	char X[] = "AGGTAB";
 	char Y[] = "GXTXAYB";
 	
 	int m = strlen(X);
 	int n = strlen(Y);
 	
-	printf(" Longest Common Subsequence : %d ", getLCS(X,Y,m,n));
+	printf(" Longest Common Subsequence : %d ", getLCS(X, Y, m, n));
 }
