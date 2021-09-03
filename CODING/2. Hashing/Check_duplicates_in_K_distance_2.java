@@ -24,7 +24,7 @@ class Array {
 
 			if(i >= k) {
 
-				hashSet.remove(arr[i-k]);
+				hashSet.remove(arr[i - k]);
 			}
 		}
 		return false;
