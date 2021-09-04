@@ -9,16 +9,19 @@
 
 void printLeaders(int *arr, int n) {
 	
-	for(int i=0; i<n; ++i) {
+	for(int i = 0; i < n; ++i) {
 		
 		int j;
-		for(j=i+1; j<n; ++j){
+		for(j = i+1; j < n; ++j){
 
-			if(arr[j] > arr[i])
+			if(arr[j] > arr[i]) {
 				break;
+			}
 		}
-		if(j == n) 
+		if(j == n) {
+
 			printf(" %d,", arr[i]);
+		}
 	}
 }
 
@@ -26,6 +29,7 @@ int main() {
 	
 	int arr[] = {16, 17, 4, 3, 5, 2};
 	int n = sizeof(arr) / sizeof(*arr);
+
 	printLeaders(arr, n);
 	return 0;
 }
