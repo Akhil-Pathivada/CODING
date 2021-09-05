@@ -9,22 +9,24 @@ Space Complexity : O(n)
 */
 #include<stdio.h>
 
-int getNthFibanocci( int n)
-{
+int getNthFibanocci(int n) {
+
 	int fibo[n];
 	
-	fibo[0]=0;
-	fibo[1]=1;
+	fibo[0] = 0;
+	fibo[1] = 1;
 	
-	for( int i=2; i<=n; ++i)
-		fibo[i]  = fibo[i-1] + fibo[i-2];
+	for(int i = 2; i <= n; ++i) {
+
+		fibo[i]  = fibo[i-1] + fibo[i-2]; 
+	}
 		
 	return fibo[n];
 }
 
-void main()
-{
-	int n=9;
+int main() {
+
+	int n = 9;
 	
-	printf(" %d ",getNthFibanocci(n));
+	printf(" %d ", getNthFibanocci(n));
 }

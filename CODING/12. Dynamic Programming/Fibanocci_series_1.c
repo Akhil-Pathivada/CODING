@@ -7,20 +7,22 @@ Space Complexity : O(n)
 */
 #include<stdio.h>
 
-int getNthFibanocci( int n)
-{
-	if(n==0)
+int getNthFibanocci(int n) {
+
+	if(n == 0) {
 		return 0;
+	}
 		
-	if(n==1)
-		return 1;
+	if(n == 1) {
+		return 1; 
+	}
 	
-	return getNthFibanocci(n-1) + getNthFibanocci(n-2);
+	return getNthFibanocci(n - 1) + getNthFibanocci(n - 2);
 }
 
-void main()
-{
-	int n=9;
+int main() {
+
+	int n = 9;
 	
-	printf(" %d ",getNthFibanocci(n));
+	printf(" %d ", getNthFibanocci(n));
 }
