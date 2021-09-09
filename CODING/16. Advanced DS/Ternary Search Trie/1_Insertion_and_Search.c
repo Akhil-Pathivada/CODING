@@ -1,5 +1,5 @@
 /*
-Insertion and Search in Ternary Search Trie....
+insertIntoTSTion and Search in Ternary Search Trie....
 
 Time Complexity : Height of Tree
 Space Complexity : Length of String 
@@ -9,80 +9,87 @@ Space Complexity : Length of String
 #include<stdlib.h>
 #include<stdbool.h>
 
-struct node
-{
+struct node {
+
 	char data;
 	struct node *left, *eq, *right;
 	bool isEnd;
 };
 
-struct node *newNode( char ch)
-{
+struct node *newNode(char ch) {
+
 	struct node *nn = (struct node*)malloc(sizeof(struct node));
-
 	nn->data = ch;
-
 	nn->isEnd = false;
-
 	nn->left = nn->eq = nn->right = NULL;
 
 	return nn;
 }
 
-void Insert( struct node **root, char *word)
-{
-	if(!*root)
-		*root = newNode(*word);
+void insertIntoTST(struct node **root, char *word) {
 
-	if(*word < (*root)->data)
-		Insert( &(*root)->left, word);
+	if(!*root) {
 
-	else if(*word > (*root)->data)
-		Insert( &(*root)->right, word);
+		*root = newNode(*word); 
+	}
 
-	else
-	{
-		if(*(word+1))
-			Insert( &(*root)->eq, word+1);
+	if(*word < (*root)->data) {
 
-		else
+		insertIntoTST(&(*root)->left, word); 
+	}
+	else if(*word > (*root)->data) {
+
+		insertIntoTST(&(*root)->right, word); 
+	}
+	else {
+		if(*(word + 1)) {
+
+			insertIntoTST(&(*root)->eq, word + 1); 
+		}
+		else {
+
 			(*root)->isEnd = true;
+		}
 	}
 }
 
-bool searchTST( struct node *root, char *word)
-{
-	if(!root)
-		return false;
+bool searchTST(struct node *root, char *word) {
 
-	if(*word < root->data)
-		return searchTST( root->left, word);
+	if(!root) {
 
-	else if(*word > root->data)
-		return searchTST( root->right, word);
+		return false; 
+	}
 
-	else
-	{
-		if(!*(word+1))
-			return root->isEnd;
+	if(*word < root->data) {
 
+		return searchTST(root->left, word); 
+	}
+	else if(*word > root->data) {
+
+		return searchTST(root->right, word); 
+	}
+	else {
+		if(!*(word+1)) {
+
+			return root->isEnd; 
+		}
 		return searchTST(root->eq, word+1);
 	}
 }
 
-int main()
-{
+int main() {
+
 	struct node *root = NULL;
 
-	Insert( &root, "cat");
-	Insert( &root, "cats");
-	Insert( &root, "up");
-	Insert( &root, "akhil");
-	Insert( &root, "mahesh");
+	insertIntoTST(&root, "cat");
+	insertIntoTST(&root, "cats");
+	insertIntoTST(&root, "up");
+	insertIntoTST(&root, "akhil");
+	insertIntoTST(&root, "mahesh");
 
-	printf( searchTST(root, "cats") ? " String Found " : " String not Found ");
+	printf(searchTST(root, "cats") ? " String Found " : " String not Found ");
 
-	printf( searchTST(root, "akhii") ? " String Found " : " String not Found ");
+	printf(searchTST(root, "akhii") ? " String Found " : " String not Found ");
 
 	return 0;
 }
