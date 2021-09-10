@@ -2,52 +2,56 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void PrintArray(int *arr,int size)
-{
-	printf("\nArray :: ");
+void PrintArray(int *arr, int size) {
 
-	for(int i=0;i<size;i++)
-		printf(" %d,",arr[i]);
+	printf("Array : ");
+
+	for(int i = 0; i < size; ++i) {
+
+		printf(" %d,", arr[i]);
+	}
 }
 
-void Sort(int *arr,int size)
-{
-	int i,j,key;
+void Sort(int *arr, int size) {
 
-	for(j=1;j<size;j++)
-	{
-		key=arr[j];
+	int i, j, key;
 
-		i=j-1;
+	for(j = 1; j < size; ++j) {
 
-		while(i>=0 && arr[i]>key)
-		{
-			arr[i+1]=arr[i];
+		key = arr[j];
+
+		i = j - 1;
+
+		while(i >= 0 && arr[i] > key) {
+
+			arr[i + 1] = arr[i];
 
 			--i;
 		}
 
-		arr[i+1]=key;
+		arr[i + 1]=key;
 	}
 }
 
-int main()
-{
-	int *arr,size;
+int main() {
 
-	printf("\nEnter size of the Array :: ");	
-	scanf("%d",&size);	
+	int *arr, size;
 
-	arr = (int*)malloc(sizeof(int)*size);	
+	printf("Enter size of the Array : ");	
+	scanf("%d", &size);	
 
-	printf("\nEnter the Array :: ");
+	arr = (int*)malloc(sizeof(int) * size);	
+
+	printf("Enter the Array : ");
 	
-	for(int i=0;i<size;i++)
-		scanf("%d",&arr[i]);
+	for(int i = 0; i < size; ++i) {
 
-	PrintArray(arr,size);
+		scanf("%d", &arr[i]);
+	}
 
-	Sort(arr,size);
+	PrintArray(arr, size);
 
-	PrintArray(arr,size);
+	Sort(arr, size);
+
+	PrintArray(arr, size);
 }
