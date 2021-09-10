@@ -25,14 +25,13 @@ int Partition(int *arr, int low, int high) {
 
 	int x = arr[high];
 
-	int i = low-1;
+	int i = low - 1;
 
 	for(int j = low; j < high; ++j) {
 
 		if(arr[j] <= x) {
 
-			++i;
-			Swap(&arr[i], &arr[j]);
+			Swap(&arr[++i], &arr[j]);
 		}
 	}
 	Swap(&arr[++i], &arr[high]);
@@ -59,7 +58,7 @@ int main() {
 	printf("Enter size of the Array : ");	
 	scanf("%d", &size);	
 
-	arr = (int*)malloc(sizeof(int)*size);
+	arr = (int*)malloc(sizeof(int) * size);
 	
 	printf("Enter the Array : ");	
 	for(int i = 0; i < size; ++i) {
