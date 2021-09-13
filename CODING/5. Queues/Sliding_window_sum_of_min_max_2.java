@@ -13,8 +13,8 @@
  *      Sum of all min & max = 6 + 4 + 4 + 4
  *                           = 18
  *
- * Time Complexity : O(N * K)
- * Space Complexity: O(1)
+ * Time Complexity : O(N)
+ * Space Complexity: O(K)
  *
  *  */
 
@@ -24,26 +24,51 @@ class GFG {
 
 	static int sumOfKMinMax(int arr[], int n, int k) {
 
-		int j, max, min;
 		int sum = 0;
 
-		for (int i = 0; i <= n - k; i++) {
+		Deque<Integer> S = new LinkedList<>(), G = new LinkedList<>();
 
-		    min = max = arr[i];
+		int i;
 
-		    for(j = 1; j < k; j++) {
+		for(i = 0; i < k; ++i) {
 
-			if(arr[i + j] < min) {
-			
-			    	min = arr[i + j];
-		    	}
-			if(arr[i + j] > max) {
-			
-			    	max = arr[i + j];
-		    	}
-		    }
-		    sum += min + max;
+			while(!S.isEmpty() && arr[S.peekLast()] >= arr[i]) {
+
+				S.removeLast();
+			}
+			while(!G.isEmpty() && arr[G.peekLast()] <= arr[i]) {
+
+				G.removeLast();
+			}
+			S.addLast(i);
+			G.addLast(i);
 		}
+		
+		for( ; i < n; ++i) {
+
+			sum += arr[S.peekFirst()] + arr[G.peekFirst()];
+
+			while(!S.isEmpty() && S.peekFirst() <= i-k) {
+
+				S.removeFirst();
+			}
+			while(!G.isEmpty() && G.peekFirst() <= i-k) {
+
+				G.removeFirst();
+			}
+			while(!S.isEmpty() && arr[S.peekLast()] >= arr[i]) {
+
+				S.removeLast();
+			}
+			while(!G.isEmpty() && arr[G.peekLast()] <= arr[i]) {
+
+				G.removeLast();
+			}
+			S.addLast(i);
+			G.addLast(i);
+		}
+		sum += arr[S.peekFirst()] + arr[G.peekFirst()];
+
 		return sum;
 	}
 
