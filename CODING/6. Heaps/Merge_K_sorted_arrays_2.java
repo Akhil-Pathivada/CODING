@@ -40,6 +40,7 @@ class GFG {
 
 	private static void mergeKArrays(int[][] arr, int[] output, int n, int k) {
 
+		//PriorityQueue is heap in Java
 		PriorityQueue<MinHeapNode> queue = new PriorityQueue<MinHeapNode>();
 
 		for(int i = 0; i < n; ++i) {
