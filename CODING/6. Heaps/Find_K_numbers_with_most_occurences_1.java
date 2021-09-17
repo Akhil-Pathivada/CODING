@@ -12,8 +12,8 @@
  * Frequency of 1 = 2
  * These two have the maximum frequency and 4 is larger than 1.
  *
- * Time Complexity : O()
- * Space Complexity : O()
+ * Time Complexity: O(d log(d)), where d is the count of distinct elements in the array. To sort the array O(d log(d)) time is needed.
+ * Auxiliary Space: O(d), where d is the count of distinct elements in the array. To store the elements in HashMap O(d) space complexity is needed.
  *
  *  */
 
