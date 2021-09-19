@@ -1,16 +1,18 @@
 /* 
  * Remove Duplicates from an Unsorted Linked List
  *
- * Time Complexity : O(n)
+ * Time Complexity : O(N)
  * Space Complexity : O(1)
  */
 import java.util.HashSet;
+
 class Node{
 	
 	int data;
 	Node next;
 
 	public Node( int key){
+
 		this.data = key;
 		this.next = null;
 	}
@@ -21,6 +23,7 @@ class LinkedList {
 	private void printList( Node curr) {
 		
 		while (curr != null) {
+
 			System.out.print(curr.data + ", ");
 			curr = curr.next;
 		}
@@ -29,13 +32,17 @@ class LinkedList {
 
 	private void removeDuplicates( Node head) {
 	
-		Node curr = head;
-		Node prev = head;
+		Node prev, curr;
+		prev = curr = head;
+
 		HashSet<Integer> hs = new HashSet<>();
-		while (curr != null) {
+
+		while(curr != null) {
+
 			if (hs.contains(curr.data)) {
 				prev.next = curr.next;
-			} else {
+			}
+		       	else {
 				hs.add(curr.data);
 				prev = curr;
 			}
@@ -53,7 +60,9 @@ class LinkedList {
 		
 		LinkedList obj = new LinkedList();
 		obj.printList(head);
+
 		obj.removeDuplicates(head);
+
 		obj.printList(head);
 	}	
 }
