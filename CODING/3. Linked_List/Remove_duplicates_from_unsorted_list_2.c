@@ -25,7 +25,7 @@ struct node* newNode(int val) {
 
 int *hash_table;
 
-int H(int x, int MAX) {// O(1).....Linear Probing
+int H(int x, int MAX) { // O(1).....Linear Probing
 
 	int index;
 	int k = x % MAX;
@@ -45,7 +45,7 @@ int H(int x, int MAX) {// O(1).....Linear Probing
 	return !(hash_table[index]) ? index : 0;
 }
 
-struct node* removeDuplicateNodes(struct node *curr,int n) { //O(N)
+struct node* removeDuplicateNodes(struct node *curr, int n) { //O(N)
 
 	struct node *main_head, *ptr;
 	main_head = curr;
@@ -54,7 +54,7 @@ struct node* removeDuplicateNodes(struct node *curr,int n) { //O(N)
 	for( ; curr; curr = curr->next) {
 
 		int temp = curr->data;
-		int x = H(curr->data,n);
+		int x = H(curr->data, n);
 		
 		if(hash_table[x] != temp) {
 
@@ -67,6 +67,7 @@ struct node* removeDuplicateNodes(struct node *curr,int n) { //O(N)
 		}
 	}
 	ptr->next = NULL;
+
 	return main_head;
 }
 
