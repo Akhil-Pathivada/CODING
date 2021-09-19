@@ -24,12 +24,13 @@ void sortBinaryArray(int arr[], int n) {
 
 	// take pivot as 1
 	int pivot = 1;
-	int j = -1;
+	int j = 0;
+
 	for(int i = 0; i < n; ++i) {
 
 		if(arr[i] < pivot) {
 		    
-			swap(&arr[i], &arr[++j]);
+			swap(&arr[i], &arr[j++]);
 		}
 	}
 }
