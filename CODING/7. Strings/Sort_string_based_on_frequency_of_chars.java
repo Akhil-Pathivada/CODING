@@ -54,6 +54,6 @@ class GFG {
 		String str = "geeksforgeeks";
 
 		System.out.println("Original String : " + str);
-		System.out.println("Original String : " + frequencySort(str));
+		System.out.println("Result String : " + frequencySort(str));
 	}
 }
