@@ -22,23 +22,23 @@ class GFG {
 
 	static int maxScore(int[] cardPoints, int k) {
         
-        int leftSum = 0;
-        
-        for(int i = 0; i < k; ++i) {
-            
-            leftSum += cardPoints[i];
-        }
-        int max = leftSum;
-        int n = cardPoints.length;
+		int leftSum = 0;
+		
+		for(int i = 0; i < k; ++i) {
+		    
+		    leftSum += cardPoints[i];
+		}
+		int max = leftSum;
+		int n = cardPoints.length;
 
-        for(int i = 0, rightSum = 0; i < k; ++i) {
-            
-            rightSum += cardPoints[n - 1 - i];
-            leftSum -= cardPoints[k - 1 - i];
-            
-            max = Math.max(max, leftSum + rightSum);
-        }
-        return max;
+		for(int i = 0, rightSum = 0; i < k; ++i) {
+		    
+		    rightSum += cardPoints[n - 1 - i];
+		    leftSum -= cardPoints[k - 1 - i];
+		    
+		    max = Math.max(max, leftSum + rightSum);
+		}
+		return max;
 	}
 
 	public static void main(String[] args) {
