@@ -17,7 +17,7 @@ Output: true
 Explanation: Both s and t become "".
 
 Time Complexity: O(M)+ O(N) where M, N are the lengths of S and T respectively.
-Space Complexity: O(M) + O(N).
+Space Complexity: O(M)+ O(N).
 */
 
 import java.util.*;
@@ -31,18 +31,23 @@ class GFG {
 
 	static String build(String s) {
 
-		Stack<Character> ans = new Stack<>();
-		String result = "";
-		for(char c : s.toCharArray()) {
+		StringBuilder str = new StringBuilder();
+		char[] ca = s.toCharArray();
 
-			if(c != '#') {
-				ans.push(c);
+		for(char ch : ca) {
+
+			if(ch == '#') {
+
+				if(str.length() != 0) {
+					// delete the most recent character
+					str.deleteCharAt(str.length() - 1);
+				}
 			}
-			else if(!ans.isEmpty()) {
-				ans.pop();
+			else {
+				str.append(ch);
 			}
 		}
-		return String.valueOf(ans);
+		return str.toString();
 	} 
 
 	public static void main(String[] args) {
