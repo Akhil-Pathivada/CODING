@@ -23,6 +23,13 @@ Space Complexity : O(1)
 import java.util.*;
 
 class GFG {
+	
+	private static void swap(char[] arr, int i, int j) {
+
+		char temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}	
 
 	private static void findNext(char[] arr, int n) {
 
