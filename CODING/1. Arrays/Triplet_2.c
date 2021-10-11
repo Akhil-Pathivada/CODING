@@ -10,42 +10,36 @@ Assume the Array was Sorted, Otherwise O(n*logn)
 #include<stdio.h>
 #include<stdlib.h>
 
-void FindTriplet(int *arr,int size,int X)
-{
+void findTriplet(int *arr, int size, int X) {
+
 	printf(" Triplets : ");	
 	
-	for(int i=0; i<size; ++i)
-	{
-	       int left = i+1;
-	       
-	       int right = size-1;
+	for(int i = 0; i < size; ++i) {
 
-		while(left < right)
-		{	
-			if(arr[i]+arr[left]+arr[right] < X) 
-				left++;	
-				
-			else if (arr[i]+arr[left]+arr[right] > X) 
-				right--;
-				
-			else
-			{
-				printf(" (%d,%d,%d)", arr[i],arr[left],arr[right]);
-				
-				left++;
-				
-				right--;
+	       int left = i + 1;     
+	       int right = size - 1;
+
+		while(left < right) {
+
+			if(arr[i] + arr[left] + arr[right] < X) {
+				++left;	
+			}	
+			else if(arr[i] + arr[left] + arr[right] > X) {
+				--right;
+			}	
+			else {
+				printf(" (%d, %d, %d)", arr[i], arr[left], arr[right]);
+				++left;
+				--right;
 			}
 		}
 	}
 }
-int main()
-{
-	int arr[] = {1, 4, 45, 6, 10, 8};
-	
-	int n = sizeof(arr)/sizeof(*arr);
-	
+int main(){
+
+	int arr[] = {1, 4, 6, 8, 10, 45};	
+	int n = sizeof(arr)/sizeof(*arr);	
 	int X = 22;
 
-	FindTriplet(arr, n, X);
+	findTriplet(arr, n, X);
 }	
