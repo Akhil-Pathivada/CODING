@@ -7,18 +7,18 @@ Space Complexity : O(1)
 #include<stdio.h>
 #include<limits.h>
 
-void findMaxDifference(int arr[],int N)
-{
+void findMaxDifference(int arr[], int N){
+
 	int smallIndex, largeIndex, max = INT_MIN;
 
-	for(int i=0; i<N-1; i++)
-	{
-		for(int j=i+1; j<N; j++)
-		{
+	for(int i = 0; i < N-1; ++i){
+
+		for(int j = i + 1; j < N; ++j){
+
 			int diff = arr[j] - arr[i];
 
-			if(diff>max)
-			{
+			if(diff > max){
+
 				max = diff;
 				smallIndex = i;
 				largeIndex = j;
@@ -26,12 +26,12 @@ void findMaxDifference(int arr[],int N)
 		}
 	}
 
-	printf(" Max.Difference between %d and %d is : %d \n", arr[smallIndex], arr[largeIndex], max);
+	printf(" Max.Difference between %d and %d is : %d ", arr[smallIndex], arr[largeIndex], max);
 }
 
-int main()
-{
-	int arr[] = {101,2,7,6,10,1,13,100};
+int main(){
 
-	findMaxDifference(arr,8);
+	int arr[] = {101, 2, 7, 6, 10, 1, 13, 100};
+
+	findMaxDifference(arr, 8);
 }

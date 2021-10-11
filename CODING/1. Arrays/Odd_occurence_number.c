@@ -6,21 +6,20 @@ Find the number in O(n) time & constant space.
 #include<stdio.h>
 #include<stdlib.h>
 
-int findOdd( int *arr, int n)
+int findOdd(int *arr, int n)
 {
-	int result=0;
+	int result = 0;
 
-	for(int i=0; i<n; ++i)
+	for(int i = 0; i < n; ++i){
 		
-		result = result ^ arr[i];
-
+		result = result ^ arr[i]; 
+	}
 	return result;
 }
-int main()
-{
+int main(){
+
 	int arr[] = { 2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2 }; 
+	int size = sizeof(arr) / sizeof(*arr);
 	
-	int size = sizeof(arr)/sizeof(*arr);
-	
-	printf(" Odd Occurence Number :: %d\n", findOdd(arr,size));
+	printf(" Odd Occurence Number :: %d", findOdd(arr, size));
 }
