@@ -1,5 +1,6 @@
 /*
-Given an unsorted array of nonnegative integers, find a continous subarray which adds to a given number. 
+Given an unsorted array of integers, find a continous subarray which adds to a given number. 
+(Handles Negative Numbers)
 
 Time Complexity : O(n)
 Space Complexity : O(n)

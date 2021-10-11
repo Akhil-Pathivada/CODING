@@ -8,37 +8,50 @@ Space Complexity : O(1)
 #include<stdio.h>
 #include<stdlib.h>
 
-void findLargestSubArray(int arr[],int N)
-{
-	int startIndex,lastIndex,max=-1;
-	for(int i=0;i<N-1;i++)
-	{
-		int zeroCount=0,oneCount=0;
+void findLargestSubArray(int arr[], int N){
 
-		arr[i]? ++oneCount : ++zeroCount;
+	int startIndex, lastIndex, max = -1;
+	
+	for(int i = 0; i < N-1; ++i) {
 
-		for(int j=i+1;j<N;j++)
-		{
-			arr[j]? ++oneCount : ++zeroCount;
+		int zeroCount = 0, oneCount = 0;
 
-			int length = (zeroCount==oneCount)?(j-i+1):-1;
+		if(arr[i]) {
+			++oneCount;
+		}
+		else {
+			++zeroCount;
+		}
 
-			if(length>max)
-			{
-				startIndex=i;
-				lastIndex=j;
-				max=length;
+		for(int j = i+1; j < N; ++j) {
+
+			if(arr[j]) {
+				++oneCount;
+			}
+			else {
+				++zeroCount;
+			}
+
+			int length = (zeroCount == oneCount) ? j - i + 1 : -1;
+
+			if(length > max) {
+
+				startIndex = i;
+				lastIndex = j;
+				max = length;
 			}
 		}
 	}
-	if(max==-1)
+	if(max == -1) {
 		printf(" No such SubArray \n");
-	else
+	}
+	else {
 		printf(" Largest Sub Array from %d to %d \n",startIndex,lastIndex);
+	}
 }
 
-int main()
-{
-	int arr[]={1,0,1,1,0,1,1};
-	findLargestSubArray(arr,7);
+int main() {
+
+	int arr[]={1, 0, 1, 1, 0, 1, 1};
+	findLargestSubArray(arr, 7);
 }
