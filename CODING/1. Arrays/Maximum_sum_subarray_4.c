@@ -15,9 +15,8 @@ Space Complexity : O(1)
 
 void maxSubArraySum(int arr[], int n) {
 
-	int currSum, maxSoFar, s, start, end;
+	int currSum, maxSoFar, start, end = -1;
 	currSum = maxSoFar = arr[0];
-	s = start = end = 0;
 	
 	for(int i = 1; i < n; ++i) {
 
@@ -26,18 +25,21 @@ void maxSubArraySum(int arr[], int n) {
 		if(currSum > maxSoFar) {
 
 			maxSoFar = currSum;
-			start = s;
 			end = i;
 		}
 
 		if(currSum < 0) {
-
 			currSum = 0;
-			s = i + 1;
 		}
 	}
+	start = end;
+	// finding the start index
+	for(int sum = 0; sum != maxSoFar; --start) {
 
-	printf(" Max. sum in a contiguous Subarray is : %d, found between indexes %d and %d", maxSoFar, start, end);
+		sum += arr[start];
+	}
+
+	printf(" Max. sum in a contiguous Subarray is : %d, found between indexes %d and %d", maxSoFar, start + 1, end);
 }
 
 int main() {
