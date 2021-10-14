@@ -3,61 +3,57 @@ Given a Binary Matrix, find the largest square submatrix with all 1's.
 
 (Dynamic Programming)
 
-Time Complexity : O(n^2)
-Space Complexity : O(1)
+Time Complexity : O(m * n)
+Space Complexity : O(1).... computing and storing results in same matrix
 */
 
 #include<stdio.h>
-#include<stdbool.h>
 
 #define N 4
+#define R 6
+#define C 5
 
-int Min( int a, int b, int c)
-{
-	return (a < b) ? ( a < c ? a : c ) : ( b < c ? b : c );
+
+int min(int a, int b, int c) {
+
+	return (a < b) ? (a < c ? a : c) : (b < c ? b : c);
 }
 
-void printSolution( int mat[N][N], int row, int col, int len)
-{
-	for(int i=row; i > row-len; --i)
-	{
-		for(int j=col; j > col-len; --j)
-			printf(" %d ",mat[i][j]);
-			
-		printf("\n");
-	}
-}
+void largestSquareMatrix(int M[R][C]) {
 
-int largestSquareMatrix( int matrix[N][N])
-{
-	int i,j,maxLen=1;
-	
-	for(i=1; i<N; ++i)
-	{
-		for(j=1; j<N; ++j)
-		{
-			if(matrix[i][j])
-				matrix[i][j] = 1 + Min(matrix[i-1][j], matrix[i-1][j-1], matrix[i][j-1]);
-				
-			else
-				matrix[i][j] = 0;	
+	int i, j, maxLen = M[0][0];
+
+	for(i = 1; i < R; ++i) {
+
+		for(j = 1; j < C; ++j) {
+			//if element is '1'
+			if(M[i][j] == 1) {
+
+				M[i][j] = 1 + min(M[i-1][j], M[i-1][j-1], M[i][j-1]);
+
+				if(M[i][j] > maxLen) {
+					maxLen = M[i][j];
+				}
+			}
+			// if element is '0'
+			else {
+				M[i][j] = 0;	
+			}
 		}
 	}
-	
-	// getting the maxLength matrix
-	for(i=0; i<N; ++i)
-		for(j=0; j<N; ++j)
-			maxLen = matrix[i][j] > maxLen ? matrix[i][j] : maxLen;
 
-	return maxLen;
+	// printing the solution
+	printf("Length of largest square matrix with all ones = %d", maxLen);
 }
 
-void main()
-{
-	int matrix[N][N] = {{1,1,1,1},
-			    {0,0,1,1},
-		            {1,1,1,1},
-		            {0,1,1,1}};
+int main() {
+
+	int M[R][C] = {	{0, 1, 1, 0, 1},
+                 	{1, 1, 0, 1, 0},
+                	{0, 1, 1, 1, 0},
+                	{1, 1, 1, 1, 0},
+                	{1, 1, 1, 1, 1},
+                	{0, 0, 0, 0, 0}};
 	
-	printf(" Largest square Submatrix : %d ", largestSquareMatrix(matrix));
+	largestSquareMatrix(M);
 }
