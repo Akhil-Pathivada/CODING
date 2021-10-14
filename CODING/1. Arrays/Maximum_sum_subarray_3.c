@@ -9,31 +9,30 @@ Space Complexity : O(1)
 
 #include<stdio.h>
 
-#define max(a,b)  (a>b) ? a : b
+#define max(a, b)  (a > b) ? a : b
 
-void maxSubArraySum( int arr[], int n)
-{
+void maxSubArraySum(int arr[], int n) {
+
 	int currSum, maxSoFar;
-	
 	currSum = maxSoFar = arr[0];
 	
-	for(int i=1; i<n; ++i)
-	{
-		currSum = max(currSum+arr[i], arr[i]);
+	for(int i = 1; i < n; ++i) {
+
+		currSum = max(currSum + arr[i], arr[i]);
 		
 		maxSoFar = max(maxSoFar, currSum);
 	}
 
-	printf(" Max. sum in a contiguous Subarray : %d ",maxSoFar);
+	printf(" Max. sum in a contiguous Subarray : %d ", maxSoFar);
 }
 
-void main()
-{
-	int arr[] = {-3, 10, 5, -20, 4, 11, -5, 7};
+int main() {
+
+	int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3 };
 	
-	int n = sizeof(arr)/sizeof(*arr);
+	int n = sizeof(arr) / sizeof(*arr);
 	
-	maxSubArraySum(arr,n);
+	maxSubArraySum(arr, n);
 }
 
 
