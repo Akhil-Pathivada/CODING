@@ -16,7 +16,7 @@ Space Complexity : O(n)
 
 #define max(a, b)  (a > b) ? a : b 
 
-int getLCS( char X[], char Y[], int m, int n) {
+int getLCS(char X[], char Y[], int m, int n) {
 
 	int mat[2][n+1];
 	bool bi;

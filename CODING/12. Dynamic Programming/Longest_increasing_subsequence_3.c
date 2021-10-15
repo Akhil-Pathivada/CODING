@@ -12,59 +12,58 @@ Space Complexity : O(n)
 #include<stdlib.h>
 #include<stdbool.h>
 
-#define max(a,b) (a>b) ? a : b
+#define max(a,b) (a > b) ? a : b
 
-int compareTo( const void *aptr, const void *bptr)
-{
+int compareTo(const void *aptr, const void *bptr) {
+	
 	return *(int*)aptr - *(int*)bptr;
 }
 
-int LCS( int X[], int Y[], int n)
-{
+int LCS(int X[], int Y[], int n) {
+
 	int mat[2][n+1];
-	
 	bool bi;
 		
-	for(int i=0; i<=n; ++i)
-	{
+	for(int i = 0; i <= n; ++i) {
+
 		bi = i & 1;
 		
-		for(int j=0; j<=n; ++j)
-		{
+		for(int j = 0; j <= n; ++j) {
 			
-			if(i==0 || j==0)
+			if(i == 0 || j == 0) {
 				mat[bi][j] = 0;
+			}
 			
-			else if(X[i-1] == Y[j-1])
+			else if(X[i-1] == Y[j-1]) {
 				mat[bi][j] = 1 + mat[1-bi][j-1];
+			}
 			
-			else
+			else {
 				mat[bi][j] = max(mat[1-bi][j], mat[bi][j-1]);
+			}
 		}
 	}
-	
 	return mat[bi][n];	
 }
 
 
-int getLIS( int *arr, int n)
-{
+int getLIS(int *arr, int n) {
+
 	int temp[n];
 	
-	for(int i=0; i<n; ++i)
-		temp[i] = arr[i];
+	for(int i = 0; i < n; ++i) {
+ 		temp[i] = arr[i];
+	}
 		
-	qsort(temp,n,sizeof(*temp),compareTo);
+	qsort(temp, n, sizeof(*temp), compareTo);
 	
-	
-	return LCS(arr,temp,n);
+	return LCS(arr, temp, n);
 }
 
-void main()
-{	
+void main() {
+
 	int arr[] = { 10, 22, 9, 33, 21, 50, 41, 60 }; 
+	int n = sizeof(arr) / sizeof(*arr);
 	
-	int n = sizeof(arr)/sizeof(*arr);
-	
-	printf(" Longest Increasing Subsequence : %d ", getLIS(arr,n));
+	printf(" Longest Increasing Subsequence : %d ", getLIS(arr, n));
 }
