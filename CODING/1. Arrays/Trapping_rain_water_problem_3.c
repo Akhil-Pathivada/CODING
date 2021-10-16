@@ -7,59 +7,58 @@ Space Complexity : O(1)
 
 #include<stdio.h>
 
-int min( int a, int b)
-{
-	return a<b ? a : b;
+int min(int a, int b) {
+
+	return a < b ? a : b;
 }
 
-int max( int a, int b)
-{
-	return a>b ? a : b;
+int max(int a, int b) {
+
+	return a > b ? a : b;
 }
 
-int findMaxWater( int *arr, int n)
-{
-	int leftMax, rightMax, low, high, water=0;
+int findMaxWater(int *arr, int n) {
+
+	int leftMax, rightMax, low, high, water = 0;
 	
 	leftMax = rightMax = 0;
 	
-	low =0 ;
+	low = 0 ;
 	
 	high = n-1;
 	
-	while(low <= high)
-	{
-		if(arr[low] < arr[high])
-		{
-			if(arr[low] > leftMax)
+	while(low <= high) {
+
+		if(arr[low] < arr[high]) {
+
+			if(arr[low] > leftMax) {
 				leftMax = arr[low];
+			}
 		
-			else
+			else {
 				water += leftMax - arr[low];
-			
-			low++;
+			}
+			++low;
 		}
-		else
-		{
-			if(arr[high] > rightMax)
+		else {
+			if(arr[high] > rightMax) {
 				rightMax = arr[high];
+			}
 			
-			else
+			else {
 				water += rightMax - arr[high];
-				
-			high--;
-		}
-		 
-	}
-		
+			}	
+			--high;
+		} 
+	}	
 	return water;
 }
 
-void main()
-{
+int main() {
+
 	int arr[] = {1, 0, 2, 0, 1, 0, 3, 1, 0, 2};
 	
-	int n = sizeof(arr)/sizeof(*arr);
+	int n = sizeof(arr) / sizeof(*arr);
 	
-	printf(" Max. water that can be holded = %d ",findMaxWater(arr,n));
+	printf(" Max. water that can be holded = %d ",findMaxWater(arr, n));
 }
