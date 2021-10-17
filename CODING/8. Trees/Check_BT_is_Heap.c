@@ -132,12 +132,12 @@ int main() {
   	 root->left = newNode(9); 
   	 root->right = newNode(8); 
   	 root->left->left = newNode(7); 
-   	 root->left->right = newNode(6); 
-   	 root->right->left = newNode(5); 
-   	 root->right->right = newNode(4); 
-   	 root->left->left->left = newNode(3); 
-   	 root->left->left->right = newNode(2); 
-   	 root->left->right->left = newNode(1); 
+    root->left->right = newNode(6); 
+    root->right->left = newNode(5); 
+    root->right->right = newNode(4); 
+    root->left->left->left = newNode(3); 
+    root->left->left->right = newNode(2); 
+    root->left->right->left = newNode(1); 
 	
 	printf(checkHeapUtil(root) ? " YES " : " NO ");
 }
