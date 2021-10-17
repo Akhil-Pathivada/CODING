@@ -2,15 +2,16 @@
 Check whether the given Binary Tree is BST or not.
 Assume, each node in the tree has a distinct key.
 
-Time Complexity : O(N * logN)
-Space Complexity : O(N)
+Time Complexity : O(n)
+Space Complexity : O(n)
 */
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
+#include<limits.h>
 
 struct node {
-
+	
 	int data;
 	struct node *left, *right;
 };
@@ -24,37 +25,20 @@ struct node *newNode(int data) {
 	return nn;
 }
 
-int minValue(struct node *root) {
-
-	while(root && root->left) {
-		root = root->left;
-	}
-	return root->data;		
-}
-
-int maxValue(struct node *root) {
-
-	while(root && root->right) {
-		root = root->right;
-	}
-	return root->data;		
-}
-
-bool isBST(struct node *root) {
+bool isBST(struct node *root, struct node **prev) {
 
 	if(!root) {
 		return true;
 	}
-	
-	if(root->left && (maxValue(root->left) > root->data)) {
+	if(!isBST(root->left, prev)) {
 		return false;
 	}
-	
-	if(root->right && (minValue(root->right) < root->data)) {
-		return false;
+	if(*prev && (root->data <= (*prev)->data)) {
+		return false;	
 	}
-			
-	return isBST(root->left) && isBST(root->right);
+	*prev = root;
+
+	return isBST(root->right, prev);	
 }
 
 int main() {
@@ -70,5 +54,6 @@ int main() {
   	root->right->right->left = newNode(65); 
   	root->right->right->right = newNode(80); 
   	
-  	printf(isBST(root) ? "True" : "False"); 
+  	struct node *prev = NULL;
+  	printf(isBST(root, &prev) ? "True" : "False"); 
 }

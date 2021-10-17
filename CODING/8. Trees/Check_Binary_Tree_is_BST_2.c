@@ -10,37 +10,37 @@ Space Complexity : O(n)
 #include<stdbool.h>
 #include<limits.h>
 
-struct node
-{
+struct node {
+	
 	int data;
 	struct node *left, *right;
 };
 
-struct node *newNode(int data)
-{
+struct node *newNode(int data) {
+
 	struct node *nn = (struct node *)malloc(sizeof(struct node));
-	
 	nn->data = data;
-	
 	nn->left = nn->right = NULL;
 	
 	return nn;
 }
 
-bool isBST(struct node *root, int min, int max)
-{
-	if(!root)
+bool isBST(struct node *root, int min, int max) {
+
+	if(!root) {
 		return true;
+	}
 	
-	if(root->data < min || root->data > max)
+	if(root->data < min || root->data > max) {
 		return false;
+	}
 			
-	return isBST(root->left, min, root->data -1) &&
-	       isBST(root->right, root->data +1, max);
+	return isBST(root->left, min, root->data - 1) &&
+	       isBST(root->right, root->data + 1, max);
 }
 
-void main()
-{
+int main() {
+
 	struct node *root = newNode(50); 
   	root->left = newNode(10); 
   	root->right = newNode(60); 
