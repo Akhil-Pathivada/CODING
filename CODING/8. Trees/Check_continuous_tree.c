@@ -11,53 +11,54 @@ Space Complexity : O(n)
 #include<stdbool.h>
 #include<math.h>
 
-struct node 
-{
+struct node {
+
 	int data;
 	struct node *left, *right;
 };
 
-struct node *newNode(int val)
-{
+struct node *newNode(int val) {
+
 	struct node *nn = (struct node*)malloc(sizeof(struct node));
-	
 	nn->data = val;
-	
 	nn->left = nn->right = NULL;
 	
 	return nn;
 }
 
-bool checkContinuous(struct node *root)
-{
-	if(!root)
+bool checkContinuous(struct node *root) {
+
+	if(!root) {
 		return true;
+	}
 	
-	if(!root->left && !root->right)
+	if(!root->left && !root->right) {
 		return true;
+	}
 	
 	int v1 = root->data;
 	
-	if(root->left)
-	{
+	if(root->left) {
+
 		int v2 = root->left->data;
 		
-		if(abs(v1-v2) != 1)
+		if(abs(v1 - v2) != 1) {
 			return false;
+		}
 	}
-	if(root->right)
-	{
+	if(root->right) {
+
 		int v2 = root->right->data;
 		
-		if(abs(v1-v2) != 1)
+		if(abs(v1 - v2) != 1) {
 			return false;
+		}
 	}
-	
 	return checkContinuous(root->left) && checkContinuous(root->right);
 }
 
-void main()
-{
+int main() {
+
 	struct node *root = newNode(3);
 	root->left = newNode(2);
 	root->right = newNode(4);
