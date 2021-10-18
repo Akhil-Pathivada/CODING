@@ -9,6 +9,7 @@ Space Complexity : O(n)
 #include<stdbool.h>
 #include<string.h>
 #define MAX 100
+
 struct node {
 	char data;
 	struct node *left,*right;
@@ -19,41 +20,50 @@ struct node* newNode(char val) {
 	struct node* nn = (struct node*)malloc(sizeof(struct node));
 	nn->data = val;
     	nn->left = nn->right = NULL;
+
     	return nn;
 }
 
-void storeInOrder(struct node *root,char Inorder[],int *i) {
+void storeInOrder(struct node *root, char Inorder[],int *i) {
 
-	if(!root)
+	if(!root) {
+
+		Inorder[(*i)++] = '$';
 		return;
+	}
 
-	storeInOrder(root->left,Inorder,i);
+	storeInOrder(root->left, Inorder, i);
 	Inorder[(*i)++] = root->data;
-	storeInOrder(root->right,Inorder,i);
+	storeInOrder(root->right, Inorder, i);
 }
 
-void storePreOrder(struct node *root,char Preorder[],int *i) {
+void storePreOrder(struct node *root, char Preorder[], int *i) {
 
-	if(!root)
+	if(!root) {
+
+		Preorder[(*i)++] = '$';
 		return;
+	}
 
 	Preorder[(*i)++] = root->data;
-	storePreOrder(root->left,Preorder,i);
-	storePreOrder(root->right,Preorder,i);
+	storePreOrder(root->left, Preorder, i);
+	storePreOrder(root->right, Preorder, i);
 }
 
 bool checkSubTree(struct node *A,struct node *B) {
 
-	if(!B)	
+	if(!B) {
 		return true;
-	if(!A)	
+	}
+	if(!A) {
 		return false;
+	}
 	
 	char InorderA[MAX], InorderB[MAX];
 	int m = 0, n = 0;
 
-	storeInOrder(A,InorderA,&n);
-	storeInOrder(B,InorderB,&m);
+	storeInOrder(A, InorderA, &n);
+	storeInOrder(B, InorderB, &m);
 	
 	InorderA[n] = '\0';
 	InorderB[m] = '\0';
@@ -67,10 +77,10 @@ bool checkSubTree(struct node *A,struct node *B) {
 	PreorderA[n] = '\0';
 	PreorderB[m] = '\0';
 	
-	return (strstr(PreorderA,PreorderB) != NULL) && (strstr(InorderA,InorderB) != NULL);
+	return (strstr(PreorderA, PreorderB) != NULL) && (strstr(InorderA, InorderB) != NULL);
 }
 
-void main() {
+int main() {
 
 	struct node *A = newNode('a');
 	A->left = newNode('b');
