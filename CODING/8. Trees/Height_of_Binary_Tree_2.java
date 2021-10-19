@@ -32,8 +32,7 @@ class BinaryTree {
 			int nodeCount = queue.size();
 			
 			if(nodeCount == 0) {
-
-				return height; 
+				return height - 1; 
 			}
 			++height;
 			
@@ -42,12 +41,10 @@ class BinaryTree {
 				Node temp = queue.remove();
 				
 				if(temp.left != null) {
-
 					queue.add(temp.left); 
 				}
 				
 				if(temp.right != null) {
-
 					queue.add(temp.right); 
 				}
 				--nodeCount;
