@@ -7,39 +7,41 @@ Time Complexity : O(min(m,n))
 Space Complexity : O(min(m,n))
 */
 
-class Node
-{
+class Node {
+
 	int data;
 	Node left, right;
 	
-	Node(int item)
-	{
+	Node(int item) {
+
 		data = item;
-		
 		left = right = null;
 	}
 }
 
-class BinaryTree
-{
-	static boolean isIsomorphic( Node n1, Node n2)
-	{
-		if(n1 == null && n2 == null)
+class BinaryTree {
+
+	static boolean isIsomorphic(Node n1, Node n2) {
+
+		if(n1 == null && n2 == null) {
 			return true;
+		}
 		
-		if(n1 == null || n2 == null)
+		if(n1 == null || n2 == null) {
 			return false;
+		}
 		
-		if(n1.data != n2.data)
+		if(n1.data != n2.data) {
 			return false;
+		}
 		
 		return (isIsomorphic(n1.left, n2.left) && isIsomorphic(n1.right, n2.right)) ||
 		       (isIsomorphic(n1.left, n2.right) && isIsomorphic(n1.right, n2.left));
 
 	}
 	
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
+		
 		BinaryTree ob = new BinaryTree();
 		
 		Node root1 = new Node(1);
