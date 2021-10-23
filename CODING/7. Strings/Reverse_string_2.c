@@ -1,11 +1,14 @@
+/* 
+Program to reverse string
+
+*/
+
 #include<stdio.h>
 #include<string.h>
-void main()
-{
-	char str[100];
 
-	printf("Enter the string : ");
-	scanf("%s",str);
+int main() {
 
-	printf("\n** Reverse of the String : %s **\n",strrev(str));
+	char str[] = "geeksforgeeks";
+
+	printf("Reverse of the String : %s", strrev(str));
 }

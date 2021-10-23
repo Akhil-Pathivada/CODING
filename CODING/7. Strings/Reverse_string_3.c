@@ -8,17 +8,19 @@ Space Complexity : O(1)
 #include<stdio.h>
 #include<string.h>
 
+void swap(char *a, char *b) {
+
+	char temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
 char* reverse(char *str) {
 
-	int i = 0;
-	int j = strlen(str) - 1;
+	int n = strlen(str);	
 
-	while(i < j) {
-
-		char temp = str[i];
-		str[i] = str[j];
-		str[j] = temp;
-		++i, --j;
+	for(int i = 0; i < n/2; ++i) {
+		swap(&str[i], &str[n - i - 1]); 
 	}
 	return str;
 }
