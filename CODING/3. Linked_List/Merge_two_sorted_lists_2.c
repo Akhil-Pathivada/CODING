@@ -1,11 +1,12 @@
 /*
 Merge two sorted Linked Lists......
 
-Time Complexity :: O(m+n)
-Space Complexity :: O(1)
+Time Complexity : O(M + N)
+Space Complexity : O(1)
 */
 #include <stdio.h>
 #include <stdlib.h>
+
 struct node {
 
 	int data;
@@ -14,27 +15,26 @@ struct node {
 
 struct node *newNode(int data) {
 
-	struct node *temp = (struct node *)malloc(sizeof(struct node));
-	temp->data = data;
-	temp->next = NULL;
+	struct node *nn = (struct node *)malloc(sizeof(struct node));
+	nn->data = data;
+	nn->next = NULL;
 
-	return temp;
+	return nn;
 }
 
-void Swap(struct node *n1,struct node *n2) {
+void swap(struct node *n1, struct node *n2) {
 
 	int temp = n1->data;
-	
 	n1->data = n2->data;
-	
 	n2->data = temp;
 }
 
-struct node *mergeTwoSortedLists(struct node *head1,struct node *head2) {
+struct node *mergeTwoSortedLists(struct node *head1, struct node *head2) {
 
 	struct node *mergeList, *res_head;
 
 	if(head1->data < head2->data) {
+
 		res_head = head1;
 		head1 = head1->next;
 	}
@@ -46,11 +46,14 @@ struct node *mergeTwoSortedLists(struct node *head1,struct node *head2) {
 	mergeList = res_head;
 
 	while(head1 && head2) {
+
 		if(head1->data < head2->data) {
+
 			mergeList->next = head1;
 			head1 = head1->next;
 		}
 		else {
+			
 			mergeList->next = head2;
 			head2 = head2->next;
 		}
@@ -64,8 +67,7 @@ struct node *mergeTwoSortedLists(struct node *head1,struct node *head2) {
 void printList(struct node *head) {
 
 	for( ; head; head = head->next) {
-		printf(" %d,", head->data);
-		
+		printf("%d, ", head->data);
 	}
 }
 

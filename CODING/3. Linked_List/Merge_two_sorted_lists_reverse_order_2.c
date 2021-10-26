@@ -22,11 +22,11 @@ struct node {
 
 struct node *newNode(int data) {
 
-	struct node *temp = (struct node *)malloc(sizeof(struct node));
-	temp->data = data;
-	temp->next = NULL;
+	struct node *nn = (struct node *)malloc(sizeof(struct node));
+	nn->data = data;
+	nn->next = NULL;
 
-	return temp;
+	return nn;
 }
 
 void printList(struct node *head) {
@@ -44,12 +44,14 @@ struct node *mergeTwoSortedListsReverse(struct node *head1, struct node *head2) 
 	while(head1 && head2) {
 
 		if(head1->data < head2->data) {
+			
 			temp = head1->next;
 			head1->next = mergeList;
 			mergeList = head1;
 			head1 = temp;
 		}
 		else {
+
 			temp = head2->next;
 			head2->next = mergeList;
 			mergeList = head2;
@@ -57,12 +59,14 @@ struct node *mergeTwoSortedListsReverse(struct node *head1, struct node *head2) 
 		}
 	}
 	while(head1) {
+
 		temp = head1->next;
 		head1->next = mergeList;
 		mergeList = head1;
 		head1 = temp;
 	}
 	while(head2) {
+
 		temp = head2->next;
 		head2->next = mergeList;
 		mergeList = head2;

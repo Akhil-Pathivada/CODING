@@ -1,61 +1,65 @@
 /*
  Merge two sorted Linked Lists......
- Time Complexity :: O(n^2)
- Space Complexity :: O(1)
+ Time Complexity : O(N ^ 2)
+ Space Complexity : O(1)
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node 
-{
+struct node  {
+
 	int data;
 	struct node *next;
 };
 
-struct node *newNode(int data)
-{
-	struct node *temp = (struct node *)malloc(sizeof(struct node));
-	temp->data = data;
-	temp->next = NULL;
-	return temp;
+struct node *newNode(int data) {
+
+	struct node *nn = (struct node *)malloc(sizeof(struct node));
+	nn->data = data;
+	nn->next = NULL;
+
+	return nn;
 }
 
-void Swap(struct node *n1,struct node *n2)
-{
-	int temp=n1->data;
-	n1->data=n2->data;
-	n2->data=temp;
+void swap(struct node *n1, struct node *n2) {
+
+	int temp = n1->data;
+	n1->data = n2->data;
+	n2->data = temp;
 }
 
-struct node *mergeTwoSortedLists(struct node *head1,struct node *head2)
-{
-	if(head1->data < head2->data)
-		Swap(head1,head2);
+struct node *mergeTwoSortedLists(struct node *head1, struct node *head2) {
 
-	struct node *curr1,*curr2,*prev,*nextPtr;
+	if(head1->data < head2->data) {
+		swap(head1, head2);
+	}
 
-	for(curr1=head1 ;curr1;curr1=nextPtr)
-	{
-		nextPtr=curr1->next;
+	struct node *curr1, *curr2, *prev, *nextPtr;
 
-		for(curr2=head2; curr2 && (curr2->data < curr1->data); curr2=curr2->next)
-			prev=curr2;
+	for(curr1 = head1; curr1; curr1 = nextPtr) {
 
-		prev->next=curr1;
-		curr1->next=curr2;
+		nextPtr = curr1->next;
+
+		for(curr2 = head2; curr2 && (curr2->data < curr1->data); curr2 = curr2->next) {
+			prev = curr2;
+		}
+
+		prev->next = curr1;
+		curr1->next = curr2;
 	}
 	return head2;
 }
 
-void printList(struct node *head)
-{
-	for(; head; head = head->next)
-		printf("%d\t", head->data);
+void printList(struct node *head) {
+
+	for( ; head; head = head->next) {
+		printf("%d, ", head->data);
+	}
 }
 
-void main()
-{
+int main() {
+
 	struct node *head1 = newNode(10);
 	head1->next = newNode(30);
 	head1->next->next = newNode(50);
