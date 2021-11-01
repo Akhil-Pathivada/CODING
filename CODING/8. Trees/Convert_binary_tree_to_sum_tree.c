@@ -11,27 +11,26 @@ Space Complexity : O(N)
 #include<stdlib.h>
 #include<stdbool.h>
 
-struct node 
-{
+struct node {
+
 	int data;
-	struct node *left,*right;
+	struct node *left, *right;
 };
 
-struct node *newNode(int val)
-{
+struct node *newNode(int val) {
+
 	struct node *nn = (struct node*)malloc(sizeof(struct node));
-	
 	nn->data = val;
-	
 	nn->left = nn->right = NULL;
 
 	return nn;
 }
 
-int convertToSumTree( struct node *root)
-{
-	if(!root)
+int convertToSumTree(struct node *root) {
+
+	if(!root) {
 		return 0;
+	}
 	
 	int old_val = root->data;
 	
@@ -40,20 +39,20 @@ int convertToSumTree( struct node *root)
 	return root->data + old_val;	
 }
 
-void PreOrder( struct node *root)
-{
-	if(!root)
+void preOrder(struct node *root) {
+
+	if(!root) {
 		return;
+	}
 		
-	printf(" %d,",root->data);
-	
-	PreOrder(root->left);
-	
-	PreOrder(root->right);
+	printf(" %d,", root->data);
+
+	preOrder(root->left);
+	preOrder(root->right);
 }
 
-int main()  
-{  
+int main() {
+
    	struct node *root = newNode(10);  
     	root->left = newNode(-2);  
 	root->right = newNode(6);  
@@ -63,6 +62,5 @@ int main()
     	root->right->right = newNode(5);  
     	
     	convertToSumTree(root);
-    	
-    	PreOrder(root);
+    	preOrder(root);
 }
