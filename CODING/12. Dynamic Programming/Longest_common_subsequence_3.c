@@ -18,7 +18,7 @@ Space Complexity : O(n)
 
 int getLCS(char X[], char Y[], int m, int n) {
 
-	int mat[2][n+1];
+	int mat[2][n + 1];
 	bool bi;
 		
 	for(int i = 0; i <= m; ++i) {

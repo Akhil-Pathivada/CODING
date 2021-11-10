@@ -5,9 +5,8 @@ The Sequences are of length : m,n
 
 (Dynamic Programming - Bottom Up approach)
 
-Time Complexity : O(m*n)
-
-Space Complexity : O(m*n)
+Time Complexity : O(m * n)
+Space Complexity : O(m * n)
 */
 
 #include<stdio.h>
