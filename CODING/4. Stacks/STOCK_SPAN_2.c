@@ -1,5 +1,6 @@
 /* Program for Stock Span problem....
 
+https://www.geeksforgeeks.org/the-stock-span-problem/
 
 Time Complexity : O(n)
 Space Complexity : O(n)....(for Stack)

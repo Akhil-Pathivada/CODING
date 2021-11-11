@@ -1,6 +1,9 @@
-/* Program for Stock Span problem....
+/* 
+Program for Stock Span problem....
 
-Time Complexity : O(n^2)
+https://www.geeksforgeeks.org/the-stock-span-problem/
+
+Time Complexity : O(n ^ 2)
 Space Complexity : O(1)
 */
 
