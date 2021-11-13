@@ -10,7 +10,6 @@ Space Complexity : O(N)
 void PrintArray(int *arr, int size) {
 
 	for(int i = 0; i < size; ++i) {
-	
 		printf(" %d,",arr[i]);
 	}
 }
@@ -34,12 +33,10 @@ int Partition(int *arr, int low, int high) {
 	for(int j = low; j < high; ++j) {
 		// If current element is smaller than the pivot 
 		if(arr[j] <= x) {
-
 			Swap(&arr[++i], &arr[j]);
 		}
 	}
 	Swap(&arr[++i], &arr[high]);
-
 	return i;
 }
 

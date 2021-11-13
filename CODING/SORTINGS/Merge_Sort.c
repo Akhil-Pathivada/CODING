@@ -24,11 +24,9 @@ void MERGE(int *arr, int p, int q, int r) {
 
 	// Copy data to temp arrays L[] and R[]
 	for(i = 0; i < n1; ++i) {
-		
 		L[i] = arr[p + i]; 
 	}
 	for(j = 0;j < n2; ++j) {
-
 		R[j] = arr[q + j + 1]; 
 	}
 
@@ -38,11 +36,9 @@ void MERGE(int *arr, int p, int q, int r) {
 	for(k = p; k <= r; ++k) {
 
 		if(L[i] <= R[j]) {
-
 			arr[k] = L[i++]; 
 		}
 		else {
-
 			arr[k] = R[j++]; 
 		}
 	}
@@ -64,14 +60,12 @@ void MergeSort(int *arr, int p, int r) {
 int main() {
 
 	int arr[] = {8, 7, 6, 5, 9, 4, 3, 2, 1};
-
 	int size = sizeof(arr) / sizeof(*arr);
 
 	MergeSort(arr, 0, size - 1);
 
 	printf("Sorted Array : ");
 	for(int i = 0; i < size; ++i) {
-
 		printf(" %d,", arr[i]);	
 	}
 }

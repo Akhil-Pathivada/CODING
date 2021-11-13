@@ -47,9 +47,7 @@ int main() {
 	arr = (int*)malloc(sizeof(int) * size);	
 
 	printf("Enter the Array : ");
-	
 	for(int i = 0; i < size; ++i) {
-
 		scanf("%d", &arr[i]);
 	}
 
