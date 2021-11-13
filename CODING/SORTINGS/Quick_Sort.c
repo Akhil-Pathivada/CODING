@@ -1,7 +1,8 @@
-/* Quick Sort
+/* 
+Sorting the elements of an Array using "QUICK SORT" 
 
-Time Complexity : O(n^2)
-Space Complexity : O(1)
+Time Complexity : O(N ^ 2)
+Space Complexity : O(N)
 */
 #include<stdio.h>
 #include<stdlib.h>
@@ -20,15 +21,18 @@ void Swap(int *p, int *q) {
 	*p = *q;
 	*q = temp;
 }
-
+/* This function takes last element as pivot, places 
+the pivot element at its correct position in sorted 
+array, and places all smaller (smaller than pivot) 
+to left of pivot and all greater elements to right 
+of pivot */
 int Partition(int *arr, int low, int high) {
 
 	int x = arr[high];
-
 	int i = low - 1;
 
 	for(int j = low; j < high; ++j) {
-
+		// If current element is smaller than the pivot 
 		if(arr[j] <= x) {
 
 			Swap(&arr[++i], &arr[j]);
@@ -42,11 +46,12 @@ int Partition(int *arr, int low, int high) {
 void quickSort(int *arr, int low, int high) {
 
 	if(low < high) {
-
+        	/* pivot is partitioning index, arr[p] is now 
+        	at right place */
 		int pivot = Partition(arr, low, high);
-
+        	/*Separately sort elements before 
+        	partition and after partition */
 		quickSort(arr, low, pivot - 1);
-
 		quickSort(arr, pivot + 1, high);
 	}
 }
