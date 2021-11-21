@@ -8,8 +8,6 @@ package trees;
 
 public class FlattenBinaryTreeToLinkedList extends TreeNode {
         
-        private static TreeNode root;
-        
         private static void flatten(TreeNode root) {
                
                 if(root == null) {
@@ -36,7 +34,7 @@ public class FlattenBinaryTreeToLinkedList extends TreeNode {
         
         public static void main(String[] args) {
                 
-                root = new TreeNode(1);
+                TreeNode root = new TreeNode(1);
                 root.left = new TreeNode(2);
                 root.left.left = new TreeNode(3);
                 root.left.right = new TreeNode(4);
