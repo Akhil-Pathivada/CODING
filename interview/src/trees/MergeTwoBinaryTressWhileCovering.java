@@ -6,7 +6,7 @@
  * */
 package trees;
 
-public class MergeTwoBinaryTressWhileCovering {
+public class MergeTwoBinaryTressWhileCovering extends TreeNode {
         
         private static TreeNode mergeTwoBinaryTrees(TreeNode t1, TreeNode t2) {
                 
@@ -23,16 +23,6 @@ public class MergeTwoBinaryTressWhileCovering {
                 return t1;
         }
         
-        private static void preOrder(TreeNode root) {
-                
-                if(root == null) {
-                        return;
-                }
-                System.out.println(root.data);
-                preOrder(root.left);
-                preOrder(root.right);
-        }
-        
         public static void main(String[] args) {
                 
                 TreeNode t1 = new TreeNode(1);
@@ -46,6 +36,6 @@ public class MergeTwoBinaryTressWhileCovering {
                 t2.right = new TreeNode(3);
                 t2.right.right = new TreeNode(7);
                 
-                preOrder(mergeTwoBinaryTrees(t1, t2));
+                t1.preOrder(mergeTwoBinaryTrees(t1, t2));
         }
 }
