@@ -9,7 +9,7 @@ package trees;
 public class FlattenBinaryTreeToLinkedList extends TreeNode {
         
         private static void flatten(TreeNode root) {
-               
+                // base case
                 if(root == null) {
                         return;
                 }
