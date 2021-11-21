@@ -3,7 +3,7 @@ Given an array of jobs where every job has a deadline and associated profit if t
 It is also given that every job takes single unit of time, so the minimum possible deadline for any job is 1. 
 How to maximize total profit if only one job can be scheduled at a time.
 
-Time Complexity : O(n^2)
+Time Complexity : O(n ^ 2)
 Space Complexity : O(1)
 */
 
