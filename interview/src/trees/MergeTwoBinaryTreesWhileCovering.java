@@ -6,7 +6,7 @@
  * */
 package trees;
 
-public class MergeTwoBinaryTressWhileCovering extends TreeNode {
+public class MergeTwoBinaryTreesWhileCovering extends TreeNode {
         
         private static TreeNode mergeTwoBinaryTrees(TreeNode t1, TreeNode t2) {
                 
