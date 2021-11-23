@@ -20,4 +20,12 @@ public class LinkedListNode {
                         node = node.next;
                 }
         }
+        public int lengthOfLinkedList(LinkedListNode node) {
+                int count = 0;
+                while(node != null) {
+                        ++count;
+                        node = node.next;
+                }
+                return count;
+        }
 }
