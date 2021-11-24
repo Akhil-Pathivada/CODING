@@ -11,6 +11,7 @@ package trees;
 
 import javafx.util.Pair;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class MaximumWidthOfBinaryTree {
         
@@ -19,27 +20,27 @@ public class MaximumWidthOfBinaryTree {
                 int maxWidth = Integer.MIN_VALUE;
                 /** Queue contains pairs, where each pair contains node and its position
                  for a node at position i, left child is at (2*i + 1) and right child is at (2*i + 2) position */
-                LinkedList<Pair<TreeNode, Integer>> queue =  new LinkedList<>();
+                Queue<Pair<TreeNode, Integer>> queue =  new LinkedList<>();
                 // assuming root is at position 0
-                queue.addLast(new Pair<>(root, 0));
+                queue.offer(new Pair<>(root, 0));
                 // do level order traversal
                 while(!queue.isEmpty()) {
                         // get first node of the current level
-                        Pair<TreeNode, Integer> head = queue.getFirst();
+                        Pair<TreeNode, Integer> head = queue.peek();
                         // no. of elements in current level is equal to size of the queue
                         int currLevelSize = queue.size();
                         Pair<TreeNode, Integer> element = null;
                         // iterate over all elements in current level
                         while(currLevelSize-- > 0) {
                                 // Dequeue
-                                element = queue.removeFirst();
+                                element = queue.remove();
                                 TreeNode node = element.getKey();
                                 // put left and right children and their positions into queue
                                 if(node.left != null) {
-                                        queue.addLast(new Pair<>(node.left, 2 * element.getValue() + 1));
+                                        queue.offer(new Pair<>(node.left, 2 * element.getValue() + 1));
                                 }
                                 if(node.right != null) {
-                                        queue.addLast(new Pair<>(node.right, 2 * element.getValue() + 2));
+                                        queue.offer(new Pair<>(node.right, 2 * element.getValue() + 2));
                                 }
                         }
                         maxWidth = Math.max(maxWidth, element.getValue() - head.getValue() + 1);
