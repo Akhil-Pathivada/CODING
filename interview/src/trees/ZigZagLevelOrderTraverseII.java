@@ -8,7 +8,7 @@ import java.util.List;
 public class ZigZagLevelOrderTraverseII {
         
         private List<List<Integer>> zigZagLevelOrder(TreeNode root) {
-                
+                // base case
                 if(root == null) {
                         return new ArrayList<>();
                 }
@@ -29,7 +29,6 @@ public class ZigZagLevelOrderTraverseII {
                                 TreeNode node;
                                 // if nodes to be inserted in normal order
                                 if(flip) {
-                                        // get first element
                                         node = deque.pollFirst();
                                         // add left and right children
                                         if(node.left != null) {
@@ -41,7 +40,6 @@ public class ZigZagLevelOrderTraverseII {
                                 }
                                 // if nodes to be inserted in reverse order
                                 else {
-                                        // get last element
                                         node = deque.pollLast();
                                         // add right and left children
                                         if(node.right != null) {
