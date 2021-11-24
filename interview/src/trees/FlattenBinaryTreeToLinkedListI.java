@@ -6,9 +6,9 @@
  * */
 package trees;
 
-public class FlattenBinaryTreeToLinkedList extends TreeNode {
+public class FlattenBinaryTreeToLinkedListI {
         
-        private static void flatten(TreeNode root) {
+        private void flatten(TreeNode root) {
                 // base case
                 if(root == null) {
                         return;
@@ -44,7 +44,8 @@ public class FlattenBinaryTreeToLinkedList extends TreeNode {
                 System.out.print("Original Tree : ");
                 root.preOrder(root);
                 
-                flatten(root);
+                new FlattenBinaryTreeToLinkedListI().flatten(root);
+                
                 System.out.print("Flattend List : ");
                 for( ; root != null; root = root.right) {
                         System.out.print(root.data + ", ");
