@@ -9,7 +9,7 @@ package trees;
 
 public class LowestCommonAncestorInBinarySearchTree {
         
-        private static TreeNode getRecursiveLCA(TreeNode root, TreeNode n1, TreeNode n2) {
+        private TreeNode getRecursiveLCA(TreeNode root, TreeNode n1, TreeNode n2) {
                 // base case
                 if(root == null) {
                         return null;
@@ -25,7 +25,7 @@ public class LowestCommonAncestorInBinarySearchTree {
                 return root;
         }
         
-        private static TreeNode getIterativeLCA(TreeNode root, TreeNode n1, TreeNode n2) {
+        private TreeNode getIterativeLCA(TreeNode root, TreeNode n1, TreeNode n2) {
                 
                 while(root != null) {
                         // If both n1 and n2 are smaller than root, then LCA lies in left
@@ -55,7 +55,7 @@ public class LowestCommonAncestorInBinarySearchTree {
                 
                 TreeNode n1 = root.left.right.left;
                 TreeNode n2 = root.left.right.right;
-                System.out.println("LCA of 10 && 14 is = " + getIterativeLCA(root, n1, n2).data);
-                System.out.println("LCA of 10 && 14 is = " + getRecursiveLCA(root, n1, n2).data);
+                System.out.println("LCA of 10 && 14 is = " + new LowestCommonAncestorInBinarySearchTree().getIterativeLCA(root, n1, n2).data);
+                System.out.println("LCA of 10 && 14 is = " + new LowestCommonAncestorInBinarySearchTree().getRecursiveLCA(root, n1, n2).data);
         }
 }

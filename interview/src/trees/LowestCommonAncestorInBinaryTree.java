@@ -8,7 +8,7 @@ package trees;
 
 public class LowestCommonAncestorInBinaryTree {
         
-        private static TreeNode getLCA(TreeNode root, TreeNode n1, TreeNode n2) {
+        private TreeNode getLCA(TreeNode root, TreeNode n1, TreeNode n2) {
                 //  base case
                 if(root == null) {
                         return null;
@@ -44,6 +44,6 @@ public class LowestCommonAncestorInBinaryTree {
                 
                 TreeNode n1 = root.left.right;
                 TreeNode n2 = root.right;
-                System.out.println("LCA of 5 && 3 is = " + getLCA(root, n1, n2).data);
+                System.out.println("LCA of 5 && 3 is = " + new LowestCommonAncestorInBinaryTree().getLCA(root, n1, n2).data);
         }
 }

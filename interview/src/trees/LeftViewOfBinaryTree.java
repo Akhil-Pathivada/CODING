@@ -9,7 +9,7 @@ public class LeftViewOfBinaryTree {
         
         static int MAX_LEVEL = 0;
         
-        private static void printLeftView(TreeNode root, int level) {
+        private void printLeftView(TreeNode root, int level) {
                 // base case
                 if(root == null) {
                         return;
@@ -36,6 +36,6 @@ public class LeftViewOfBinaryTree {
                 root.right.right.left = new TreeNode(14);
                 
                 int level = 1;
-                printLeftView(root, 1);
+                new LeftViewOfBinaryTree().printLeftView(root, 1);
         }
 }

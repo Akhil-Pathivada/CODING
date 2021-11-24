@@ -15,7 +15,7 @@ import java.util.Vector;
 
 public class VerticalOrderTraversalOfBinaryTreeII {
         
-        private static void getVerticalOrder(TreeNode root, int hd, TreeMap<Integer, Vector<Integer>> map) {
+        private void getVerticalOrder(TreeNode root, int hd, TreeMap<Integer, Vector<Integer>> map) {
                 // base case
                 if(root == null) {
                         return;
@@ -34,7 +34,7 @@ public class VerticalOrderTraversalOfBinaryTreeII {
                 getVerticalOrder(root.right, hd + 1, map);
         }
         
-        private static void printVerticalOrder(TreeNode root) {
+        private void printVerticalOrder(TreeNode root) {
                 // stores horizontal distance and nodes having that distance
                 TreeMap<Integer, Vector<Integer>> map = new TreeMap<>();
                 
@@ -57,7 +57,7 @@ public class VerticalOrderTraversalOfBinaryTreeII {
                 root.right.right = new TreeNode(7);
                 root.right.left.right = new TreeNode(8);
                 root.right.right.right = new TreeNode(9);
-                
-                printVerticalOrder(root);
+        
+                new VerticalOrderTraversalOfBinaryTreeII().printVerticalOrder(root);
         }
 }

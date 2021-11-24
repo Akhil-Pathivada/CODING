@@ -13,7 +13,7 @@ public class VerticalOrderTraversalOfBinaryTreeI {
         // store min and max horizontal distances of tree
         static int MIN = 0, MAX = 0;
         // find min and max distances with respect to root
-        private static void findMinMaxHorizontalDistance(TreeNode root, int hd) {
+        private void findMinMaxHorizontalDistance(TreeNode root, int hd) {
                 // base case
                 if(root == null) {
                         return;
@@ -30,7 +30,7 @@ public class VerticalOrderTraversalOfBinaryTreeI {
                 findMinMaxHorizontalDistance(root.right, hd + 1);
         }
         
-        private static void printNodesOfHorizontalDistance(TreeNode root, int line_no, int hd) {
+        private void printNodesOfHorizontalDistance(TreeNode root, int line_no, int hd) {
                 // base case
                 if(root == null) {
                         return;
@@ -44,7 +44,7 @@ public class VerticalOrderTraversalOfBinaryTreeI {
                 printNodesOfHorizontalDistance(root.right, line_no, hd + 1);
         }
         
-        private static void printVerticalOrder(TreeNode root) {
+        private void printVerticalOrder(TreeNode root) {
                 // compute horizontal distance of tree
                 findMinMaxHorizontalDistance(root, 0);
                 /* Iterate through all possible vertical lines starting
@@ -67,6 +67,6 @@ public class VerticalOrderTraversalOfBinaryTreeI {
                 root.right.left.right = new TreeNode(8);
                 root.right.right.right = new TreeNode(9);
                 
-                printVerticalOrder(root);
+                new VerticalOrderTraversalOfBinaryTreeI().printVerticalOrder(root);
         }
 }

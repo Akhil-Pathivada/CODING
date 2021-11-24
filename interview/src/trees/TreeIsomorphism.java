@@ -11,7 +11,7 @@ package trees;
 
 public class TreeIsomorphism {
         
-        private static boolean areIsomorphicTrees(TreeNode n1, TreeNode n2) {
+        private boolean areIsomorphicTrees(TreeNode n1, TreeNode n2) {
                 // Both roots are NULL, trees isomorphic by definition
                 if(n1 == null && n2 == null) {
                         return true;
@@ -52,6 +52,6 @@ public class TreeIsomorphism {
                 root2.right.right.left = new TreeNode(8);
                 root2.right.right.right = new TreeNode(7);
         
-                System.out.println(areIsomorphicTrees(root1, root2) ? "YES" : "NO");
+                System.out.println(new TreeIsomorphism().areIsomorphicTrees(root1, root2) ? "YES" : "NO");
         }
 }
