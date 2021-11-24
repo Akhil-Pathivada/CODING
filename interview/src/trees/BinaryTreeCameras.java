@@ -14,9 +14,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BinaryTreeCameras {
-        static int cams = 0;
         
-        private static void DFS(TreeNode root, TreeNode parent, Set<TreeNode> covered) {
+        int cams = 0;
+        
+        private void DFS(TreeNode root, TreeNode parent, Set<TreeNode> covered) {
                 // base case
                 if(root == null) {
                         return;
@@ -37,7 +38,7 @@ public class BinaryTreeCameras {
                 }
         }
         
-        private static int minCameraCover(TreeNode root) {
+        private int minCameraCover(TreeNode root) {
                 // base case
                 if(root == null) {
                         return 0;
@@ -61,6 +62,6 @@ public class BinaryTreeCameras {
                 root.right.left = new TreeNode(6);
                 root.right.left.left = new TreeNode(7);
         
-                System.out.println("minimum number of cameras needed to monitor all nodes of the tree = " + minCameraCover(root));
+                System.out.println("minimum number of cameras needed to monitor all nodes of the tree = " + new BinaryTreeCameras().minCameraCover(root));
         }
 }
