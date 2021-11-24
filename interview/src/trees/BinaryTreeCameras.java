@@ -31,6 +31,9 @@ public class BinaryTreeCameras {
                  if any of its left or right child are not covered */
                 if(parent == null && !covered.contains(root) || !covered.contains(root.left) || !covered.contains(root.right)) {
                         ++cams;
+                        /** since cam is attached to node,
+                         itself, parent, children are also covered,
+                         so mark them as covered */
                         covered.add(root);
                         covered.add(parent);
                         covered.add(root.left);
