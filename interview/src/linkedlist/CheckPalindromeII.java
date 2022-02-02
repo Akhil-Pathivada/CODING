@@ -44,7 +44,6 @@ public class CheckPalindromeII {
                         }
                         slow = slow.next;
                         fast = fast.next;
-                        
                 }
                 return true;
         }

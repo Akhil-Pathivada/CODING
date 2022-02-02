@@ -13,7 +13,6 @@ public class CheckPalindromeI {
         private static boolean isPalindrome(LinkedListNode head) {
                 
                 LinkedListNode curr = head;
-        
                 Stack<Integer> stack = new Stack<>();
                 // push all elements into stack
                 while(curr != null) {
