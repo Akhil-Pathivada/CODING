@@ -4,7 +4,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(1)
  * */
-package arrays;
+package array;
 
 import java.util.ArrayList;
 import java.util.List;

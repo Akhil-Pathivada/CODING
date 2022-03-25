@@ -4,7 +4,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(N)
  * */
-package heaps;
+package heap;
 
 import java.util.ArrayList;
 import java.util.HashMap;

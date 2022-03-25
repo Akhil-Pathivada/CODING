@@ -2,7 +2,7 @@
  * https://leetcode.com/problems/clone-graph/
  * */
 
-package graphs;
+package graph;
 
 import java.util.HashMap;
 

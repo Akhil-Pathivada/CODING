@@ -8,7 +8,7 @@
  * Space Complexity : O(1)
  * */
 
-package arrays;
+package array;
 
 import java.util.Arrays;
 

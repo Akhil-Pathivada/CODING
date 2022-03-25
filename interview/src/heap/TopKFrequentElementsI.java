@@ -4,7 +4,7 @@
  * Time Complexity : O(K * log(N))
  * Space Complexity : O(N)
  * */
-package heaps;
+package heap;
 
 import java.util.*;
 

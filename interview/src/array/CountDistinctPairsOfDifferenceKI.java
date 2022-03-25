@@ -8,7 +8,7 @@
  * Space Complexity : O(1)
  * */
 
-package arrays;
+package array;
 
 public class CountDistinctPairsOfDifferenceKI {
         

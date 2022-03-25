@@ -9,7 +9,7 @@ Time Complexity  : O(log(N))
 Space Complexity : O(N)
 */
 
-package heaps;
+package heap;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
