@@ -4,7 +4,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(N)
  * */
-package trees;
+package tree;
 
 public class MergeTwoBinaryTreesWhileCovering extends TreeNode {
         

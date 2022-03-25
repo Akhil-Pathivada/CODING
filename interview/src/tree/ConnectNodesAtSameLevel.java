@@ -1,4 +1,4 @@
-package trees;
+package tree;
 
 public class ConnectNodesAtSameLevel {
 }

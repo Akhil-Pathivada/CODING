@@ -1,15 +1,15 @@
 /**
- *  Print the left view of a Binary Tree
+ *  Print the right view of a Binary Tree
  *  Time Complexity : O(N)
  *  Space Complexity : O(H) -> Height of Tree
  * */
-package trees;
+package tree;
 
-public class LeftViewOfBinaryTree {
+public class RightViewOfBinaryTree {
         
         static int MAX_LEVEL = 0;
         
-        private void printLeftView(TreeNode root, int level) {
+        private void printRightView(TreeNode root, int level) {
                 // base case
                 if(root == null) {
                         return;
@@ -19,9 +19,9 @@ public class LeftViewOfBinaryTree {
                         System.out.print(root.data + ", ");
                         MAX_LEVEL = level;
                 }
-                // Recur for left and right subtrees
-                printLeftView(root.left, level + 1);
-                printLeftView(root.right, level + 1);
+                // Recur for right and left subtrees
+                printRightView(root.right, level + 1);
+                printRightView(root.left, level + 1);
         }
         
         public static void main(String[] args) {
@@ -36,6 +36,6 @@ public class LeftViewOfBinaryTree {
                 root.right.right.left = new TreeNode(14);
                 
                 int level = 1;
-                new LeftViewOfBinaryTree().printLeftView(root, 1);
+                new RightViewOfBinaryTree().printRightView(root, 1);
         }
 }

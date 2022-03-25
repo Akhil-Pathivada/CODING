@@ -3,7 +3,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(H)
  * */
-package trees;
+package tree;
 
 public class HeightOfBinaryTreeI {
         // finding max depth of binary tree

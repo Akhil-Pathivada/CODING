@@ -7,7 +7,7 @@
  * Space Complexity : O(N)
 */
 
-package trees;
+package tree;
 
 import java.util.HashMap;
 import java.util.Map;

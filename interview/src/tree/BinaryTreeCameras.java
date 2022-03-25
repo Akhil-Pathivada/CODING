@@ -8,7 +8,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(N)
  * */
-package trees;
+package tree;
 
 import java.util.HashSet;
 import java.util.Set;

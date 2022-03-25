@@ -7,7 +7,7 @@
  * Space Complexity : O(min(m, n))
  * where m, n are sizes of two trees respectively
  * */
-package trees;
+package tree;
 
 public class TreeIsomorphism {
         

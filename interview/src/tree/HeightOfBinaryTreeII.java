@@ -3,7 +3,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(N)
  * */
-package trees;
+package tree;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -6,7 +6,7 @@
  * Space Complexity : O(H)
  * */
 
-package trees;
+package tree;
 
 public class InvertBinaryTree {
         

@@ -5,7 +5,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(H)
  */
-package trees;
+package tree;
 
 public class ClosestValueInBinaryTreeI {
         // tracks the min difference and closest value

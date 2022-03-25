@@ -4,25 +4,32 @@
  * Time Complexity : O(N)
  * Space Complexity : O(H) -> Height of Tree
  * */
-package trees;
+package tree;
 
-public class FlattenBinaryTreeToLinkedListII {
-        
-        private TreeNode prev = null;
+public class FlattenBinaryTreeToLinkedListI {
         
         private void flatten(TreeNode root) {
                 // base case
                 if(root == null) {
                         return;
                 }
-                // recursively convert right and left subtrees
-                flatten(root.right);
-                flatten(root.left);
-                // since we are making as linkedlist, make left as null
+                // store both child pointers into temp
+                TreeNode tempLeft = root.left;
+                TreeNode tempRight = root.right;
+                /* since we are converting to linkedlist
+                make left pointer of node as null */
                 root.left = null;
-                // attach root right pointer to already visited prev node
-                root.right = prev;
-                prev = root;
+                // recursively convert left and right subtrees
+                flatten(tempLeft);
+                flatten(tempRight);
+                // point the right pointer to left child
+                root.right = tempLeft;
+                
+                TreeNode current = root;
+                while(current.right != null) {
+                        current = current.right;
+                }
+                current.right = tempRight;
         }
         
         public static void main(String[] args) {
@@ -37,7 +44,7 @@ public class FlattenBinaryTreeToLinkedListII {
                 System.out.print("Original Tree : ");
                 root.preOrder(root);
                 
-                new FlattenBinaryTreeToLinkedListII().flatten(root);
+                new FlattenBinaryTreeToLinkedListI().flatten(root);
                 
                 System.out.print("Flattend List : ");
                 for( ; root != null; root = root.right) {

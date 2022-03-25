@@ -4,7 +4,7 @@
  * Time Complexity : O(N)
  * Space Complexity : O(log(N))
  * */
-package trees;
+package tree;
 
 public class SortedArrayToBST extends TreeNode {
         
