@@ -9,7 +9,7 @@ package tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BalanceBinaryTreeToBST extends TreeNode {
+public class BalanceBST extends TreeNode {
         
         private static TreeNode sortedArrayToBST(List<TreeNode> sortedArray, int start, int end) {
                 // base case
@@ -53,6 +53,6 @@ public class BalanceBinaryTreeToBST extends TreeNode {
                 root.left.left.left = new TreeNode(6);
                 root.left.left.left.left = new TreeNode(5);
         
-                new BalanceBinaryTreeToBST().preOrder(balanceBinaryTreeToBST(root));
+                new BalanceBST().preOrder(balanceBinaryTreeToBST(root));
         }
 }
