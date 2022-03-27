@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
  *
- * Time Complexity : O(N ^ 2)
+ * Time Complexity : O(K * log(K))
  * Space Complexity : O(N)
  * */
 package heap;
