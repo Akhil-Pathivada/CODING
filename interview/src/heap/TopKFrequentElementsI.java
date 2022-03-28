@@ -17,7 +17,7 @@ public class TopKFrequentElementsI {
                         frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
                 }
                 // create a maxHeap
-                PriorityQueue<Map.Entry<Integer, Integer>> maxHeap = new PriorityQueue<>((a,b)->(b.getValue()-a.getValue()));
+                PriorityQueue<Map.Entry<Integer, Integer>> maxHeap = new PriorityQueue<>((a,b) -> (b.getValue() - a.getValue()));
                 // store entries of hashmap into maxHeap
                 for(Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
                         maxHeap.add(entry);

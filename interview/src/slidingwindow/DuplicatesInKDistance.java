@@ -22,7 +22,6 @@ public class DuplicatesInKDistance {
                         hashSet.add(nums[i]);
                         // slide the window
                         if(i >= k) {
-                                
                                 hashSet.remove(nums[i - k]);
                         }
                 }
