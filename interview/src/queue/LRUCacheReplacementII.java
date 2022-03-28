@@ -51,7 +51,6 @@ public class LRUCacheReplacementII {
         private void displayCache() {
         
                 LinkedList<Integer> list = new LinkedList<>(cache);
-        
                 /** The descendingIterator() method of java.util.LinkedList class is used to return an iterator over the elements
                  in this LinkedList in reverse sequential order */
                 Iterator<Integer> itr = list.descendingIterator();
