@@ -12,7 +12,6 @@ package tree;
 
 public class LargestBSTInBinaryTreeII {
         
-        
         private class NodeInfo {
                 
                 int size; // size of subtree
