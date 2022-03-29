@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/kth-largest-element-in-a-stream/
  *
- * Time Complexity : O(N * log(K))
+ * Time Complexity : O(K)
  * Space Complexity : O(K)
  *
  * */
