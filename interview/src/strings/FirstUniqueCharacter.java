@@ -12,7 +12,7 @@ public class FirstUniqueCharacter {
         private static int firstUniqChar(String s) {
                 
                 int freq[] = new int[26];
-                // store frequencyof character
+                // store frequency of character
                 for(int i = 0; i < s.length(); ++i) {
                         freq[s.charAt(i) - 'a']++;
                 }
