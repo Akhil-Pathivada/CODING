@@ -3,7 +3,7 @@
  *
  * @author akhilpathivada
  *
- * https://leetcode.com/problems/subarray-sum-equals-k/
+ * Given an unsorted array of integers, find a continous subarray which adds to a given number.
  *
  * (works only for array with non-negative integers)
  * Time Complexity : O(N ^ 2)
