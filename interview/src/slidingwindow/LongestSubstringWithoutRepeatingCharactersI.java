@@ -5,7 +5,7 @@
  *
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  *
- * Time Complexity : O(N)
+ * Time Complexity : O(N ^ 3)
  * Space Complexity : O(1)
  *
  */
@@ -38,9 +38,9 @@ public class LongestSubstringWithoutRepeatingCharactersI {
                 int n = s.length(), maxLen = 0;
                 
                 for(int i =0; i < n; ++i) {
-                        
+                        // get all possible substrings
                         for(int j = i; j < n; ++j) {
-                                
+                                // check substring is non-repeating
                                 if(isDistinct(s, i , j)) {
                                         maxLen = Math.max(j - i + 1, maxLen);
                                 }
