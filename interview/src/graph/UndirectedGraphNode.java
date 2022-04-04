@@ -1,9 +1,8 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import com.sun.corba.se.impl.orbutil.graph.Graph;
+
+import java.util.*;
 
 public class UndirectedGraphNode {
         
@@ -35,9 +34,39 @@ public class UndirectedGraphNode {
                         }
                 }
         }
-        
+        // Depth First Traversal
         protected void DFS(UndirectedGraphNode node) {
+                
                 Set<Integer> visited = new HashSet<>();
                 DFSUtil(node, visited);
+        }
+        
+        private void BFSUtil(UndirectedGraphNode node) {
+                
+                Set<Integer> visited = new HashSet<>();
+                Queue<UndirectedGraphNode> queue = new LinkedList<>();
+                visited.add(node.label);
+                queue.add(node);
+                
+                while(!queue.isEmpty()) {
+                        
+                        node = queue.poll();
+                        System.out.print(node.label + ", ");
+                        // iterate over all neighbours of a node
+                        for(UndirectedGraphNode _node : node.neighbours) {
+                                // if node is visited first time : inser into Queue
+                                if(!visited.contains(_node.label)) {
+                                        
+                                        visited.add(_node.label);
+                                        queue.add(_node);
+                                }
+                        }
+                }
+                
+        }
+        // Breadth First Traversal
+        protected void BFS(UndirectedGraphNode node) {
+                
+                BFSUtil(node);
         }
 }
