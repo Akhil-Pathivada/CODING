@@ -7,7 +7,7 @@
  * */
 package linkedlist;
 
-public class ReverseLinkedListInGroupsI {
+public class ReverseLinkedListInGroupsOfSizeKI {
         
         private static LinkedListNode reverseKNodes(LinkedListNode head, int k) {
                 // base case

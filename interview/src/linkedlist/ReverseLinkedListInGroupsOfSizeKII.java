@@ -3,13 +3,13 @@
  * https://www.geeksforgeeks.org/reverse-a-list-in-groups-of-given-size/
  *
  * Time Complexity : O(N)
- * Space Comnplexity : O(K) -> For each Linked List of size n, n/k or (n/k)+1 calls will be made during the recursion.
+ * Space Comnplexity : O(K)
  * */
 package linkedlist;
 
 import java.util.Stack;
 
-public class ReverseLinkedListInGroupsII {
+public class ReverseLinkedListInGroupsOfSizeKII {
         
         private static LinkedListNode reverseKNodes(LinkedListNode head, int k) {
                 // base case
