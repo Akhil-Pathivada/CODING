@@ -3,6 +3,8 @@
  *
  * @author akhilpathivada
  *
+ * Merge Sort Algorithm
+ *
  * Time Complexity : O(N * log(N))
  * Space Complexity : O(N)
  */

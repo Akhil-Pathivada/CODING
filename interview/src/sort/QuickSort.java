@@ -3,6 +3,8 @@
  *
  * @author akhilpathivada
  *
+ * Quick Sort Algorithm
+ *
  * Best Case :
  *      Time Complexity : N * log(N)
  *      Space Complexity : log(N)
