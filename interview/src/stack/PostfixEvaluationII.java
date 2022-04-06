@@ -5,6 +5,8 @@
  *
  * https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/
  *
+ * Allows operands to have multiple digits
+ *
  * Time Complexity : O(N)
  * Space Complexity : O(N)
  *
@@ -13,16 +15,31 @@ package stack;
 
 import java.util.Stack;
 
-public class PostfixEvaluation {
+public class PostfixEvaluationII {
         
         private static int evaluatePostfix(String postfix) {
-        
+                
                 Stack<Integer> stack = new Stack<>();
                 
-                for(char ch : postfix.toCharArray()) {
+                for(int i = 0; i < postfix.length(); ++i) {
+                        
+                        char ch = postfix.charAt(i);
+                        
+                        if(ch == ' ') {
+                                continue;
+                        }
                         // If the scanned character is an operand (number here), push it to the stack.
-                        if(Character.isDigit(ch)) {
-                                stack.push(ch - '0');
+                        else if(Character.isDigit(ch)) {
+                                //extract the characters and store it in num
+                                int n = 0;
+                                while(Character.isDigit(ch)) {
+                                        
+                                        n = n * 10 + (int) (ch - '0');
+                                        ch = postfix.charAt(++i);
+                                }
+                                --i;
+                                // push the number in stack
+                                stack.push(n);
                         }
                         //  If the scanned character is an operator, pop two
                         // elements from stack apply the operator
@@ -51,8 +68,8 @@ public class PostfixEvaluation {
         }
         
         public static void main(String[] args) {
-        
-                String postfix = "231*+9-";
+                
+                String postfix = "100 200 + 2 / 5 * 7 +";
                 System.out.printf("postfix evaluation = %d", evaluatePostfix(postfix));
         }
 }
