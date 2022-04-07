@@ -19,7 +19,7 @@ public class ConvertBinaryTreeToDLLI {
         }
         
         private static TreeNode convertBinaryTreeToDLL(TreeNode root) {
-                // Base case
+                // base case
                 if(root == null) {
                         return root;
                 }
