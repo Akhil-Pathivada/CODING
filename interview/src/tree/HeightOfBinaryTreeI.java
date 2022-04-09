@@ -26,7 +26,7 @@ public class HeightOfBinaryTreeI {
                 root.right = new TreeNode(3);
                 root.left.left = new TreeNode(4);
                 root.left.left.right = new TreeNode(5);
-        
+                
                 System.out.println("Height of Binary Tree = " + new HeightOfBinaryTreeI().heightOfBinaryTree(root));
         }
 }
