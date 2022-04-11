@@ -25,18 +25,18 @@ public class MaximumLengthOfSubarrayWithEqualZerosOnes {
                 
                 int sum = 0, max = 0;
                 // store the presum
-                HashMap<Integer, Integer> map = new HashMap<>();
-                map.put(0, -1);
+                HashMap<Integer, Integer> preSum = new HashMap<>();
+                preSum.put(0, -1);
                 
                 for(int i = 0; i < n; ++i) {
                         
                         sum += nums[i];
                         // found, update the length
-                        if(map.containsKey(sum)) {
-                                max = Math.max(i - map.get(sum), max);
+                        if(preSum.containsKey(sum)) {
+                                max = Math.max(i - preSum.get(sum), max);
                         }
                         else {
-                                map.put(sum, i);
+                                preSum.put(sum, i);
                         }
                 }
                 return max;
