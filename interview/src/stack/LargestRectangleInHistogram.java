@@ -5,6 +5,8 @@
  *
  * https://leetcode.com/problems/largest-rectangle-in-histogram/
  *
+ * Time Complexity : O(N)
+ * Space Complexity : O(N)
  *
  */
 package stack;
