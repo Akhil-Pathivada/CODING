@@ -45,7 +45,6 @@ public class MaximumLengthOfSubarrayWithEqualZerosOnes {
         public static void main(String[] args) {
         
                 int[] nums = { 0, 1, 0, 0, 1, 1, 0};
-        
                 System.out.println("Length of largest subarray with equal 0s 1s = " + findMaxLength(nums, nums.length));
         }
 }
