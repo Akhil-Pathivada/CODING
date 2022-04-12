@@ -5,6 +5,8 @@
  *
  * https://practice.geeksforgeeks.org/problems/find-optimum-operation4504/1
  *
+ * Time Complexity : O(N)
+ * Space Complexity : O(N)
  *
  */
 package dp;
@@ -40,6 +42,6 @@ public class MinimumOperationsToReachNFrom0 {
         public static void main(String[] args) {
                 
                 int n = 8;
-                System.out.println(minOperations(n));
+                System.out.printf("Min operations to reach %d is = %d ", n, minOperations(n));
         }
 }
