@@ -13,7 +13,7 @@
  */
 package array;
 
-public class MajorityElement {
+public class MajorityElementI {
         
         private static int getMajorityElement(int[] nums, int n) {
         

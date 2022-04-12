@@ -18,7 +18,7 @@ public class SlidingWindowMaximumII {
         private static int[] maxSlidingWindow(int[] nums, int k) {
                 
                 // maintain a deque, we store indexes of elements
-                // always the index maximum element of a window is at head
+                // always the index of maximum element of a window is at head
                 Deque<Integer> deque = new LinkedList<>();
                 // store maximum of every window
                 List<Integer> result = new ArrayList<>();
