@@ -7,7 +7,7 @@
  *
  * (works only for array with non-negative integers)
  * Time Complexity : O(N)
- * Space Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package array;
 
