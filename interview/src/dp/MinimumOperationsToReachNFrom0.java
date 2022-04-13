@@ -26,9 +26,7 @@ public class MinimumOperationsToReachNFrom0 {
                 }
                 int[] dp = new int[n + 1];
                 dp[0] = 0; dp[1] = 1; dp[2] = 2;
-        
                 for(int i = 3; i <= n; ++i) {
-                
                         if(i % 2 == 0) {
                                 dp[i] = Math.min(dp[i/2], dp[i - 1]) + 1;
                         }

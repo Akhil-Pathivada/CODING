@@ -17,13 +17,9 @@ public class IsSubsequenceII {
                 if(m == 0) {
                         return true;
                 }
-        
                 int indexS = 0, indexT = 0;
-                
                 while(indexT < n) {
-                
                         if(s[indexS] == t[indexT]){
-                        
                                 ++indexS;
                                 if(indexS == m) {
                                         return true;

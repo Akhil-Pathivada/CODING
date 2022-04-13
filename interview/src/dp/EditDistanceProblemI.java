@@ -44,7 +44,6 @@ public class EditDistanceProblemI {
         
                 String X = "sunday";
                 String Y = "saturday";
-        
                 System.out.printf("Min. Operations required = %d", minOperations(X.toCharArray(), Y.toCharArray(), X.length(), Y.length()));
         }
 }

@@ -5,7 +5,7 @@
  *
  * https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
  *
- * Time Complexity : O(N)
+ * Time Complexity : O(2 ^ N)
  * Space Complexity : O(N)
  *
  */

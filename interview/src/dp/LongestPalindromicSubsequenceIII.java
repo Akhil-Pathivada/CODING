@@ -21,11 +21,8 @@ public class LongestPalindromicSubsequenceIII {
         private static int LCS(char[] X, char[] Y, int m, int n) {
                 
                 int table[][] = new int[m + 1][n + 1];
-                
                 for(int i = 0; i <= m; ++i) {
-                        
                         for(int j = 0; j <= n; ++j) {
-                                
                                 if(i == 0 || j == 0) {
                                         table[i][j] = 0;
                                 }
@@ -43,7 +40,6 @@ public class LongestPalindromicSubsequenceIII {
         public static void main(String[] args) {
                 
                 String X = "GEEKSFORGEEKS"; // input
-                
                 String Y = new StringBuilder(X).reverse().toString();
                 System.out.printf("The length of the LPS is = %d ", LCS(X.toCharArray(), Y.toCharArray(), X.length(), Y.length()));
         }

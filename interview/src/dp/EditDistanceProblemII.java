@@ -20,9 +20,7 @@ public class EditDistanceProblemII {
         private static int minOperations(char[] X, char[] Y, int m, int n) {
                 // Create a table to store results of subproblems
                 int[][] table = new int[m + 1][n + 1];
-                
                 for(int i = 0; i <= m; ++i) {
-                        
                         for(int j = 0; j <= n; ++j) {
                                 // If first string is empty, only option is
                                 // to insert all characters of second string
@@ -56,7 +54,6 @@ public class EditDistanceProblemII {
                 
                 String X = "sunday";
                 String Y = "saturday";
-                
                 System.out.printf("Min. Operations required = %d", minOperations(X.toCharArray(), Y.toCharArray(), X.length(), Y.length()));
         }
 }

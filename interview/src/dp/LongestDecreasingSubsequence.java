@@ -16,14 +16,11 @@ public class LongestDecreasingSubsequence {
                 // store longest decreasing sequence till that point
                 int[] lds = new int[n];
                 lds[0] = 1;
-                
                 for(int i = 1; i < n; ++i) {
-                        
                         lds[i] = 1;
                         // iterate over previous elements and check adding current element
                         // to its sequence can increase result
                         for(int j = 0; j < i; ++j) {
-                                
                                 if(nums[i] < nums[j] && lds[j] + 1 > lds[i]) {
                                         lds[i] = lds[j] + 1;
                                 }

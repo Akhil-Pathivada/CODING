@@ -11,9 +11,7 @@ public class LongestPalindromicSubsequenceII {
         private static int LPS(String s, int n) {
                 
                 int[][] table = new int[n][n]; // table to store the sub problems result
-                
                 for(int i = n - 1; i >= 0; --i) {
-                        
                         table[i][i] = 1; // string of length 1 is always a palindrome
                         for(int j = i + 1; j < n; ++j) {
                                 // palindrome
