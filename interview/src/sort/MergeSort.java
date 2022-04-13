@@ -35,7 +35,6 @@ public class MergeSort {
                 i = j = 0;
                 // Merge the temp arrays back into arr[p..r]
                 for(int k = p; k <= r; ++k) {
-                        
                         if(L[i] <= R[j]) {
                                 arr[k] = L[i++];
                         }
@@ -48,7 +47,6 @@ public class MergeSort {
         private static void sort(int[] arr, int p, int r) {
                 
                 if(p < r) {
-                        
                         int q = (p + r) / 2;
                         // call sort on first and second halves
                         sort(arr, p, q);
@@ -61,11 +59,8 @@ public class MergeSort {
         public static void main(String args[]) {
                 
                 int arr[] = { 12, 11, 13, 5, 6, 7 };
-                
                 System.out.println("Given Array" + Arrays.toString(arr));
-                
                 sort(arr, 0, arr.length - 1);
-                
                 System.out.println("Sorted array" +  Arrays.toString(arr));
         }
 }
