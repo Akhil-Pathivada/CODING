@@ -12,7 +12,6 @@ public class InsertionIntoTrie {
         
         // Method to insert every string into Trie
         public static void insertStringIntoTrie(TrieNode root, String s) {
-                
                 TrieNode current = root;
                 // iterating over every character in string and forming trie
                 for(char c : s.toCharArray()) {
@@ -27,9 +26,7 @@ public class InsertionIntoTrie {
         }
         
         public static void main(String[] args) {
-        
                 String strs[] = { "gee", "geeks", "ape", "apple", "geeksforgeeks" };
-                
                 TrieNode root = new TrieNode();
                 // insert the strings into Trie
                 for(String str : strs) {

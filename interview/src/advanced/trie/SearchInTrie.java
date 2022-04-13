@@ -8,7 +8,6 @@ package advanced.trie;
 public class SearchInTrie {
         
         private static boolean searchStringInTrie(TrieNode root, String s) {
-        
                 TrieNode current = root;
                 // iterating over every character of string
                 for(char c : s.toCharArray()) {
@@ -22,9 +21,7 @@ public class SearchInTrie {
         }
         
         public static void main(String[] args) {
-        
                 String strs[] = { "gee", "geeks", "ape", "apple", "geeksforgeeks" };
-        
                 TrieNode root = new TrieNode();
                 // insert the strings into Trie
                 for(String str : strs) {

@@ -11,7 +11,6 @@ public class TrieNode {
         boolean isEndOfString = true; // tells if the string ends there or not
         
         public TrieNode() {
-                
                 trie = new TrieNode[256];
                 // iterates over 256 indexes and initializes as null
                 for(int i = 0; i < 256; ++i) {

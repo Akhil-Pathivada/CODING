@@ -8,7 +8,7 @@ package advanced.ternarysearchtree;
 public class SearchInTernarySearchTree {
         
         private static boolean searchStringIntoTST(TernarySearchTreeNode root, String s, int index) {
-                
+                // base case
                 if(root == null) {
                         return false;
                 }
@@ -28,9 +28,7 @@ public class SearchInTernarySearchTree {
         }
         
         public static void main(String[] args) {
-                
                 String strs[] = { "gee", "geeks", "ape", "apple", "geeksforgeeks" };
-                
                 TernarySearchTreeNode root = null;
                 // insert the strings into TST
                 for(String str : strs) {

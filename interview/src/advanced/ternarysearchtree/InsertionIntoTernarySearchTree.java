@@ -38,9 +38,7 @@ public class InsertionIntoTernarySearchTree {
         }
         
         public static void main(String[] args) {
-        
                 String strs[] = { "gee", "geeks", "ape", "apple", "geeksforgeeks" };
-        
                 TernarySearchTreeNode root = null;
                 // insert the strings into TST
                 for(String str : strs) {
