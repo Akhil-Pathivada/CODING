@@ -37,7 +37,6 @@ public class LongestDecreasingSubsequence {
         }
         
         public static void main(String[] args) {
-                
                 int[] nums = { 15, 27, 14, 38, 63, 55, 46, 65, 85 };
                 System.out.printf("Length of LDS is = %d ", LDS(nums, nums.length));
         }

@@ -13,7 +13,7 @@ package dp;
 public class HouseRobber {
         
         private static int rob(int[] nums, int n) {
-
+                // base case
                 if(n == 0) {
                         return 0;
                 }
@@ -33,7 +33,6 @@ public class HouseRobber {
         }
         
         public static void main(String[] args) {
-                
                 int[] nums = { 2, 7, 9, 3, 1};
                 System.out.println("Max amount you can rob = " + rob(nums, nums.length));
         }

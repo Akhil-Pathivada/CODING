@@ -14,7 +14,6 @@ package dp;
 public class MinimumOperationsToReachNFrom0 {
         
         private static int minOperations(int n) {
-                
                 if(n == 0) {
                         return 0;
                 }
@@ -38,7 +37,6 @@ public class MinimumOperationsToReachNFrom0 {
         }
         
         public static void main(String[] args) {
-                
                 int n = 8;
                 System.out.printf("Min operations to reach %d is = %d ", n, minOperations(n));
         }

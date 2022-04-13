@@ -35,7 +35,6 @@ public class IsStringInterleavedOtherTwoStringsI {
         }
         
         public static void main(String[] args) {
-                
                 IsStringInterleavedOtherTwoStringsI obj = new IsStringInterleavedOtherTwoStringsI();
                 System.out.println(obj.isInterleaved("XXY", "XXZ", "XXZXXXY"));
                 System.out.println(obj.isInterleaved("XY", "WZ", "WZXY"));

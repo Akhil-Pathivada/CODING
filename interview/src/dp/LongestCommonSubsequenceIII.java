@@ -16,7 +16,6 @@ package dp;
 public class LongestCommonSubsequenceIII {
         
         private static int LCS(char[] X, char[] Y, int m, int n) {
-                
                 int table[][] = new int[m + 1][n + 1];
                 int bi = 0;
                 for(int i = 0; i <= m; ++i) {
@@ -37,7 +36,6 @@ public class LongestCommonSubsequenceIII {
         }
         
         public static void main(String[] args) {
-                
                 String X = "AGGTAB";
                 String Y = "GXTXAYB";
                 System.out.printf("Longest Common Subsequence = %d ", LCS(X.toCharArray(), Y.toCharArray(), X.length(), Y.length()));

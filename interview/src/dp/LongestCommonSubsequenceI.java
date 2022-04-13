@@ -18,7 +18,6 @@ package dp;
 public class LongestCommonSubsequenceI {
         
         private static int LCS(char[] X, char[] Y, int m, int n) {
-                
                 if(m == 0 || n == 0) {
                         return 0;
                 }
@@ -29,7 +28,6 @@ public class LongestCommonSubsequenceI {
         }
         
         public static void main(String[] args) {
-        
                 String X = "AGGTAB";
                 String Y = "GXTXAYB";
         

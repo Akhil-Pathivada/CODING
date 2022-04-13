@@ -11,7 +11,6 @@ package dp;
 public class ClimbingStairsII {
         
         private static int climbStairs(int n) {
-                
                 int[] temp = new int[n + 1];
                 temp[1] = 1;
                 temp[2] = 2;
@@ -22,7 +21,6 @@ public class ClimbingStairsII {
         }
         
         public static void main(String[] args) {
-                
                 int stairs = 5;
                 System.out.printf("Total ways a person can reach the Top : %d ", climbStairs(stairs));
         }

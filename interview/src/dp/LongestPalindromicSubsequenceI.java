@@ -9,7 +9,7 @@ package dp;
 public class LongestPalindromicSubsequenceI {
         
         private static int LPS(char[] str, int start, int end) {
-                
+                // base case
                 if(start > end) {
                         return 0;
                 }
@@ -26,7 +26,6 @@ public class LongestPalindromicSubsequenceI {
         }
         
         public static void main(String[] args) {
-        
                 String str = "GEEKSFORGEEKS";
                 int n = str.length();
                 System.out.printf("The length of the LPS is %d", LPS(str.toCharArray(), 0, n - 1));

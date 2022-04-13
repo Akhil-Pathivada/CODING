@@ -9,7 +9,6 @@ package dp;
 public class LongestPalindromicSubsequenceII {
         
         private static int LPS(String s, int n) {
-                
                 int[][] table = new int[n][n]; // table to store the sub problems result
                 for(int i = n - 1; i >= 0; --i) {
                         table[i][i] = 1; // string of length 1 is always a palindrome
@@ -28,7 +27,6 @@ public class LongestPalindromicSubsequenceII {
         }
         
         public static void main(String[] args) {
-                
                 String str = "GEEKSFORGEEKS";
                 int n = str.length();
                 System.out.printf("The length of the LPS is %d", LPS(str, n));

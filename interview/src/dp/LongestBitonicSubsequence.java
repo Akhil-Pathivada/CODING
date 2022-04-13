@@ -13,7 +13,6 @@ package dp;
 public class LongestBitonicSubsequence {
         
         private static int LBS(int[] nums, int n) {
-        
                 // store longest increasing sequence till that point
                 int lis[] = new int[n];
                 // store longest decreasing sequence till that point
@@ -53,7 +52,6 @@ public class LongestBitonicSubsequence {
         }
         
         public static void main(String[] args) {
-                
                 int[] nums = { 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
                 System.out.printf("Length of LBS is = %d ", LBS(nums, nums.length));
         }

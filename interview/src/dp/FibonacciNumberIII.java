@@ -14,7 +14,7 @@ package dp;
 public class FibonacciNumberIII {
         
         private int fibonacci(int n) {
-                
+                // base case
                 if(n <= 1) {
                         return n;
                 }
@@ -28,7 +28,6 @@ public class FibonacciNumberIII {
         }
         
         public static void main(String[] args) {
-                
                 int n = 9;
                 System.out.println(new FibonacciNumberIII().fibonacci(n));
         }

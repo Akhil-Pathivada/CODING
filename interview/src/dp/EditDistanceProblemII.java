@@ -51,7 +51,6 @@ public class EditDistanceProblemII {
         }
         
         public static void main(String[] args) {
-                
                 String X = "sunday";
                 String Y = "saturday";
                 System.out.printf("Min. Operations required = %d", minOperations(X.toCharArray(), Y.toCharArray(), X.length(), Y.length()));

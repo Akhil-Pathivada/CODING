@@ -13,7 +13,6 @@ package dp;
 public class MaximumSumIncreasingSubsequence {
         
         private static int MSIS(int[] arr, int n) {
-        
                 int msis[] = new int[n];
                 msis[0] = arr[0];
                 // Compute maximum sum values in bottom up manner
@@ -37,7 +36,6 @@ public class MaximumSumIncreasingSubsequence {
         }
         
         public static void main(String[] args) {
-        
                 int arr[] = new int[]{1, 101, 2, 3, 100, 4, 5};
                 System.out.println("Sum of maximum sum increasing subsequence is = " + MSIS(arr, arr.length));
         }

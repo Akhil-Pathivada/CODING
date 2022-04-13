@@ -37,7 +37,6 @@ public class LongestIncreasingSubsequence {
         }
         
         public static void main(String[] args) {
-                
                 int[] nums = { 10, 22, 9, 33, 21, 50, 41, 60 };
                 System.out.printf("Longest Increasing Subsequence : %d ", LIS(nums, nums.length));
         }

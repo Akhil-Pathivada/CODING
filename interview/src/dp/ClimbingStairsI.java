@@ -10,7 +10,7 @@ package dp;
 public class ClimbingStairsI {
         
         private static int climbStairs(int n) {
-                
+                // base case
                 if(n <= 1) {
                         return 1;
                 }
@@ -18,7 +18,6 @@ public class ClimbingStairsI {
         }
         
         public static void main(String[] args) {
-                
                 int stairs = 5;
                 System.out.printf("Total ways a person can reach the Top : %d ", climbStairs(stairs));
         }

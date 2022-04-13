@@ -13,7 +13,6 @@ package dp;
 public class IsSubsequenceI {
         
         private static boolean isSubsequence(char[] s, char[] t, int m, int n) {
-                
                 if(m == 0) {
                         return true;
                 }
@@ -27,7 +26,6 @@ public class IsSubsequenceI {
         }
         
         public static void main(String[] args) {
-        
                 String s ="abc", t = "ahbgdc";
                 System.out.println(isSubsequence(s.toCharArray(), t.toCharArray(), s.length(), t.length()));
         }
