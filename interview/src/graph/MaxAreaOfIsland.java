@@ -26,21 +26,16 @@ public class MaxAreaOfIsland {
         }
         
         private static int maxArea(int[][] grid) {
-                
                 m = grid.length;
                 if (m == 0) {
                         return 0;
                 }
                 n = grid[0].length;
-                
                 int area = 0;
-                
                 for(int i = 0; i < m; ++i) {
-                        
                         for(int j = 0; j < n; ++j) {
                                 // island found
                                 if(grid[i][j] == 1) {
-                                        
                                         area = Math.max(area, DFS(grid, i, j));
                                 }
                         }
@@ -49,7 +44,6 @@ public class MaxAreaOfIsland {
         }
         
         public static void main(String[] args) {
-        
                 int grid[][] = new int[][] {
                         { 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
                         { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
@@ -59,7 +53,6 @@ public class MaxAreaOfIsland {
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                         { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
                         { 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}};
-        
                 System.out.printf("Max Area of Island = %d", maxArea(grid));
         }
         

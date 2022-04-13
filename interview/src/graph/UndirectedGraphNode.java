@@ -10,7 +10,6 @@ public class UndirectedGraphNode {
         public List<UndirectedGraphNode> neighbours; // list of neighbours
         
         public UndirectedGraphNode() {
-        
         }
         
         public UndirectedGraphNode(int _label) {
@@ -24,7 +23,6 @@ public class UndirectedGraphNode {
         }
         
         private void DFSUtil(UndirectedGraphNode node, Set<Integer> visited) {
-                
                 System.out.print(node.label + ", ");
                 visited.add(node.label);
                 // iterate over all neighbours of a node recursively
@@ -36,18 +34,15 @@ public class UndirectedGraphNode {
         }
         // Depth First Traversal
         protected void DFS(UndirectedGraphNode node) {
-                
                 Set<Integer> visited = new HashSet<>();
                 DFSUtil(node, visited);
         }
         
         private void BFSUtil(UndirectedGraphNode node) {
-                
                 Set<Integer> visited = new HashSet<>();
                 Queue<UndirectedGraphNode> queue = new LinkedList<>();
                 visited.add(node.label);
                 queue.add(node);
-                
                 while(!queue.isEmpty()) {
                         
                         node = queue.poll();
@@ -66,7 +61,6 @@ public class UndirectedGraphNode {
         }
         // Breadth First Traversal
         protected void BFS(UndirectedGraphNode node) {
-                
                 BFSUtil(node);
         }
 }

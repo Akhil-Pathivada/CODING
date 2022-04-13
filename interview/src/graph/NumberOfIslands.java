@@ -30,15 +30,12 @@ public class NumberOfIslands {
         }
         
         private static int numOfIslands(char[][] grid) {
-                
                 m = grid.length;
                 if (m == 0) {
                         return 0;
                 }
                 n = grid[0].length;
-                
                 int countOfIslands = 0;
-                
                 for(int i = 0; i < m; ++i) {
                         
                         for(int j = 0; j < n; ++j) {
@@ -54,14 +51,12 @@ public class NumberOfIslands {
         }
         
         public static void main(String[] args) {
-        
                 char grid[][] = new char[][] {
                         { '1', '1', '0', '0', '0' },
                         { '0', '1', '0', '0', '1' },
                         { '1', '0', '0', '1', '1' },
                         { '0', '0', '0', '0', '0' },
                         { '1', '0', '1', '0', '1' } };
-        
                 System.out.printf("Number of Islands = %d", numOfIslands(grid));
         }
 }
