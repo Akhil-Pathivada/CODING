@@ -20,17 +20,14 @@ public class AddTwoNumbers extends LinkedListNode {
                 // while loop will run, until l1 OR l2 not reaches null OR if they both reaches null. But our carry has some value in it.
                 // We will add that as well into our list
                 while (l1 != null || l2 != null || carry == 1) {
-                        
                         int sum = 0;
                         // adding l1 to our sum & moving l1
                         if(l1 != null) {
-                                
                                 sum += l1.data;
                                 l1 = l1.next;
                         }
                         // adding l2 to our sum & moving l2
                         if(l2 != null) {
-                
                                 sum += l2.data;
                                 l2 = l2.next;
                         }
@@ -51,13 +48,10 @@ public class AddTwoNumbers extends LinkedListNode {
                 list1.next.next.next.next = new LinkedListNode(9);
                 list1.next.next.next.next.next = new LinkedListNode(9);
                 list1.next.next.next.next.next.next  = new LinkedListNode(9);
-        
-        
                 LinkedListNode list2 = new LinkedListNode(9);
                 list2.next = new LinkedListNode(9);
                 list2.next.next = new LinkedListNode(9);
                 list2.next.next.next = new LinkedListNode(9);
-        
                 new LinkedListNode().printLinkedList(addNumbers(list1, list2));
         }
 }
