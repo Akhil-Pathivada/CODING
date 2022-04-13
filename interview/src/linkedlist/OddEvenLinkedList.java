@@ -10,6 +10,7 @@ package linkedlist;
 public class OddEvenLinkedList {
         
         private static LinkedListNode getOddEvenList(LinkedListNode head) {
+                
                 // base case
                 if(head == null) {
                         return null;
@@ -34,7 +35,6 @@ public class OddEvenLinkedList {
                 head.next.next.next = new LinkedListNode(4);
                 head.next.next.next.next = new LinkedListNode(5);
                 head.next.next.next.next.next = new LinkedListNode(6);
-                
                 head.printLinkedList(getOddEvenList(head));
         }
 }

@@ -9,6 +9,7 @@ package linkedlist;
 public class RemoveCycle {
         
         private static void removeCycle(LinkedListNode head, LinkedListNode nodeInCycle) {
+                
                 // point slow pointer to head and fastPtr to node in cycle
                 LinkedListNode slowPtr, fastPtr;
                 slowPtr = head;
@@ -22,12 +23,12 @@ public class RemoveCycle {
         }
         
         private static LinkedListNode getNodeInCycle(LinkedListNode head) {
+                
                 // point both slow, fast pointers to head
                 LinkedListNode slowPtr, fastPtr;
                 slowPtr = fastPtr = head;
                 // slowPtr is a walker, whereas fastPtr is a runner
                 while (fastPtr != null && fastPtr.next != null) {
-                        
                         slowPtr = slowPtr.next;
                         fastPtr = fastPtr.next.next;
                         // cycle is found
@@ -47,7 +48,6 @@ public class RemoveCycle {
                 head.next.next.next.next = new LinkedListNode(5);
                 head.next.next.next.next.next = new LinkedListNode(6);
                 head.next.next.next.next.next.next = head.next;
-                
                 removeCycle(head, getNodeInCycle(head));
                 head.printLinkedList(head);
         }

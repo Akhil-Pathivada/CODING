@@ -20,7 +20,6 @@ public class CloneListWithRandomPointerI {
                         data = value;
                         next = random = null;
                 }
-                
                 private void printList(LinkedListNode head) {
                         for( ; head != null; head = head.next) {
                                 System.out.println(head.data + ", " + head.random.data);
@@ -29,6 +28,7 @@ public class CloneListWithRandomPointerI {
         }
         
         private static LinkedListNode cloneList(LinkedListNode head) {
+                
                 // maintain two pointers, one of them should point to original list
                 LinkedListNode originalCurr, clonedCurr;
                 originalCurr = head;
@@ -66,7 +66,7 @@ public class CloneListWithRandomPointerI {
                 head.next.next.random = head.next.next.next.next;
                 head.next.next.next.random = head;
                 head.next.next.next.next.random = head.next;
-                
+                // get cloned list
                 LinkedListNode clonedListHead = cloneList(head);
                 clonedListHead.printList(clonedListHead);
         }

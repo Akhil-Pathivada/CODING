@@ -12,13 +12,13 @@ import java.util.Stack;
 public class ReverseLinkedListInGroupsOfSizeKII {
         
         private static LinkedListNode reverseKNodes(LinkedListNode head, int k) {
+                
                 // base case
                 if(head == null) {
                         return null;
                 }
                 Stack<LinkedListNode> stack = new Stack<LinkedListNode>();
                 LinkedListNode current = head, prev = null;
-                
                 while(current != null) {
                         // Terminate the loop whichever comes first either current == NULL or count >= k
                         for(int count = 1; count <= k && current != null; ++count) {
@@ -55,7 +55,6 @@ public class ReverseLinkedListInGroupsOfSizeKII {
                 head.next.next.next.next.next.next = new LinkedListNode(7);
                 head.next.next.next.next.next.next.next = new LinkedListNode(8);
                 head.next.next.next.next.next.next.next.next = new LinkedListNode(9);
-                
                 int k = 3;
                 head.printLinkedList(reverseKNodes(head, 3));
         }

@@ -13,7 +13,6 @@ public class MiddleNodeOfList {
                 
                 LinkedListNode slow, fast;
                 slow = fast = head;
-                
                 while(fast != null && fast.next != null) {
                         slow = slow.next;
                         fast = fast.next.next;
@@ -29,7 +28,6 @@ public class MiddleNodeOfList {
                 head.next.next.next = new LinkedListNode(2);
                 head.next.next.next.next = new LinkedListNode(7);
                 head.next.next.next.next.next = new LinkedListNode(5);
-        
                 System.out.println(getMiddleNodeOfList(head));
         }
 }

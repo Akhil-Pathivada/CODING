@@ -10,6 +10,7 @@ package linkedlist;
 public class RemoveKthNodeFromEndOfList {
         
         private static LinkedListNode removeKthNodeFromEnd(LinkedListNode head, int K) {
+                
                 // create dummy pointer and maintain it before head
                 LinkedListNode start = new LinkedListNode(0);
                 start.next = head;

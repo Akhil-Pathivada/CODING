@@ -16,7 +16,6 @@ public class RemoveDuplicatesFromSortedListI {
                 
                 LinkedListNode curr = head;
                 while (curr != null) {
-                        
                         if(curr.next != null && curr.data == curr.next.data) {
                                 curr.next = curr.next.next;
                         }
@@ -34,7 +33,6 @@ public class RemoveDuplicatesFromSortedListI {
                 head.next.next = new LinkedListNode(2);
                 head.next.next.next = new LinkedListNode(3);
                 head.next.next.next.next = new LinkedListNode(3);
-                
                 head.printLinkedList(removeDuplicates(head));
         }
 }

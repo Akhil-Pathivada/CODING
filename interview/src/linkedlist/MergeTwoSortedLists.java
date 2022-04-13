@@ -9,6 +9,7 @@ package linkedlist;
 public class MergeTwoSortedLists {
         
         private static LinkedListNode mergeTwoSortedLists(LinkedListNode list1, LinkedListNode list2) {
+                
                 // create a dummy variable, point to beginning of result
                 LinkedListNode dummy = new LinkedListNode();
                 LinkedListNode curr = dummy;
@@ -36,11 +37,9 @@ public class MergeTwoSortedLists {
                 head1.next = new LinkedListNode(2);
                 head1.next.next = new LinkedListNode(3);
                 head1.next.next.next = new LinkedListNode(4);
-                
                 LinkedListNode head2 = new LinkedListNode(1);
                 head2.next = new LinkedListNode(4);
                 head2.next.next = new LinkedListNode(5);
-                
                 head1.printLinkedList(mergeTwoSortedLists(head1, head2));
         }
 }

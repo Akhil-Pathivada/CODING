@@ -10,6 +10,7 @@ package linkedlist;
 public class ReverseLinkedListInGroupsOfSizeKI {
         
         private static LinkedListNode reverseKNodes(LinkedListNode head, int k) {
+                
                 // base case
                 if(head == null) {
                         return null;
@@ -45,7 +46,6 @@ public class ReverseLinkedListInGroupsOfSizeKI {
                 head.next.next.next.next.next.next = new LinkedListNode(7);
                 head.next.next.next.next.next.next.next = new LinkedListNode(8);
                 head.next.next.next.next.next.next.next.next = new LinkedListNode(9);
-                
                 int k = 3;
                 head.printLinkedList(reverseKNodes(head, 3));
         }

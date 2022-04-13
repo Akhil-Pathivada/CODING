@@ -13,7 +13,6 @@ public class AlternateSplitList {
                 LinkedListNode head1, head2;
                 head1 = head;
                 head2 = head.next;
-                
                 while(head != null) {
                         LinkedListNode temp = head.next;
                         head.next = temp != null ? temp.next : temp;
@@ -31,7 +30,6 @@ public class AlternateSplitList {
                 head.next.next.next = new LinkedListNode(4);
                 head.next.next.next.next = new LinkedListNode(5);
                 head.next.next.next.next.next = new LinkedListNode(6);
-                
                 alternateSplitList(head);
         }
 }

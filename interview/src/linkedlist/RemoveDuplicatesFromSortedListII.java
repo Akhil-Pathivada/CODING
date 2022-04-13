@@ -18,7 +18,6 @@ public class RemoveDuplicatesFromSortedListII {
                 dummy = new LinkedListNode(0);
                 curr = dummy.next = head;
                 prev = dummy;
-                
                 while (curr != null) {
                         // iterate over all duplicates of current element
                         while (curr.next != null && curr.data == curr.next.data) {
@@ -42,7 +41,6 @@ public class RemoveDuplicatesFromSortedListII {
                 head.next.next = new LinkedListNode(2);
                 head.next.next.next = new LinkedListNode(3);
                 head.next.next.next.next = new LinkedListNode(3);
-                
                 head.printLinkedList(removeDuplicates(head));
         }
 }

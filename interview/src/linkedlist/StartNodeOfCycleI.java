@@ -9,6 +9,7 @@ package linkedlist;
 public class StartNodeOfCycleI {
         
         private static int getStartNodeOfCycle(LinkedListNode head, LinkedListNode nodeInCycle) {
+                
                 // point both pointers to the node in cycle
                 LinkedListNode ptr1, ptr2;
                 ptr1 = ptr2 = nodeInCycle;
@@ -32,12 +33,12 @@ public class StartNodeOfCycleI {
         }
         
         private static LinkedListNode getNodeInCycle(LinkedListNode head) {
+                
                 // point both slow, fast pointers to head
                 LinkedListNode slowPtr, fastPtr;
                 slowPtr = fastPtr = head;
                 // slowPtr is a walker, whereas fastPtr is a runner
                 while (fastPtr != null && fastPtr.next != null) {
-                        
                         slowPtr = slowPtr.next;
                         fastPtr = fastPtr.next.next;
                         // cycle is found
@@ -57,7 +58,6 @@ public class StartNodeOfCycleI {
                 head.next.next.next.next = new LinkedListNode(5);
                 head.next.next.next.next.next = new LinkedListNode(6);
                 head.next.next.next.next.next.next = head.next;
-                
                 System.out.println(getStartNodeOfCycle(head, getNodeInCycle(head)));
         }
 }

@@ -43,7 +43,6 @@ public class NextGreaterNodeInList {
                 head.next.next.next = new LinkedListNode(2);
                 head.next.next.next.next = new LinkedListNode(7);
                 head.next.next.next.next.next = new LinkedListNode(5);
-        
                 System.out.println(Arrays.toString(nextGreaterNodes(head)));
         }
 }

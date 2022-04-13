@@ -10,6 +10,7 @@ package linkedlist;
 public class RotateLinkedList {
         
         private static LinkedListNode rotateRight(LinkedListNode head, int k) {
+                
                 // base case
                 if(head == null) {
                         return null;
@@ -38,7 +39,6 @@ public class RotateLinkedList {
                 current.next = null;
                 // point the tail next to old head
                 tail.next = head;
-                
                 return newHead;
         }
         

@@ -56,7 +56,6 @@ public class CheckPalindromeII {
                 head.next.next.next = new LinkedListNode(3);
                 head.next.next.next.next = new LinkedListNode(2);
                 head.next.next.next.next.next = new LinkedListNode(1);
-                
                 System.out.println(isPalindrome(head));
         }
 }

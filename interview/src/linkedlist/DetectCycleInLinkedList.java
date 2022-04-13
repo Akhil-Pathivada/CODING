@@ -34,7 +34,6 @@ public class DetectCycleInLinkedList {
                 head.next.next.next.next = new LinkedListNode(5);
                 head.next.next.next.next.next = new LinkedListNode(6);
                 head.next.next.next.next.next.next = head.next;
-        
                 System.out.println(hasCycle(head));
         }
 }

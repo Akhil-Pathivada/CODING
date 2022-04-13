@@ -44,7 +44,6 @@ public class RemoveDuplicatesFromUnsortedList {
                 head.next.next.next.next = new LinkedListNode(12);
                 head.next.next.next.next.next = new LinkedListNode(11);
                 head.next.next.next.next.next.next = new LinkedListNode(10);
-                
                 head.printLinkedList(removeDuplicates(head));
         }
 }

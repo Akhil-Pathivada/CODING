@@ -29,13 +29,10 @@ public class IntersectionOfTwoListsII {
                 headA.next.next = new LinkedListNode(30);
                 headA.next.next.next = new LinkedListNode(40);
                 headA.next.next.next.next = new LinkedListNode(50);
-                
                 LinkedListNode headB = new LinkedListNode(60);
                 headB.next = new LinkedListNode(70);
                 headB.next.next = new LinkedListNode(80);
-        
                 headB.next.next.next = headA.next.next.next;
-        
                 System.out.println(getIntersectionNode(headA, headB));
         }
 }
