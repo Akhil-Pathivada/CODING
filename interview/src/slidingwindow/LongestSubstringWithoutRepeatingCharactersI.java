@@ -17,13 +17,11 @@ import java.util.Map;
 public class LongestSubstringWithoutRepeatingCharactersI {
         
         private static boolean isDistinct(String s, int i, int j) {
-        
+                
                 // Note : Default values in visited are false
                 boolean[] visited = new boolean[26];
                 HashSet<Character> set = new HashSet<>();
-        
                 for(int k = i; k <= j; k++) {
-                        
                         if (set.contains(s.charAt(k))) {
                                 return false;
                         }
@@ -36,7 +34,6 @@ public class LongestSubstringWithoutRepeatingCharactersI {
                 
                 HashSet<Character> set = new HashSet<>();
                 int n = s.length(), maxLen = 0;
-                
                 for(int i =0; i < n; ++i) {
                         // get all possible substrings
                         for(int j = i; j < n; ++j) {

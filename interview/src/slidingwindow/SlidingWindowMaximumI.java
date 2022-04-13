@@ -19,7 +19,6 @@ public class SlidingWindowMaximumI {
                 
                 // store maximum of every window
                 List<Integer> result = new ArrayList<>();
-                
                 for(int i = 0; i <= nums.length -k; ++i) {
                         // compute max in every window
                         int max = nums[i];
