@@ -8,7 +8,7 @@ package tree;
 
 public class SortedArrayToBST extends TreeNode {
         
-        private static TreeNode sortedArrayToBSTUtil(int[] nums, int start, int end) {
+        private TreeNode sortedArrayToBSTUtil(int[] nums, int start, int end) {
                 // base case
                 if(start > end) {
                         return null;
@@ -22,7 +22,7 @@ public class SortedArrayToBST extends TreeNode {
                 return root;
         }
         
-        private static TreeNode sortedArrayToBST(int[] nums) {
+        private TreeNode sortedArrayToBST(int[] nums) {
                 // base case
                 if(nums.length == 0) {
                         return null;
@@ -31,8 +31,8 @@ public class SortedArrayToBST extends TreeNode {
         }
         
         public static void main(String[] args) {
-                
                 int nums[] = {-10, -3, 0, 5, 9};
-                new SortedArrayToBST().preOrder(sortedArrayToBST(nums));
+                SortedArrayToBST obj = new SortedArrayToBST();
+                obj.preOrder(obj.sortedArrayToBST(nums));
         }
 }

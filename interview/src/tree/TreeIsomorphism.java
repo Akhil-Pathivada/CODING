@@ -33,7 +33,6 @@ public class TreeIsomorphism {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root1 = new TreeNode(1);
                 root1.left = new TreeNode(2);
                 root1.right = new TreeNode(3);
@@ -42,7 +41,6 @@ public class TreeIsomorphism {
                 root1.right.left = new TreeNode(6);
                 root1.left.right.left = new TreeNode(7);
                 root1.left.right.right = new TreeNode(8);
-        
                 TreeNode root2 = new TreeNode(1);
                 root2.left = new TreeNode(3);
                 root2.right = new TreeNode(2);
@@ -51,7 +49,6 @@ public class TreeIsomorphism {
                 root2.left.right = new TreeNode(6);
                 root2.right.right.left = new TreeNode(8);
                 root2.right.right.right = new TreeNode(7);
-        
                 System.out.println(new TreeIsomorphism().areIsomorphicTrees(root1, root2) ? "YES" : "NO");
         }
 }

@@ -8,9 +8,8 @@ package tree;
 
 public class ValidateBST {
         
-        private static TreeNode prev = null;
-        
-        private static boolean isValidBST(TreeNode root) {
+        private TreeNode prev = null;
+        private boolean isValidBST(TreeNode root) {
                 // base case
                 if(root == null) {
                         return true;
@@ -27,7 +26,6 @@ public class ValidateBST {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(20);
                 root.left = new TreeNode(8);
                 root.right = new TreeNode(22);
@@ -35,7 +33,6 @@ public class ValidateBST {
                 root.left.right = new TreeNode(12);
                 root.left.right.left = new TreeNode(10);
                 root.left.right.right = new TreeNode(14);
-                
-                System.out.println(isValidBST(root));
+                System.out.println(new ValidateBST().isValidBST(root));
         }
 }
