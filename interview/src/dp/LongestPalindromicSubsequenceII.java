@@ -15,7 +15,6 @@ public class LongestPalindromicSubsequenceII {
                         for(int j = i + 1; j < n; ++j) {
                                 // palindrome
                                 if(s.charAt(i) == s.charAt(j)) {
-                                        
                                         table[i][j] = table[i + 1][j - 1] + 2;
                                 }
                                 else {
