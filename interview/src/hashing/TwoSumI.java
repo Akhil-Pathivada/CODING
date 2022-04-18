@@ -28,7 +28,6 @@ public class TwoSumI {
         }
         
         public static void main(String[] args) {
-                
                 int arr[] = {2, 7, 11, 15};
                 int target = 22;
                 System.out.println(Arrays.toString(twoSum(arr, target)));

@@ -11,7 +11,6 @@ import java.util.Arrays;
 public class ThreeSumII {
         
         private static void printTriplets(int[] arr, int sum) {
-                
                 int n = arr.length;
                 Arrays.sort(arr);
                 // Now fix the first element one by one and find the other two elements
@@ -37,10 +36,8 @@ public class ThreeSumII {
         }
         
         public static void main(String[] args) {
-                
                 int[] arr = { 1, 4, 45, 6, 10, 8 };
                 int sum = 22;
-                
                 printTriplets(arr, sum);
         }
 }
