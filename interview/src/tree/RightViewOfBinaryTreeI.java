@@ -5,10 +5,9 @@
  * */
 package tree;
 
-public class RightViewOfBinaryTree {
+public class RightViewOfBinaryTreeI {
         
         static int MAX_LEVEL = 0;
-        
         private void printRightView(TreeNode root, int level) {
                 // base case
                 if(root == null) {
@@ -25,7 +24,6 @@ public class RightViewOfBinaryTree {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(10);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(3);
@@ -34,8 +32,7 @@ public class RightViewOfBinaryTree {
                 root.right.right = new TreeNode(15);
                 root.right.left = new TreeNode(12);
                 root.right.right.left = new TreeNode(14);
-                
                 int level = 1;
-                new RightViewOfBinaryTree().printRightView(root, 1);
+                new RightViewOfBinaryTreeI().printRightView(root, 1);
         }
 }

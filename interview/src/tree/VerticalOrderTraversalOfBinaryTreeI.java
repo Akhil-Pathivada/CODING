@@ -47,8 +47,8 @@ public class VerticalOrderTraversalOfBinaryTreeI {
         private void printVerticalOrder(TreeNode root) {
                 // compute horizontal distance of tree
                 findMinMaxHorizontalDistance(root, 0);
-                /* Iterate through all possible vertical lines starting
-                 from the leftmost line and print nodes line by line */
+                // Iterate through all possible vertical lines starting
+                // from the leftmost line and print nodes line by line
                 for(int line_no = MIN; line_no <= MAX; ++line_no) {
                         printNodesOfHorizontalDistance(root, line_no, 0);
                         System.out.println();
@@ -56,7 +56,6 @@ public class VerticalOrderTraversalOfBinaryTreeI {
         }
         
         public static void main(String[] args) {
-        
                 TreeNode root = new TreeNode(1);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(3);
@@ -66,7 +65,6 @@ public class VerticalOrderTraversalOfBinaryTreeI {
                 root.right.right = new TreeNode(7);
                 root.right.left.right = new TreeNode(8);
                 root.right.right.right = new TreeNode(9);
-                
                 new VerticalOrderTraversalOfBinaryTreeI().printVerticalOrder(root);
         }
 }

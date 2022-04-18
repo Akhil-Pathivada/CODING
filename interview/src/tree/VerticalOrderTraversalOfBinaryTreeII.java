@@ -37,7 +37,6 @@ public class VerticalOrderTraversalOfBinaryTreeII {
         private void printVerticalOrder(TreeNode root) {
                 // stores horizontal distance and nodes having that distance
                 TreeMap<Integer, Vector<Integer>> map = new TreeMap<>();
-                
                 int hd = 0; // horizontal distance
                 getVerticalOrder(root, hd, map);
                 // printing the values of TreeMap
@@ -47,7 +46,6 @@ public class VerticalOrderTraversalOfBinaryTreeII {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(1);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(3);
@@ -57,7 +55,6 @@ public class VerticalOrderTraversalOfBinaryTreeII {
                 root.right.right = new TreeNode(7);
                 root.right.left.right = new TreeNode(8);
                 root.right.right.right = new TreeNode(9);
-        
                 new VerticalOrderTraversalOfBinaryTreeII().printVerticalOrder(root);
         }
 }
