@@ -14,10 +14,8 @@ import java.util.Arrays;
 
 public class RotateArray {
         
-        private static void reverse(int[] nums, int left, int right) {
-                
+        private void reverse(int[] nums, int left, int right) {
                 while(left <= right) {
-                        
                         int temp = nums[left];
                         nums[left] = nums[right];
                         nums[right] = temp;
@@ -25,8 +23,7 @@ public class RotateArray {
                 }
         }
         
-        private static void rotateRight(int[] nums, int k, int n) {
-                
+        private void rotateRight(int[] nums, int k, int n) {
                 k = k % n;
                 // if k == n
                 if(k == 0) {
@@ -41,9 +38,8 @@ public class RotateArray {
         }
         
         public static void main(String[] args) {
-        
                 int nums[] = { 1, 2, 3, 4, 5, 6, 7 }, k = 3;
-                rotateRight(nums, k, nums.length);
+                new RotateArray().rotateRight(nums, k, nums.length);
                 System.out.println(Arrays.toString(nums));
         }
 }

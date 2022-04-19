@@ -13,17 +13,13 @@ package array;
 public class MaximumSumSubarrayIV {
         
         private static void maxSubArraySum(int[] arr) {
-                
                 int n = arr.length, maxSumSoFar, currSum, start, end;
                 maxSumSoFar = currSum = arr[0];
                 start = end = -1;
-                
                 for(int i = 0; i < n; ++i) {
-                        
                         currSum = Math.max(currSum + arr[i], arr[i]);
                         // update the maxSumSoFar and end index
                         if(currSum > maxSumSoFar) {
-                                
                                 maxSumSoFar = currSum;
                                 end = i;
                         }
@@ -37,7 +33,6 @@ public class MaximumSumSubarrayIV {
         }
         
         public static void main(String[] args) {
-                
                 int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3};
                 maxSubArraySum(arr);
         }

@@ -11,8 +11,8 @@
 package array;
 
 public class MaximumSumSubarrayII {
+        
         private static void maxSubArraySum(int[] arr) {
-                
                 int n = arr.length, maxSum = Integer.MIN_VALUE;
                 int start = -1, end = -1;
                 int sumArray[] = new int[n];
@@ -21,7 +21,6 @@ public class MaximumSumSubarrayII {
                 for(int i = 1; i < n; ++i) {
                         sumArray[i] = sumArray[i - 1] + arr[i];
                 }
-                
                 for(int i = 0; i < n; ++i) {
                         // update max sum
                         if(sumArray[i] > maxSum) {
@@ -30,9 +29,7 @@ public class MaximumSumSubarrayII {
                                 end = i;
                         }
                 }
-                
                 for(int i = 1; i < n; ++i) {
-                        
                         int prevSum = sumArray[i - 1];
                         // find out all subarrays
                         for(int j = i; j < n; ++j) {
@@ -40,7 +37,6 @@ public class MaximumSumSubarrayII {
                                 int sum =  sumArray[j] - prevSum;
                                 // update max sum
                                 if(sum > maxSum) {
-                                        
                                         maxSum = sum;
                                         start = i;
                                         end = j;
@@ -51,7 +47,6 @@ public class MaximumSumSubarrayII {
         }
         
         public static void main(String[] args) {
-                
                 int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3};
                 maxSubArraySum(arr);
         }
