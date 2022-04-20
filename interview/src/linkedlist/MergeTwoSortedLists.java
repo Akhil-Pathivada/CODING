@@ -8,19 +8,16 @@ package linkedlist;
 
 public class MergeTwoSortedLists {
         
-        private static LinkedListNode mergeTwoSortedLists(LinkedListNode list1, LinkedListNode list2) {
-                
+        private LinkedListNode mergeTwoSortedLists(LinkedListNode list1, LinkedListNode list2) {
                 // create a dummy variable, point to beginning of result
                 LinkedListNode dummy = new LinkedListNode();
                 LinkedListNode curr = dummy;
                 // iterate till one of the lists is empty
                 while(list1 != null && list2 != null) {
-                        
                         if(list1.data <= list2.data) {
                                 curr.next = list1;
                                 list1 = list1.next;
-                        }
-                        else {
+                        } else {
                                 curr.next = list2;
                                 list2 = list2.next;
                         }
@@ -32,7 +29,6 @@ public class MergeTwoSortedLists {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode head1 = new LinkedListNode(1);
                 head1.next = new LinkedListNode(2);
                 head1.next.next = new LinkedListNode(3);
@@ -40,6 +36,6 @@ public class MergeTwoSortedLists {
                 LinkedListNode head2 = new LinkedListNode(1);
                 head2.next = new LinkedListNode(4);
                 head2.next.next = new LinkedListNode(5);
-                head1.printLinkedList(mergeTwoSortedLists(head1, head2));
+                head1.printLinkedList(new MergeTwoSortedLists().mergeTwoSortedLists(head1, head2));
         }
 }
