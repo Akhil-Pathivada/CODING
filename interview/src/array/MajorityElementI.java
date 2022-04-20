@@ -16,16 +16,12 @@ package array;
 public class MajorityElementI {
         
         private static int getMajorityElement(int[] nums, int n) {
-        
                 int voter = -1, votes = 0;
-                
                 for(int num : nums) {
-                        
                         if(votes == 0) {
                                 voter = num;
                                 votes = 1;
-                        }
-                        else {
+                        } else {
                                 if (num == voter) {
                                         ++votes;
                                 } else {
@@ -47,7 +43,6 @@ public class MajorityElementI {
         }
         
         public static void main(String[] args) {
-        
                 int nums[] = { 1, 1, 1, 1, 2, 3, 4 };
                 System.out.println(" The majority element is : " + getMajorityElement(nums, nums.length));
         }
