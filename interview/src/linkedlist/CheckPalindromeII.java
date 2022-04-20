@@ -8,7 +8,7 @@ package linkedlist;
 
 public class CheckPalindromeII {
         
-        private static LinkedListNode reverseList(LinkedListNode head) {
+        private LinkedListNode reverseList(LinkedListNode head) {
                 LinkedListNode prev, curr, nextPtr;
                 prev = null;
                 curr = head;
