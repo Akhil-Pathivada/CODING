@@ -9,8 +9,7 @@ package linkedlist;
 
 public class IntersectionOfTwoListsI {
         
-        private static int getIntersectionNode(LinkedListNode headA, LinkedListNode headB) {
-                
+        private int getIntersectionNode(LinkedListNode headA, LinkedListNode headB) {
                 int lenA = headA.lengthOfLinkedList(headA);
                 int lenB = headB.lengthOfLinkedList(headB);
                 // move headA and headB to the same start point
@@ -31,7 +30,6 @@ public class IntersectionOfTwoListsI {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode headA = new LinkedListNode(10);
                 headA.next = new LinkedListNode(20);
                 headA.next.next = new LinkedListNode(30);
@@ -41,6 +39,6 @@ public class IntersectionOfTwoListsI {
                 headB.next = new LinkedListNode(70);
                 headB.next.next = new LinkedListNode(80);
                 headB.next.next.next = headA.next.next.next;
-                System.out.println(getIntersectionNode(headA, headB));
+                System.out.println(new IntersectionOfTwoListsI().getIntersectionNode(headA, headB));
         }
 }

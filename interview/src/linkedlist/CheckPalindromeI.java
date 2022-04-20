@@ -10,8 +10,7 @@ import java.util.Stack;
 
 public class CheckPalindromeI {
         
-        private static boolean isPalindrome(LinkedListNode head) {
-                
+        private boolean isPalindrome(LinkedListNode head) {
                 LinkedListNode curr = head;
                 Stack<Integer> stack = new Stack<>();
                 // push all elements into stack
@@ -29,13 +28,12 @@ public class CheckPalindromeI {
         }
         
         public static void main(String[] args) {
-        
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);
                 head.next.next.next = new LinkedListNode(3);
                 head.next.next.next.next = new LinkedListNode(2);
                 head.next.next.next.next.next = new LinkedListNode(1);
-                System.out.println(isPalindrome(head));
+                System.out.println(new CheckPalindromeI().isPalindrome(head));
         }
 }

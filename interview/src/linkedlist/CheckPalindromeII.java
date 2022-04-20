@@ -9,7 +9,6 @@ package linkedlist;
 public class CheckPalindromeII {
         
         private static LinkedListNode reverseList(LinkedListNode head) {
-                
                 LinkedListNode prev, curr, nextPtr;
                 prev = null;
                 curr = head;
@@ -22,8 +21,7 @@ public class CheckPalindromeII {
                 return prev;
         }
         
-        private static boolean isPalindrome(LinkedListNode head) {
-        
+        private boolean isPalindrome(LinkedListNode head) {
                 LinkedListNode slow, fast;
                 slow = fast = head;
                 // get middle of list
@@ -49,13 +47,12 @@ public class CheckPalindromeII {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);
                 head.next.next.next = new LinkedListNode(3);
                 head.next.next.next.next = new LinkedListNode(2);
                 head.next.next.next.next.next = new LinkedListNode(1);
-                System.out.println(isPalindrome(head));
+                System.out.println(new CheckPalindromeII().isPalindrome(head));
         }
 }

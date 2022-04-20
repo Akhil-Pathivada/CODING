@@ -8,8 +8,7 @@ package linkedlist;
 
 public class AlternateSplitList {
         
-        private static void alternateSplitList(LinkedListNode head) {
-                
+        private void alternateSplitList(LinkedListNode head) {
                 LinkedListNode head1, head2;
                 head1 = head;
                 head2 = head.next;
@@ -23,13 +22,12 @@ public class AlternateSplitList {
         }
         
         public static void main(String[] args) {
-        
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);
                 head.next.next.next = new LinkedListNode(4);
                 head.next.next.next.next = new LinkedListNode(5);
                 head.next.next.next.next.next = new LinkedListNode(6);
-                alternateSplitList(head);
+                new AlternateSplitList().alternateSplitList(head);
         }
 }
