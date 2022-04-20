@@ -14,7 +14,7 @@ import java.util.LinkedHashSet;
 
 public class RemoveDuplicates {
         
-        private static void removeDuplicates(String str) {
+        private void removeDuplicates(String str) {
                 // LinkedHashSet maintains the insertion order
                 LinkedHashSet<Character> lhs = new LinkedHashSet<>();
                 // add all characters into set
@@ -28,8 +28,7 @@ public class RemoveDuplicates {
         }
         
         public static void main(String[] args) {
-                
                 String str = "geeksforgeeks";
-                removeDuplicates(str);
+                new RemoveDuplicates().removeDuplicates(str);
         }
 }

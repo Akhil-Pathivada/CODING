@@ -9,8 +9,7 @@ package strings;
 
 public class FirstUniqueCharacter {
         
-        private static int firstUniqChar(String s) {
-                
+        private int firstUniqChar(String s) {
                 int freq[] = new int[26];
                 // store frequency of character
                 for(int i = 0; i < s.length(); ++i) {
@@ -26,8 +25,7 @@ public class FirstUniqueCharacter {
         }
         
         public static void main(String[] args) {
-                
                 String s = new String("loveleetcode");
-                System.out.println(firstUniqChar(s));
+                System.out.println(new FirstUniqueCharacter().firstUniqChar(s));
         }
 }

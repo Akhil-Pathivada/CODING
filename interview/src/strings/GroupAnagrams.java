@@ -17,19 +17,15 @@ import java.util.Map;
 
 public class GroupAnagrams {
         
-        static List<List<String>> groupAnagrams(String[] strs) {
-                
+        private List<List<String>> groupAnagrams(String[] strs) {
+                // base case
                 if (strs == null || strs.length == 0) {
                         return new ArrayList<>();
                 }
-                
                 Map<String, List<String>> map = new HashMap<>();
-                
                 for(String s : strs) {
-                        
                         // character array
                         char[] ca = new char[26];
-                        
                         for(char ch : s.toCharArray()) {
                                 ca[ch - 'a']++;
                         }
@@ -46,9 +42,7 @@ public class GroupAnagrams {
         }
         
         public static void main(String[] args) {
-                
                 String[] strs = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
-                
-                System.out.println("Grouped Anagrams : " + groupAnagrams(strs));
+                System.out.println("Grouped Anagrams : " + new GroupAnagrams().groupAnagrams(strs));
         }
 }

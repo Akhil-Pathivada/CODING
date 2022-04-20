@@ -45,8 +45,7 @@ public class MajorityElementII {
                 for(int num : nums) {
                         if(num == n1) {
                                 ++count1;
-                        }
-                        else if(num == n2) {
+                        } else if(num == n2) {
                                 ++count2;
                         }
                 }
