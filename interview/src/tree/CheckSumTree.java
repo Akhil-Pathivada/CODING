@@ -8,7 +8,7 @@ package tree;
 
 public class CheckSumTree {
         
-        private static int checkSumTree(TreeNode root) {
+        private int checkSumTree(TreeNode root) {
                 // base case
                 if(root == null) {
                         return 0;
@@ -28,14 +28,12 @@ public class CheckSumTree {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(26);
                 root.left = new TreeNode(10);
                 root.right = new TreeNode(3);
                 root.left.left = new TreeNode(4);
                 root.left.right = new TreeNode(6);
                 root.right.right=new TreeNode(3);
-        
-                System.out.println(checkSumTree(root) != -1 ? "YES" : " NO");
+                System.out.println(new CheckSumTree().checkSumTree(root) != -1 ? "YES" : " NO");
         }
 }

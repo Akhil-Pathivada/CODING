@@ -20,12 +20,10 @@ public class InvertBinaryTree {
                 // make left to point to right and vice versa
                 root.left = invertBinaryTree(root.right);
                 root.right = invertBinaryTree(tempLeft);
-                
                 return root;
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(4);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(7);
@@ -33,7 +31,6 @@ public class InvertBinaryTree {
                 root.left.right = new TreeNode(3);
                 root.right.left = new TreeNode(6);
                 root.right.right = new TreeNode(9);
-                
                 root.preOrder(new InvertBinaryTree().invertBinaryTree(root));
         }
 }

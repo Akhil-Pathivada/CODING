@@ -31,9 +31,7 @@ public class TopViewOfBinaryTree {
                 TreeMap<Integer, TreeNode> map = new TreeMap<>();
                 // insert the root into Queue
                 queue.add(new QueueObj(root, 0));
-                
                 while(!queue.isEmpty()) {
-                        
                         QueueObj tempObj = queue.poll();
                         // if node is the first one with the horizontal distance
                         if(!map.containsKey(tempObj.hd)) {
@@ -54,14 +52,12 @@ public class TopViewOfBinaryTree {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(1);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(3);
                 root.left.right = new TreeNode(4);
                 root.left.right.right = new TreeNode(5);
                 root.left.right.right.right = new TreeNode(6);
-                
                 new TopViewOfBinaryTree().printTopView(root);
         }
 }

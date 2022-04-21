@@ -12,22 +12,20 @@ import java.util.Queue;
 
 public class CheckCousins {
         
-        private static boolean checkCousins(TreeNode root, int x, int y) {
+        private boolean checkCousins(TreeNode root, int x, int y) {
                 // base case
                 if(root == null) {
                         return false;
                 }
                 Queue<TreeNode> queue = new LinkedList<>();
                 queue.offer(root);
-                
                 while(!queue.isEmpty()) {
                         // count nodes in current level
-                        int size =  queue.size();
+                        int size = queue.size();
                         boolean xExists = false;
                         boolean yExists = false;
                         // iterate over all nodes in current level
                         for(int i = 0; i < size; ++i) {
-                                
                                 TreeNode curr = queue.poll();
                                 // if x, y is found
                                 if(curr.data == x) {
@@ -61,13 +59,12 @@ public class CheckCousins {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(1);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(3);
                 root.left.left = new TreeNode(4);
                 root.right.left = new TreeNode(5);
                 int x = 4, y = 5;
-                System.out.println("Height of Binary Tree = " + checkCousins(root, x, y));
+                System.out.println("Height of Binary Tree = " + new CheckCousins().checkCousins(root, x, y));
         }
 }

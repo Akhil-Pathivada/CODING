@@ -31,9 +31,7 @@ public class BottomViewOfBinaryTree {
                 TreeMap<Integer, TreeNode> map = new TreeMap<>();
                 // insert the root into Queue
                 queue.add(new QueueObj(root, 0));
-                
                 while(!queue.isEmpty()) {
-                        
                         QueueObj tempObj = queue.poll();
                         // even if node exists for that hd or not update entry with current node
                         map.put(tempObj.hd, tempObj.node);
@@ -52,7 +50,6 @@ public class BottomViewOfBinaryTree {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(20);
                 root.left = new TreeNode(8);
                 root.right = new TreeNode(22);
@@ -62,8 +59,6 @@ public class BottomViewOfBinaryTree {
                 root.right.right = new TreeNode(25);
                 root.left.right.left = new TreeNode(10);
                 root.left.right.right = new TreeNode(14);
-        
-        
                 new BottomViewOfBinaryTree().printBottomView(root);
         }
 }
