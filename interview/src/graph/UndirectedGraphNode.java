@@ -1,7 +1,5 @@
 package graph;
 
-import com.sun.corba.se.impl.orbutil.graph.Graph;
-
 import java.util.*;
 
 public class UndirectedGraphNode {
@@ -44,14 +42,12 @@ public class UndirectedGraphNode {
                 visited.add(node.label);
                 queue.add(node);
                 while(!queue.isEmpty()) {
-                        
                         node = queue.poll();
                         System.out.print(node.label + ", ");
                         // iterate over all neighbours of a node
                         for(UndirectedGraphNode _node : node.neighbours) {
                                 // if node is visited first time : inser into Queue
                                 if(!visited.contains(_node.label)) {
-                                        
                                         visited.add(_node.label);
                                         queue.add(_node);
                                 }
