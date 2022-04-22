@@ -14,8 +14,7 @@ import java.util.Arrays;
 
 public class MergeSort {
         // Merges two subarrays of arr[]. First subarray is arr[p..q] Second subarray is arr[q+1..r]
-        private static void merge(int[] arr, int p, int q, int r) {
-                
+        private void merge(int[] arr, int p, int q, int r) {
                 int i, j;
                 // find sizes of two subarrays to be merged
                 int n1 = q - p + 1;
@@ -44,8 +43,7 @@ public class MergeSort {
                 }
         }
         
-        private static void sort(int[] arr, int p, int r) {
-                
+        private void sort(int[] arr, int p, int r) {
                 if(p < r) {
                         int q = (p + r) / 2;
                         // call sort on first and second halves
@@ -57,10 +55,9 @@ public class MergeSort {
         }
         
         public static void main(String args[]) {
-                
                 int arr[] = { 12, 11, 13, 5, 6, 7 };
                 System.out.println("Given Array" + Arrays.toString(arr));
-                sort(arr, 0, arr.length - 1);
+                new MergeSort().sort(arr, 0, arr.length - 1);
                 System.out.println("Sorted array" +  Arrays.toString(arr));
         }
 }

@@ -14,10 +14,8 @@ import java.util.Arrays;
 
 public class StockSpanProblemI {
         
-        private static void calculateSpan(int[] price, int[] stock, int n) {
-                
+        private void calculateSpan(int[] price, int[] stock, int n) {
                 for(int i = 0; i < n; ++i) {
-                       
                         int j = i - 1;
                         for( ; j >= 0 && price[j] <= price[i]; --j);
                         stock[i] = i - j - 1;
@@ -25,12 +23,10 @@ public class StockSpanProblemI {
         }
         
         public static void main(String[] args) {
-        
                 int price[] = {100, 80, 60, 70, 60, 75, 85};
                 int n = price.length;
                 int stock[] = new int[n];
-                
-                calculateSpan(price, stock, n);
+                new StockSpanProblemI().calculateSpan(price, stock, n);
                 System.out.println(Arrays.toString(stock));
         }
 }

@@ -15,13 +15,10 @@ import java.util.Stack;
 public class SpecialStackForGetMinimum {
         
         static int min = Integer.MAX_VALUE;
-        
         private static void push(Stack<Integer> stack, int value) {
-                // push element if it is bigger than min
-                if(value > min) {
-                   stack.push(value);
-                }
-                else { // update min
+                if(value > min) { // push element if it is bigger than min
+                        stack.push(value);
+                } else { // update min
                         stack.push(value - min);
                         min = value;
                 }
@@ -34,7 +31,6 @@ public class SpecialStackForGetMinimum {
                 }
                 // if popped element is minimum : update min and pop
                 if(stack.peek() <= -1) {
-                        
                         int temp = min;
                         min -= stack.pop();
                         return temp;
@@ -47,7 +43,6 @@ public class SpecialStackForGetMinimum {
         }
         
         public static void main(String[] args) {
-        
                 int[] nums = { 3, 2, 6, 1, 8, 5, 5, 5, 5 };
                 Stack<Integer> stack = new Stack<>();
                 // push elements into stack

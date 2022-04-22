@@ -14,8 +14,7 @@ import java.util.Arrays;
 
 public class InsertionSort {
         
-        private static void sort(int[] arr, int n) {
-                
+        private void sort(int[] arr, int n) {
                 int i, j, key;
                 // picking up all the elements;
                 for(i = 1; i < n; ++i) {
@@ -30,10 +29,9 @@ public class InsertionSort {
         }
         
         public static void main(String args[]) {
-                
                 int arr[] = { 12, 11, 13, 5, 6, 7 };
                 System.out.println("Given Array" + Arrays.toString(arr));
-                sort(arr, arr.length);
+                new InsertionSort().sort(arr, arr.length);
                 System.out.println("Sorted array" +  Arrays.toString(arr));
         }
 }

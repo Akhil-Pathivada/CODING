@@ -15,23 +15,15 @@ import java.util.Stack;
 
 public class PostfixEvaluationI {
         
-        private static int evaluatePostfix(String postfix) {
-        
+        private int evaluatePostfix(String postfix) {
                 Stack<Integer> stack = new Stack<>();
-                
                 for(char ch : postfix.toCharArray()) {
-                        // If the scanned character is an operand (number here), push it to the stack.
-                        if(Character.isDigit(ch)) {
+                        if(Character.isDigit(ch)) { // If the scanned character is an operand (number here), push it to the stack.
                                 stack.push(ch - '0');
-                        }
-                        //  If the scanned character is an operator, pop two
-                        // elements from stack apply the operator
-                        else {
+                        } else { //  If the scanned character is an operator, pop two elements from stack apply the operator
                                 int n1 = stack.pop();
                                 int n2 = stack.pop();
-                                
                                 switch(ch) {
-                                        
                                         case '+':
                                                 stack.push(n1 + n2);
                                                 break;
@@ -51,8 +43,7 @@ public class PostfixEvaluationI {
         }
         
         public static void main(String[] args) {
-        
                 String postfix = "231*+9-";
-                System.out.printf("postfix evaluation = %d", evaluatePostfix(postfix));
+                System.out.printf("postfix evaluation = %d", new PostfixEvaluationI().evaluatePostfix(postfix));
         }
 }

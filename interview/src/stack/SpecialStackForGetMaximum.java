@@ -12,13 +12,11 @@ import java.util.Stack;
 public class SpecialStackForGetMaximum {
         
         static int max = Integer.MIN_VALUE;
-        
         private static void push(Stack<Integer> stack, int value) {
                 // push element if it is bigger than max
                 if(value < max) {
                         stack.push(value);
-                }
-                else { // update max
+                } else { // update max
                         stack.push(max - value);
                         max = value;
                 }
@@ -31,7 +29,6 @@ public class SpecialStackForGetMaximum {
                 }
                 // if popped element is maximum : update max and pop
                 if(stack.peek() <= -1) {
-                        
                         int temp = max;
                         max += stack.pop();
                         return temp;
@@ -44,7 +41,6 @@ public class SpecialStackForGetMaximum {
         }
         
         public static void main(String[] args) {
-                
                 int[] nums = { 3, 2, 6, 1, 8, 5, 5, 5, 5 };
                 Stack<Integer> stack = new Stack<>();
                 // push elements into stack
