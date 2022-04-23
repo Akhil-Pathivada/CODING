@@ -11,8 +11,7 @@ package array;
 
 public class TwoRepeatingNumbers {
         
-        private static void printTwoRepeatingNumbers(int[] arr) {
-                
+        private void printTwoRepeatingNumbers(int[] arr) {
                 for(int i = 0; i < arr.length; ++i) {
                         // duplicate found
                         if(arr[Math.abs(arr[i])] < 0) {
@@ -25,9 +24,7 @@ public class TwoRepeatingNumbers {
         }
         
         public static void main(String[] args) {
-                
                 int[] arr = {1, 2, 4, 3, 1, 3};
-                
-                printTwoRepeatingNumbers(arr);
+                new TwoRepeatingNumbers().printTwoRepeatingNumbers(arr);
         }
 }
