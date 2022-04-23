@@ -16,11 +16,12 @@ import java.util.List;
 public class Permutations {
         
         private void backtrack(int[] nums, List<List<Integer>> result, List<Integer> ds) {
-                if(ds.size() == nums.length) {
+                // base case
+                if (ds.size() == nums.length) {
                         result.add(new ArrayList<>(ds));
                 } else {
-                        for(int i = 0; i < nums.length; ++i) {
-                                if(ds.contains(nums[i])) {
+                        for (int i = 0; i < nums.length; ++i) {
+                                if (ds.contains(nums[i])) {
                                         continue;
                                 }
                                 ds.add(nums[i]);
