@@ -12,11 +12,10 @@ package graph;
 
 public class MaxAreaOfIsland {
         
-        private static int m, n; // rows, columns
-        
-        private static int DFS(int[][] grid, int i, int j) {
+        private int m, n; // rows, columns
+        private int DFS(int[][] grid, int i, int j) {
                 // base case
-                if(i < 0 || j < 0 || i >= m || j >= n || grid[i][j] != 1) {
+                if (i < 0 || j < 0 || i >= m || j >= n || grid[i][j] != 1) {
                         return 0;
                 }
                 // mark the island as visited
@@ -25,17 +24,17 @@ public class MaxAreaOfIsland {
                 return 1 + DFS(grid, i + 1, j) + DFS(grid, i - 1, j) + DFS(grid, i, j + 1) + DFS(grid, i, j - 1);
         }
         
-        private static int maxArea(int[][] grid) {
+        private int maxArea(int[][] grid) {
                 m = grid.length;
                 if (m == 0) {
                         return 0;
                 }
                 n = grid[0].length;
                 int area = 0;
-                for(int i = 0; i < m; ++i) {
-                        for(int j = 0; j < n; ++j) {
+                for (int i = 0; i < m; ++i) {
+                        for (int j = 0; j < n; ++j) {
                                 // island found
-                                if(grid[i][j] == 1) {
+                                if (grid[i][j] == 1) {
                                         area = Math.max(area, DFS(grid, i, j));
                                 }
                         }
@@ -53,7 +52,7 @@ public class MaxAreaOfIsland {
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                         { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
                         { 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}};
-                System.out.printf("Max Area of Island = %d", maxArea(grid));
+                System.out.printf("Max Area of Island = %d", new MaxAreaOfIsland().maxArea(grid));
         }
         
 }

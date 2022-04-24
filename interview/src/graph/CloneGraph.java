@@ -8,15 +8,13 @@ import java.util.HashMap;
 
 public class CloneGraph extends UndirectedGraphNode {
         // tracks whether node is already cloned
-        private static HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
-        
-        private static UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-                
-                if(node == null) {
+        private HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
+        private UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+                if (node == null) {
                         return null;
                 }
                 // if the node is already formed in Clone graph
-                if(map.containsKey(node.label)) {
+                if (map.containsKey(node.label)) {
                         return map.get(node.label);
                 }
                 // create new node into Clone graph
@@ -24,7 +22,7 @@ public class CloneGraph extends UndirectedGraphNode {
                 // add into map
                 map.put(clone.label, clone);
                 // iterate over all its neighbours
-                for(UndirectedGraphNode neighbour : node.neighbours) {
+                for (UndirectedGraphNode neighbour : node.neighbours) {
                         clone.neighbours.add(cloneGraph(neighbour));
                 }
                 return clone;
@@ -46,8 +44,7 @@ public class CloneGraph extends UndirectedGraphNode {
                 graph[2].neighbours.add(graph[3]);
                 graph[3].neighbours.add(graph[1]);
                 graph[3].neighbours.add(graph[2]);
-        
                 System.out.print("Original Graph : "); new UndirectedGraphNode().DFS(graph[0]);
-                System.out.print("Cloned Graph : "); new UndirectedGraphNode().DFS(cloneGraph(graph[0]));
+                System.out.print("Cloned Graph : "); new UndirectedGraphNode().DFS(new CloneGraph().cloneGraph(graph[0]));
         }
 }

@@ -29,17 +29,17 @@ public class RottingOranges {
         
         private int orangesRotting(int[][] grid) {
                 int m = grid.length, n = grid[0].length;
-                for(int i = 0; i < m; ++i) {
-                        for(int j = 0; j < n; ++j) {
-                                if(grid[i][j] == 2) {
+                for (int i = 0; i < m; ++i) {
+                        for (int j = 0; j < n; ++j) {
+                                if (grid[i][j] == 2) {
                                         DFS(grid, i, j, m, n, 2);
                                 }
                         }
                 }
                 int minutes = 2;
-                for(int[] row : grid) {
-                        for(int cell : row) {
-                                if(cell == 1) { // if any orange remained unrotten
+                for (int[] row : grid) {
+                        for (int cell : row) {
+                                if (cell == 1) { // if any orange remained unrotten
                                         return -1;
                                 }
                                 // find out max minutes taken for an orange to rotten

@@ -11,23 +11,23 @@ import java.util.HashSet;
 
 public class ConnectedComponentsInUndirectedGraph {
         
-        private static void DFS(UndirectedGraphNode node, HashSet<Integer> visited) {
+        private void DFS(UndirectedGraphNode node, HashSet<Integer> visited) {
                 // Mark the current node as visited and print it
                 visited.add(node.label);
                 System.out.print(node.label + ", ");
                 // recur over all neighbours of a node recursively
-                for(UndirectedGraphNode _node : node.neighbours) {
-                        if(!visited.contains(_node.label)) {
+                for (UndirectedGraphNode _node : node.neighbours) {
+                        if (!visited.contains(_node.label)) {
                                 DFS(_node, visited);
                         }
                 }
         }
         
-        private static int connectedComponents(UndirectedGraphNode[] graph, int V) {
+        private int connectedComponents(UndirectedGraphNode[] graph, int V) {
                 int components = 0;
                 HashSet<Integer> visited = new HashSet<>();
-                for(int v = 0; v < V; ++v) {
-                        if(!visited.contains(v)) {
+                for (int v = 0; v < V; ++v) {
+                        if (!visited.contains(v)) {
                                 DFS(graph[v], visited);
                                 ++components;
                                 System.out.println();
@@ -52,6 +52,6 @@ public class ConnectedComponentsInUndirectedGraph {
                 graph[2].neighbours.add(graph[1]);
                 graph[3].neighbours.add(graph[4]);
                 graph[4].neighbours.add(graph[3]);
-                System.out.println("Number of connected components = " + connectedComponents(graph, V));
+                System.out.println("Number of connected components = " + new ConnectedComponentsInUndirectedGraph().connectedComponents(graph, V));
         }
 }
