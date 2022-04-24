@@ -20,11 +20,6 @@ public class DirectedGraphNode {
                 label = _label;
                 neighbours = new ArrayList<DirectedGraphNode>();
         }
-        
-        public DirectedGraphNode(int _label, ArrayList<DirectedGraphNode> _neighbours) {
-                label = _label;
-                neighbours = _neighbours;
-        }
         // Add Edge into the Graph Node
         protected void addEdge(DirectedGraphNode w) {
                 this.neighbours.add(w);
