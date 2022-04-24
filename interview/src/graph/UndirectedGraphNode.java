@@ -24,8 +24,8 @@ public class UndirectedGraphNode {
                 System.out.print(node.label + ", ");
                 visited.add(node.label);
                 // iterate over all neighbours of a node recursively
-                for(UndirectedGraphNode _node : node.neighbours) {
-                        if(!visited.contains(_node.label)) {
+                for (UndirectedGraphNode _node : node.neighbours) {
+                        if (!visited.contains(_node.label)) {
                                 DFSUtil(_node, visited);
                         }
                 }
@@ -41,13 +41,13 @@ public class UndirectedGraphNode {
                 Queue<UndirectedGraphNode> queue = new LinkedList<>();
                 visited.add(node.label);
                 queue.add(node);
-                while(!queue.isEmpty()) {
+                while (!queue.isEmpty()) {
                         node = queue.poll();
                         System.out.print(node.label + ", ");
                         // iterate over all neighbours of a node
-                        for(UndirectedGraphNode _node : node.neighbours) {
+                        for (UndirectedGraphNode _node : node.neighbours) {
                                 // if node is visited first time : inser into Queue
-                                if(!visited.contains(_node.label)) {
+                                if (!visited.contains(_node.label)) {
                                         visited.add(_node.label);
                                         queue.add(_node);
                                 }
