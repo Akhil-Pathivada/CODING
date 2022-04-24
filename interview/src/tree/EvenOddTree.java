@@ -16,6 +16,7 @@ import java.util.Queue;
 public class EvenOddTree {
         
         private boolean isEvenOdd(TreeNode root) {
+                // base case
                 if (root == null) {
                         return true;
                 }
