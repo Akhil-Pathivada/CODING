@@ -15,10 +15,10 @@ package array;
 
 public class MajorityElementI {
         
-        private static int getMajorityElement(int[] nums, int n) {
+        private int getMajorityElement(int[] nums, int n) {
                 int voter = -1, votes = 0;
-                for(int num : nums) {
-                        if(votes == 0) {
+                for (int num : nums) {
+                        if (votes == 0) {
                                 voter = num;
                                 votes = 1;
                         } else {
@@ -31,12 +31,12 @@ public class MajorityElementI {
                 }
                 // Checking if majority candidate occurs more than n/2 times
                 int count = 0;
-                for(int num : nums) {
-                        if(num == voter) {
+                for (int num : nums) {
+                        if (num == voter) {
                                 ++count;
                         }
                 }
-                if(count > n/2) {
+                if (count > n/2) {
                         return voter;
                 }
                 return -1;
@@ -44,6 +44,6 @@ public class MajorityElementI {
         
         public static void main(String[] args) {
                 int nums[] = { 1, 1, 1, 1, 2, 3, 4 };
-                System.out.println(" The majority element is : " + getMajorityElement(nums, nums.length));
+                System.out.println(" The majority element is : " + new MajorityElementI().getMajorityElement(nums, nums.length));
         }
 }

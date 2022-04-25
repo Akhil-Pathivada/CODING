@@ -13,26 +13,23 @@ package array;
 
 public class SubarraySumEqualsKII {
         
-        private static void subarraySum(int[] nums, int k) {
-                
+        private void subarraySum(int[] nums, int k) {
                 int n = nums.length, left = 0, sum = nums[0];
-                for(int right = 1; right < n; ++right) {
-                        
+                for (int right = 1; right < n; ++right) {
                         sum += nums[right];
                         // if subarray sum exceeded k : start a new subarray
-                        while(sum > k && left < right) {
+                        while (sum > k && left < right) {
                                 sum -= nums[left++];
                         }
                         // found
-                        if(sum == k) {
+                        if (sum == k) {
                                 System.out.printf("Sum found between indices %d and %d ", left, right);
                         }
                 }
         }
         
         public static void main(String[] args) {
-                
                 int nums[] = { 1, 5, 20, 3, 10, 4}, k = 33;
-                subarraySum(nums, k);
+                new SubarraySumEqualsKII().subarraySum(nums, k);
         }
 }

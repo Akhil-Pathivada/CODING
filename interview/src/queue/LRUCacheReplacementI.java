@@ -16,9 +16,7 @@ public class LRUCacheReplacementI {
         private final int CACHE_SIZE; // maximum capacity of cache
         private Deque<Integer> deque; // store keys of cache
         private HashSet<Integer> hashSet; // store references of key in cache
-        
         private LRUCacheReplacementI(int capacity) {
-        
                 CACHE_SIZE = capacity;
                 deque = new LinkedList<>();
                 hashSet = new HashSet<>(capacity);
@@ -26,14 +24,13 @@ public class LRUCacheReplacementI {
         // Refer the page within the LRU cache
         private void refer(int page) {
                 // if page not found && cache is full
-                if(!hashSet.contains(page)) {
-                        if(deque.size() == CACHE_SIZE) {
+                if (!hashSet.contains(page)) {
+                        if (deque.size() == CACHE_SIZE) {
                                 // remove least recently used page: it should be last
                                 int lru = deque.removeLast();
                                 hashSet.remove(lru);
                         }
-                }
-                else { /** The found page may not be always the last element, even if it's an intermediate
+                } else { /** The found page may not be always the last element, even if it's an intermediate
                  element that needs to be removed and added to the start of the Queue */
                         deque.remove(page);
                 }
@@ -42,16 +39,13 @@ public class LRUCacheReplacementI {
         }
         // display contents of cache
         private void displayCache() {
-                
                 Iterator<Integer> itr = deque.iterator();
                 while (itr.hasNext()) {
                         System.out.print(itr.next() + " ");
                 }
         }
         public static void main(String[] args) {
-                
                 LRUCacheReplacementI cache = new LRUCacheReplacementI(4);
-        
                 cache.refer(1);
                 cache.refer(2);
                 cache.refer(3);
@@ -61,7 +55,6 @@ public class LRUCacheReplacementI {
                 cache.refer(2);
                 cache.refer(2);
                 cache.refer(1);
-        
                 cache.displayCache();
         }
 }

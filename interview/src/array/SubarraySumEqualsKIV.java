@@ -14,14 +14,11 @@ import java.util.HashMap;
 
 public class SubarraySumEqualsKIV {
         
-        private static int subarraySum(int[] nums, int k) {
-                
-                int n = nums.length, sum = 0, result = 0;
+        private int subarraySum(int[] nums, int k) {
+                int sum = 0, result = 0;
                 HashMap<Integer, Integer> map = new HashMap<>();
                 map.put(0, 1);
-                
-                for(int num : nums) {
-                
+                for (int num : nums) {
                         sum += num;
                         result += map.getOrDefault(sum - k, 0);
                         map.put(sum, map.getOrDefault(sum, 0) + 1);
@@ -30,8 +27,7 @@ public class SubarraySumEqualsKIV {
         }
         
         public static void main(String[] args) {
-                
                 int nums[] = { 1, 5, 20, 3, 10, 4}, k = 33;
-                System.out.printf("Total subarrays with sum K = %d ", subarraySum(nums, k));
+                System.out.printf("Total subarrays with sum K = %d ", new SubarraySumEqualsKIV().subarraySum(nums, k));
         }
 }
