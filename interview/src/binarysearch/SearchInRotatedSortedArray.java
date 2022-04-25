@@ -11,8 +11,7 @@ package binarysearch;
 
 public class SearchInRotatedSortedArray {
         
-        private static int searchElement(int[] nums, int target) {
-        
+        private int searchElement(int[] nums, int target) {
                 int n = nums.length;
                 // base cases
                 if (n == 0) {
@@ -23,12 +22,10 @@ public class SearchInRotatedSortedArray {
                 // elements before and after pivot point are sorted.
                 // target will be in one of the sorted arrays
                 while (left < right) {
-                
                         int midpoint = left + (right - left) / 2;
                         if (nums[midpoint] >= nums[right]) {
                                 left = midpoint + 1;
-                        }
-                        else {
+                        } else {
                                 right = midpoint;
                         }
                 }
@@ -36,24 +33,20 @@ public class SearchInRotatedSortedArray {
                 int start = left;
                 right = n - 1; left = 0;
                 // check in which sorted array our target exists
-                if(target >= nums[start] && target <= nums[right]) {
+                if (target >= nums[start] && target <= nums[right]) {
                         left = start;
-                }
-                else {
+                } else {
                         right = start;
                 }
                 // binary search on the sorted array
-                while(left <= right) {
-                        
+                while (left <= right) {
                         int mid = (left + right) / 2;
                         // target found
-                        if(nums[mid] == target) {
+                        if (nums[mid] == target) {
                                 return mid;
-                        }
-                        else if(nums[mid] < target) {
+                        } else if(nums[mid] < target) {
                                 left = mid + 1;
-                        }
-                        else {
+                        } else {
                                 right = mid - 1;
                         }
                 }
@@ -61,9 +54,8 @@ public class SearchInRotatedSortedArray {
         }
         
         public static void main(String[] args) {
-                
                 int nums[] = { 4, 5, 6, 7, 0, 1, 2}, target = 1;
-                System.out.printf("Target : %d is found at index : %d ", target, searchElement(nums, target));
+                System.out.printf("Target : %d is found at index : %d ", target, new SearchInRotatedSortedArray().searchElement(nums, target));
         
         }
 }
