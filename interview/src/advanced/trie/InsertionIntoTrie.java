@@ -11,12 +11,12 @@ package advanced.trie;
 public class InsertionIntoTrie {
         
         // Method to insert every string into Trie
-        public static void insertStringIntoTrie(TrieNode root, String s) {
+        public void insertStringIntoTrie(TrieNode root, String s) {
                 TrieNode current = root;
                 // iterating over every character in string and forming trie
-                for(char c : s.toCharArray()) {
+                for (char c : s.toCharArray()) {
                         // if that character not exists
-                        if(current.trie[c] == null) {
+                        if (current.trie[c] == null) {
                                 current.trie[c] = new TrieNode();
                         }
                         current = current.trie[c];
@@ -29,8 +29,8 @@ public class InsertionIntoTrie {
                 String strs[] = { "gee", "geeks", "ape", "apple", "geeksforgeeks" };
                 TrieNode root = new TrieNode();
                 // insert the strings into Trie
-                for(String str : strs) {
-                        insertStringIntoTrie(root, str);
+                for (String str : strs) {
+                        new InsertionIntoTrie().insertStringIntoTrie(root, str);
                 }
         }
 }
