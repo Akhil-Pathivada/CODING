@@ -14,17 +14,16 @@ import java.util.PriorityQueue;
 
 public class ConnectNRopesMinimumCost {
         
-        private static int minCost(int[] arr, int n) {
+        private int minCost(int[] arr, int n) {
                 // create a min heap
                 PriorityQueue<Integer> minHeap = new PriorityQueue<>();
                 // adding items to the heap
-                for(int i : arr) {
+                for (int i : arr) {
                         minHeap.add(i);
                 }
                 // initialize result
                 int result = 0;
-                
-                while(minHeap.size() > 1) {
+                while (minHeap.size() > 1) {
                         // extract shortest two ropes from pq
                         int first = minHeap.poll();
                         int second = minHeap.poll();
@@ -36,8 +35,7 @@ public class ConnectNRopesMinimumCost {
         }
         
         public static void main(String[] args) {
-        
                 int arr[] = { 4, 3, 2, 6 };
-                System.out.println("Total cost for connecting ropes is = " + minCost(arr, arr.length));
+                System.out.println("Total cost for connecting ropes is = " + new ConnectNRopesMinimumCost().minCost(arr, arr.length));
         }
 }

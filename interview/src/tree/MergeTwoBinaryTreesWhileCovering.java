@@ -9,11 +9,11 @@ package tree;
 public class MergeTwoBinaryTreesWhileCovering extends TreeNode {
         
         private static TreeNode mergeTwoBinaryTrees(TreeNode t1, TreeNode t2) {
-                
-                if(t1 == null) {
+                // base case
+                if (t1 == null) {
                         return t2;
                 }
-                if(t2 == null) {
+                if (t2 == null) {
                         return t1;
                 }
                 t1.data += t2.data;
