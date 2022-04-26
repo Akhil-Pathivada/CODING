@@ -10,15 +10,15 @@ public class AncestorsOfBinaryTreeNode {
         
         private boolean printAncestors(TreeNode root, int target) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return false;
                 }
                 // if target found
-                if(root.data == target) {
+                if (root.data == target) {
                         return true;
                 }
                 // if target exists in left or right subtree, current node becomes an ancestor
-                if(printAncestors(root.left, target) || printAncestors(root.right, target)) {
+                if (printAncestors(root.left, target) || printAncestors(root.right, target)) {
                         // print ancestor
                         System.out.println(root.data);
                         return true;
@@ -27,7 +27,6 @@ public class AncestorsOfBinaryTreeNode {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(1);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(3);
