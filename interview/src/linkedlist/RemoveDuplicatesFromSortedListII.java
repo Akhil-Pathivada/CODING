@@ -12,8 +12,7 @@ package linkedlist;
 
 public class RemoveDuplicatesFromSortedListII {
         
-        private static LinkedListNode removeDuplicates(LinkedListNode head) {
-                
+        private LinkedListNode removeDuplicates(LinkedListNode head) {
                 LinkedListNode curr, prev, dummy;
                 dummy = new LinkedListNode(0);
                 curr = dummy.next = head;
@@ -23,10 +22,9 @@ public class RemoveDuplicatesFromSortedListII {
                         while (curr.next != null && curr.data == curr.next.data) {
                                 curr = curr.next;
                         }
-                        if(prev.next == curr) { // duplicate not found for current element
+                        if (prev.next == curr) { // duplicate not found for current element
                                 prev = prev.next;
-                        }
-                        else { // duplicate found for current element
+                        } else { // duplicate found for current element
                                 prev.next = curr.next;
                         }
                         curr = curr.next;
@@ -35,12 +33,11 @@ public class RemoveDuplicatesFromSortedListII {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(1);
                 head.next.next = new LinkedListNode(2);
                 head.next.next.next = new LinkedListNode(3);
                 head.next.next.next.next = new LinkedListNode(3);
-                head.printLinkedList(removeDuplicates(head));
+                head.printLinkedList(new RemoveDuplicatesFromSortedListII().removeDuplicates(head));
         }
 }

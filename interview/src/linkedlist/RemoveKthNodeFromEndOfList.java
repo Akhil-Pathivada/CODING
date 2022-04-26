@@ -9,18 +9,17 @@ package linkedlist;
 
 public class RemoveKthNodeFromEndOfList {
         
-        private static LinkedListNode removeKthNodeFromEnd(LinkedListNode head, int K) {
-                
+        private LinkedListNode removeKthNodeFromEnd(LinkedListNode head, int K) {
                 // create dummy pointer and maintain it before head
                 LinkedListNode start = new LinkedListNode(0);
                 start.next = head;
                 LinkedListNode slow = start, fast = start;
                 // move fast in front so that the gap between slow and fast becomes n
-                for(int i = 0; i <= K; ++i) {
+                for (int i = 0; i <= K; ++i) {
                         fast = fast.next;
                 }
                 // move fast to the end, maintaining the gap
-                while(fast != null) {
+                while (fast != null) {
                         slow = slow.next;
                         fast = fast.next;
                 }
@@ -30,7 +29,6 @@ public class RemoveKthNodeFromEndOfList {
         }
         
         public static void main(String[] args) {
-        
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);
@@ -38,6 +36,6 @@ public class RemoveKthNodeFromEndOfList {
                 head.next.next.next.next = new LinkedListNode(5);
                 head.next.next.next.next.next = new LinkedListNode(6);
                 int K = 4;
-                head.printLinkedList(removeKthNodeFromEnd(head, K));
+                head.printLinkedList(new RemoveKthNodeFromEndOfList().removeKthNodeFromEnd(head, K));
         }
 }

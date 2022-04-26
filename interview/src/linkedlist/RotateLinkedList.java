@@ -9,28 +9,27 @@ package linkedlist;
 
 public class RotateLinkedList {
         
-        private static LinkedListNode rotateRight(LinkedListNode head, int k) {
-                
+        private LinkedListNode rotateRight(LinkedListNode head, int k) {
                 // base case
-                if(head == null) {
+                if (head == null) {
                         return null;
                 }
                 int length  = 1;
                 LinkedListNode tail = head;
                 // get the tail pointer
-                while(tail.next != null) {
+                while (tail.next != null) {
                         ++length;
                         tail = tail.next;
                 }
                 // even if k > length, calculate how many rotations needed exactly
                 k %= length;
                 // if k == 0 or k == length of list
-                if(k == 0) {
+                if (k == 0) {
                         return head;
                 }
                 LinkedListNode current = head;
                 // traverse till the node before the new head
-                for(int i = 0; i < length - k - 1; ++i) {
+                for (int i = 0; i < length - k - 1; ++i) {
                         current = current.next;
                 }
                 // point the new head
@@ -43,7 +42,6 @@ public class RotateLinkedList {
         }
         
         public static void main(String[] args) {
-        
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);
@@ -52,6 +50,6 @@ public class RotateLinkedList {
                 head.next.next.next.next.next = new LinkedListNode(6);
                 // no. of rotations
                 int k = 10;
-                head.printLinkedList(rotateRight(head, k));
+                head.printLinkedList(new RotateLinkedList().rotateRight(head, k));
         }
 }

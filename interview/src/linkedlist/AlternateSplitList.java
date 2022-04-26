@@ -12,7 +12,7 @@ public class AlternateSplitList {
                 LinkedListNode head1, head2;
                 head1 = head;
                 head2 = head.next;
-                while(head != null) {
+                while (head != null) {
                         LinkedListNode temp = head.next;
                         head.next = temp != null ? temp.next : temp;
                         head = temp;

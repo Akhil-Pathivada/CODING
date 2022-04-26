@@ -14,12 +14,12 @@ public class CheckPalindromeI {
                 LinkedListNode curr = head;
                 Stack<Integer> stack = new Stack<>();
                 // push all elements into stack
-                while(curr != null) {
+                while (curr != null) {
                         stack.push(curr.data);
                         curr = curr.next;
                 }
                 // if it is palindrome, always the poppped element is equal to current element
-                for(curr = head; curr != null; curr = curr.next) {
+                for (curr = head; curr != null; curr = curr.next) {
                         if(stack.pop() != curr.data) {
                                 return false;
                         }

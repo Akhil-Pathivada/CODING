@@ -20,11 +20,10 @@ public class RemoveElementK {
                 LinkedListNode curr = new LinkedListNode(0);
                 LinkedListNode dummy = curr;
                 curr.next = head;
-                while(curr.next != null) {
-                        if(curr.next.data == k) {
+                while (curr.next != null) {
+                        if (curr.next.data == k) {
                                 curr.next = curr.next.next;
-                        }
-                        else {
+                        } else {
                                 curr = curr.next;
                         }
                 }

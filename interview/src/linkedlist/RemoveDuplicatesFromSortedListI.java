@@ -12,14 +12,12 @@ package linkedlist;
 
 public class RemoveDuplicatesFromSortedListI {
         
-        private static LinkedListNode removeDuplicates(LinkedListNode head) {
-                
+        private LinkedListNode removeDuplicates(LinkedListNode head) {
                 LinkedListNode curr = head;
                 while (curr != null) {
-                        if(curr.next != null && curr.data == curr.next.data) {
+                        if (curr.next != null && curr.data == curr.next.data) {
                                 curr.next = curr.next.next;
-                        }
-                        else {
+                        } else {
                                 curr = curr.next;
                         }
                 }
@@ -27,12 +25,11 @@ public class RemoveDuplicatesFromSortedListI {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(1);
                 head.next.next = new LinkedListNode(2);
                 head.next.next.next = new LinkedListNode(3);
                 head.next.next.next.next = new LinkedListNode(3);
-                head.printLinkedList(removeDuplicates(head));
+                head.printLinkedList(new RemoveDuplicatesFromSortedListI().removeDuplicates(head));
         }
 }

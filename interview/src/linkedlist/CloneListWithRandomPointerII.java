@@ -9,7 +9,6 @@ package linkedlist;
 public class CloneListWithRandomPointerII {
         
         static class LinkedListNode {
-                
                 int data;
                 LinkedListNode next, random;
                 // initialize a node with value and next, random pointer
@@ -25,9 +24,8 @@ public class CloneListWithRandomPointerII {
         }
         
         private static LinkedListNode alternateSplitList(LinkedListNode head) {
-                
                 LinkedListNode clonedListHead = head.next;
-                while(head != null) {
+                while (head != null) {
                         LinkedListNode temp = head.next;
                         head.next = temp != null ? temp.next : temp;
                         head = temp;
@@ -36,25 +34,22 @@ public class CloneListWithRandomPointerII {
         }
         
         private static void setRandomPointers(LinkedListNode current) {
-                
                 // set cloned list's node random pointer
-                while(current != null) {
+                while (current != null) {
                         current.next.random = current.random.next;
                         current = current.next.next;
                 }
         }
         
         private static LinkedListNode cloneList(LinkedListNode head) {
-                
                 LinkedListNode originalCurr;
                 originalCurr = head;
                 // create new node and copy contents of current node into that and make it as it's next
-                while(originalCurr != null) {
+                while (originalCurr != null) {
                         LinkedListNode temp = new LinkedListNode(originalCurr.data);
                         temp.next = originalCurr.next;
                         originalCurr.next = temp;
                         originalCurr = temp.next;
-                        
                 }
                 // set the random pointers of cloned list
                 setRandomPointers(head);
@@ -64,7 +59,6 @@ public class CloneListWithRandomPointerII {
         }
         
         public static void main(String[] args) {
-                
                 CloneListWithRandomPointerII obj = new CloneListWithRandomPointerII();
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);

@@ -13,16 +13,16 @@ public class IntersectionOfTwoListsI {
                 int lenA = headA.lengthOfLinkedList(headA);
                 int lenB = headB.lengthOfLinkedList(headB);
                 // move headA and headB to the same start point
-                while(lenA > lenB) {
+                while (lenA > lenB) {
                         headA = headA.next;
                         --lenA;
                 }
-                while(lenB > lenA) {
+                while (lenB > lenA) {
                         headB = headB.next;
                         --lenB;
                 }
                 // find the intersection until end
-                while(headA != headB) {
+                while (headA != headB) {
                         headA = headA.next;
                         headB = headB.next;
                 }

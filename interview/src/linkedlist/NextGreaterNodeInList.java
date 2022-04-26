@@ -14,17 +14,16 @@ import java.util.Stack;
 
 public class NextGreaterNodeInList {
         
-        private static int[] nextGreaterNodes(LinkedListNode head) {
-                
+        private int[] nextGreaterNodes(LinkedListNode head) {
                 List<Integer> A = new ArrayList<>();
                 // store elements into list
-                for(LinkedListNode curr = head; curr != null; curr = curr.next) {
+                for (LinkedListNode curr = head; curr != null; curr = curr.next) {
                         A.add(curr.data);
                 }
                 int result[] = new int[A.size()];
                 Stack<Integer> stack = new Stack<>();
                 // traverse list from start
-                for(int i = 0; i < A.size(); ++i) {
+                for (int i = 0; i < A.size(); ++i) {
                         // when a greater node occurs pop elements from stack: current node becomes Greater node for the popped elements
                         while (!stack.isEmpty() && A.get(i) > A.get(stack.peek())) {
                                 result[stack.pop()] = A.get(i);
@@ -36,13 +35,12 @@ public class NextGreaterNodeInList {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode head = new LinkedListNode(3);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(4);
                 head.next.next.next = new LinkedListNode(2);
                 head.next.next.next.next = new LinkedListNode(7);
                 head.next.next.next.next.next = new LinkedListNode(5);
-                System.out.println(Arrays.toString(nextGreaterNodes(head)));
+                System.out.println(Arrays.toString(new NextGreaterNodeInList().nextGreaterNodes(head)));
         }
 }

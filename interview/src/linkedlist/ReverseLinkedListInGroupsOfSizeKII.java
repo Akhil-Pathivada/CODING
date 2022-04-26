@@ -11,29 +11,27 @@ import java.util.Stack;
 
 public class ReverseLinkedListInGroupsOfSizeKII {
         
-        private static LinkedListNode reverseKNodes(LinkedListNode head, int k) {
-                
+        private LinkedListNode reverseKNodes(LinkedListNode head, int k) {
                 // base case
-                if(head == null) {
+                if (head == null) {
                         return null;
                 }
                 Stack<LinkedListNode> stack = new Stack<LinkedListNode>();
                 LinkedListNode current = head, prev = null;
-                while(current != null) {
+                while (current != null) {
                         // Terminate the loop whichever comes first either current == NULL or count >= k
-                        for(int count = 1; count <= k && current != null; ++count) {
+                        for (int count = 1; count <= k && current != null; ++count) {
                                 stack.push(current);
                                 current = current.next;
                         }
                         // Now pop the elements of stack one by one
-                        while(!stack.isEmpty()) {
+                        while (!stack.isEmpty()) {
                                 LinkedListNode temp = stack.pop();
                                 // If result list has not been started yet.
-                                if(prev == null) {
+                                if (prev == null) {
                                         prev = temp;
                                         head = prev;
-                                }
-                                else {
+                                } else {
                                         prev.next = temp;
                                         prev = temp;
                                 }
@@ -45,7 +43,6 @@ public class ReverseLinkedListInGroupsOfSizeKII {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);
@@ -56,6 +53,6 @@ public class ReverseLinkedListInGroupsOfSizeKII {
                 head.next.next.next.next.next.next.next = new LinkedListNode(8);
                 head.next.next.next.next.next.next.next.next = new LinkedListNode(9);
                 int k = 3;
-                head.printLinkedList(reverseKNodes(head, 3));
+                head.printLinkedList(new ReverseLinkedListInGroupsOfSizeKII().reverseKNodes(head, 3));
         }
 }

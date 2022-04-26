@@ -9,16 +9,15 @@ package linkedlist;
 
 public class ReverseLinkedListInGroupsOfSizeKI {
         
-        private static LinkedListNode reverseKNodes(LinkedListNode head, int k) {
-                
+        private LinkedListNode reverseKNodes(LinkedListNode head, int k) {
                 // base case
-                if(head == null) {
+                if (head == null) {
                         return null;
                 }
                 LinkedListNode current = head;
                 LinkedListNode prev = null, next = null;
                 // Reverse first k nodes of linked list
-                for(int count = 1; count <= k && current != null; ++count) {
+                for (int count = 1; count <= k && current != null; ++count) {
                         next = current.next;
                         current.next = prev;
                         prev = current;
@@ -28,7 +27,7 @@ public class ReverseLinkedListInGroupsOfSizeKI {
                 Recursively call for the list starting from
                 current. And make rest of the list as next of
                 first node */
-                if(next != null) {
+                if (next != null) {
                         head.next = reverseKNodes(next, k);
                 }
                 // prev is now head of input list
@@ -36,7 +35,6 @@ public class ReverseLinkedListInGroupsOfSizeKI {
         }
         
         public static void main(String[] args) {
-                
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);
@@ -47,6 +45,6 @@ public class ReverseLinkedListInGroupsOfSizeKI {
                 head.next.next.next.next.next.next.next = new LinkedListNode(8);
                 head.next.next.next.next.next.next.next.next = new LinkedListNode(9);
                 int k = 3;
-                head.printLinkedList(reverseKNodes(head, 3));
+                head.printLinkedList(new ReverseLinkedListInGroupsOfSizeKI().reverseKNodes(head, 3));
         }
 }

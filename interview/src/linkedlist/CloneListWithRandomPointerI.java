@@ -12,7 +12,6 @@ import java.util.Map;
 public class CloneListWithRandomPointerI {
         
         static class LinkedListNode {
-                
                 int data;
                 LinkedListNode next, random;
                 // initialize a node with value and next, random pointer
@@ -21,14 +20,13 @@ public class CloneListWithRandomPointerI {
                         next = random = null;
                 }
                 private void printList(LinkedListNode head) {
-                        for( ; head != null; head = head.next) {
+                        for ( ; head != null; head = head.next) {
                                 System.out.println(head.data + ", " + head.random.data);
                         }
                 }
         }
         
         private static LinkedListNode cloneList(LinkedListNode head) {
-                
                 // maintain two pointers, one of them should point to original list
                 LinkedListNode originalCurr, clonedCurr;
                 originalCurr = head;
@@ -42,7 +40,7 @@ public class CloneListWithRandomPointerI {
                 }
                 originalCurr = head;
                 // copy contents of old node's into new node
-                while(originalCurr != null) {
+                while (originalCurr != null) {
                         clonedCurr = hashMap.get(originalCurr);
                         clonedCurr.next = hashMap.get(originalCurr.next);
                         clonedCurr.random = hashMap.get(originalCurr.random);
@@ -52,9 +50,7 @@ public class CloneListWithRandomPointerI {
         }
         
         public static void main(String[] args) {
-                
                 CloneListWithRandomPointerI obj = new CloneListWithRandomPointerI();
-                
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);
                 head.next.next = new LinkedListNode(3);

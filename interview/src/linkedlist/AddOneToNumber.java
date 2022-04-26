@@ -12,10 +12,9 @@ package linkedlist;
 
 public class AddOneToNumber {
         
-        private static LinkedListNode reverse(LinkedListNode head) {
-                
+        private LinkedListNode reverse(LinkedListNode head) {
                 LinkedListNode curr = head, prev = null, next;
-                while(curr != null) {
+                while (curr != null) {
                         next = curr.next;
                         curr.next = prev;
                         prev = curr;
@@ -24,34 +23,32 @@ public class AddOneToNumber {
                 return prev;
         }
         
-        private static LinkedListNode addOne(LinkedListNode head) {
-                
+        private LinkedListNode addOne(LinkedListNode head) {
                 head = reverse(head);
                 LinkedListNode curr = head, prev = null;
                 int carry = 1;
-                while(curr != null) {
+                while (curr != null) {
                         int sum = carry + curr.data;
                         carry = sum / 10;
                         curr.data = sum % 10;
                         prev = curr;
                         curr = curr.next;
-                        if(carry == 0) {
+                        if (carry == 0) {
                                 break;
                         }
                 }
-                if(carry == 1) {
+                if (carry == 1) {
                         prev.next = new LinkedListNode(1);
                 }
                 return reverse(head);
         }
         
         public static void main(String[] args) {
-        
                 LinkedListNode head = new LinkedListNode(9);
                 head.next = new LinkedListNode(9);
                 head.next.next = new LinkedListNode(9);
                 head.next.next.next = new LinkedListNode(9);
-                head = addOne(head);
+                head = new AddOneToNumber().addOne(head);
                 head.printLinkedList(head);
         }
 }

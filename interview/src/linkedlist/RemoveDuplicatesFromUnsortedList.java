@@ -14,19 +14,16 @@ import java.util.HashSet;
 
 public class RemoveDuplicatesFromUnsortedList {
         
-        private static LinkedListNode removeDuplicates(LinkedListNode head) {
-                
+        private LinkedListNode removeDuplicates(LinkedListNode head) {
                 LinkedListNode prev, curr;
                 prev = curr = head;
                 // Hash to store seen values
                 HashSet<Integer> hashSet = new HashSet<>();
-                
                 while (curr != null) {
                         // If current value is seen before
-                        if(hashSet.contains(curr.data)) {
+                        if (hashSet.contains(curr.data)) {
                                 prev.next = curr.next;
-                        }
-                        else {
+                        } else {
                                 hashSet.add(curr.data);
                                 prev = curr;
                         }
@@ -36,7 +33,6 @@ public class RemoveDuplicatesFromUnsortedList {
         }
         
         public static void main(String[] args) {
-        
                 LinkedListNode head = new LinkedListNode(10);
                 head.next = new LinkedListNode(12);
                 head.next.next = new LinkedListNode(11);
@@ -44,6 +40,6 @@ public class RemoveDuplicatesFromUnsortedList {
                 head.next.next.next.next = new LinkedListNode(12);
                 head.next.next.next.next.next = new LinkedListNode(11);
                 head.next.next.next.next.next.next = new LinkedListNode(10);
-                head.printLinkedList(removeDuplicates(head));
+                head.printLinkedList(new RemoveDuplicatesFromUnsortedList().removeDuplicates(head));
         }
 }

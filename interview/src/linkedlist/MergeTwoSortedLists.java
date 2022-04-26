@@ -13,8 +13,8 @@ public class MergeTwoSortedLists {
                 LinkedListNode dummy = new LinkedListNode();
                 LinkedListNode curr = dummy;
                 // iterate till one of the lists is empty
-                while(list1 != null && list2 != null) {
-                        if(list1.data <= list2.data) {
+                while (list1 != null && list2 != null) {
+                        if (list1.data <= list2.data) {
                                 curr.next = list1;
                                 list1 = list1.next;
                         } else {

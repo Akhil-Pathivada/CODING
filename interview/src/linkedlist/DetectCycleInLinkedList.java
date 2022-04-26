@@ -17,7 +17,7 @@ public class DetectCycleInLinkedList {
                         slowPtr = slowPtr.next;
                         fastPtr = fastPtr.next.next;
                         // cycle is found
-                        if(slowPtr == fastPtr) {
+                        if (slowPtr == fastPtr) {
                                 return true;
                         }
                 }

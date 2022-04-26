@@ -12,7 +12,7 @@ public class MiddleNodeOfList {
         private int getMiddleNodeOfList(LinkedListNode head) {
                 LinkedListNode slow, fast;
                 slow = fast = head;
-                while(fast != null && fast.next != null) {
+                while (fast != null && fast.next != null) {
                         slow = slow.next;
                         fast = fast.next.next;
                 }

@@ -12,7 +12,7 @@ public class CheckPalindromeII {
                 LinkedListNode prev, curr, nextPtr;
                 prev = null;
                 curr = head;
-                while(curr != null) {
+                while (curr != null) {
                         nextPtr = curr.next;
                         curr.next = prev;
                         prev = curr;
@@ -25,19 +25,19 @@ public class CheckPalindromeII {
                 LinkedListNode slow, fast;
                 slow = fast = head;
                 // get middle of list
-                while(fast != null && fast.next != null) {
+                while (fast != null && fast.next != null) {
                         slow = slow.next;
                         fast = fast.next.next;
                 }
                 // odd nodes: let right half smaller
-                if(fast != null) {
+                if (fast != null) {
                         slow = slow.next;
                 }
                 slow = reverseList(slow);
                 fast = head;
                 // slow pointer will reach to end first
-                while(slow != null) {
-                        if(slow.data != fast.data) {
+                while (slow != null) {
+                        if (slow.data != fast.data) {
                                 return false;
                         }
                         slow = slow.next;

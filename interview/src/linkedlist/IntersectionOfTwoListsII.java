@@ -12,7 +12,7 @@ public class IntersectionOfTwoListsII {
         private int getIntersectionNode(LinkedListNode headA, LinkedListNode headB) {
                 LinkedListNode a = headA, b = headB;
                 //if a & b have different len, then we will stop the loop after second iteration
-                while(a != b) {
+                while (a != b) {
                         // for the end of first iteration, we just reset the pointer to the head of another linkedlist
                         a = (a == null) ? headB : a.next;
                         b = (b == null) ? headA : b.next;
