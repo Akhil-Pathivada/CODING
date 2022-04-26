@@ -12,16 +12,16 @@ package array;
 
 public class MaximumSumSubarrayII {
         
-        private static void maxSubArraySum(int[] arr) {
+        private void maxSubArraySum(int[] arr) {
                 int n = arr.length, maxSum = Integer.MIN_VALUE;
                 int start = -1, end = -1;
                 int sumArray[] = new int[n];
                 // compute the cummulative sum at every element
                 sumArray[0] = arr[0];
-                for(int i = 1; i < n; ++i) {
+                for (int i = 1; i < n; ++i) {
                         sumArray[i] = sumArray[i - 1] + arr[i];
                 }
-                for(int i = 0; i < n; ++i) {
+                for (int i = 0; i < n; ++i) {
                         // update max sum
                         if(sumArray[i] > maxSum) {
                                 maxSum = sumArray[i];
@@ -29,14 +29,14 @@ public class MaximumSumSubarrayII {
                                 end = i;
                         }
                 }
-                for(int i = 1; i < n; ++i) {
+                for (int i = 1; i < n; ++i) {
                         int prevSum = sumArray[i - 1];
                         // find out all subarrays
-                        for(int j = i; j < n; ++j) {
+                        for (int j = i; j < n; ++j) {
                                 // sum of current subarray
                                 int sum =  sumArray[j] - prevSum;
                                 // update max sum
-                                if(sum > maxSum) {
+                                if (sum > maxSum) {
                                         maxSum = sum;
                                         start = i;
                                         end = j;
@@ -48,6 +48,6 @@ public class MaximumSumSubarrayII {
         
         public static void main(String[] args) {
                 int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3};
-                maxSubArraySum(arr);
+                new MaximumSumSubarrayII().maxSubArraySum(arr);
         }
 }

@@ -13,15 +13,12 @@ package array;
 
 public class LeadersInArray {
         
-        private static void leaders(int[] arr) {
-                
+        private void leaders(int[] arr) {
                 int n = arr.length;
                 int maxOnRight = arr[n - 1];
                 System.out.println(maxOnRight);
-                
-                for(int i = n - 2; i >= 0; --i) {
-                        
-                        if(arr[i] >= maxOnRight) {
+                for (int i = n - 2; i >= 0; --i) {
+                        if (arr[i] >= maxOnRight) {
                                 maxOnRight = arr[i];
                                 System.out.println(arr[i]);
                         }
@@ -29,8 +26,7 @@ public class LeadersInArray {
         }
         
         public static void main(String[] args) {
-        
                 int[] arr = { 16, 17, 4, 3, 5, 2 };
-                leaders(arr);
+                new LeadersInArray().leaders(arr);
         }
 }

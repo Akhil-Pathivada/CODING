@@ -14,10 +14,10 @@ public class MissingElement {
         
         private int find(int[] arr1, int[] arr2) {
                 int result = 0;
-                for(int num : arr1) {
+                for (int num : arr1) {
                         result ^= num;
                 }
-                for(int num : arr2) {
+                for (int num : arr2) {
                         result ^= num;
                 }
                 return result;

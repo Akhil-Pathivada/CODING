@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class RotateArray {
         
         private void reverse(int[] nums, int left, int right) {
-                while(left <= right) {
+                while (left <= right) {
                         int temp = nums[left];
                         nums[left] = nums[right];
                         nums[right] = temp;
@@ -26,7 +26,7 @@ public class RotateArray {
         private void rotateRight(int[] nums, int k, int n) {
                 k = k % n;
                 // if k == n
-                if(k == 0) {
+                if (k == 0) {
                         return;
                 }
                 // reverse entire array

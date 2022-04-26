@@ -15,13 +15,12 @@ public class FindPivotIndex {
         private int findPivotIndex(int[] nums) {
                 int n = nums.length, sum = 0, leftSum = 0;
                 // compute total sum of array
-                for(int i = 0; i < n; ++i) {
+                for (int i = 0; i < n; ++i) {
                         sum += nums[i];
                 }
-                for(int i = 0; i < n; ++i){
+                for (int i = 0; i < n; ++i){
                         sum -= nums[i];
-                        // found
-                        if(leftSum == sum){
+                        if(leftSum == sum){ // found
                                 return i;
                         }
                         leftSum += nums[i];

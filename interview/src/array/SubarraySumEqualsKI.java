@@ -20,11 +20,11 @@ public class SubarraySumEqualsKI {
                         for (int j = i; j < n; ++j) {
                                 sum += nums[j];
                                 // if subarray sum exceeded k : start a new subarray
-                                if(sum > k) {
+                                if (sum > k) {
                                         break;
                                 }
                                 // found
-                                if(sum == k) {
+                                if (sum == k) {
                                         System.out.printf("Sum found between indices %d and %d ", i, j);
                                 }
                         }
