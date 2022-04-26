@@ -10,13 +10,13 @@ public class LowestCommonAncestorInBinaryTree {
         
         private TreeNode getLCA(TreeNode root, TreeNode n1, TreeNode n2) {
                 //  base case
-                if(root == null) {
+                if (root == null) {
                         return null;
                 }
                 // If either n1 or n2 matches with root's key, report
                 //  the presence by returning root (Note that if a key is
                 // ancestor of other, then the ancestor key becomes LCA
-                if(root == n1 || root == n2) {
+                if (root == n1 || root == n2) {
                         return root;
                 }
                 // Look for both nodes in left and right subtrees
@@ -25,7 +25,7 @@ public class LowestCommonAncestorInBinaryTree {
                 // If both of the above calls return Non-NULL, then one key
                 // is present in one subtree and other is present in other,
                 // So this node is the LCA
-                if(left != null && right != null) {
+                if (left != null && right != null) {
                         return root;
                 }
                 // Otherwise check if left subtree or right subtree is LCA

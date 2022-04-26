@@ -17,12 +17,12 @@ public class VerticalOrderTraversalOfBinaryTreeII {
         
         private void getVerticalOrder(TreeNode root, int hd, TreeMap<Integer, Vector<Integer>> map) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return;
                 }
                 Vector<Integer> nodes = map.get(hd);
                 // if there is no entry for this hd
-                if(nodes == null) {
+                if (nodes == null) {
                         nodes = new Vector<>();
                 }
                 // add root data into list
@@ -40,7 +40,7 @@ public class VerticalOrderTraversalOfBinaryTreeII {
                 int hd = 0; // horizontal distance
                 getVerticalOrder(root, hd, map);
                 // printing the values of TreeMap
-                for(Map.Entry<Integer, Vector<Integer>> entry : map.entrySet()) {
+                for (Map.Entry<Integer, Vector<Integer>> entry : map.entrySet()) {
                         System.out.println(entry.getValue());
                 }
         }

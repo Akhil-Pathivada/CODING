@@ -11,14 +11,14 @@ public class ValidateBST {
         private TreeNode prev = null;
         private boolean isValidBST(TreeNode root) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return true;
                 }
                 // do inorder traversal
-                if(!isValidBST(root.left)) {
+                if (!isValidBST(root.left)) {
                         return false;
                 }
-                if(prev != null && root.data < prev.data) {
+                if (prev != null && root.data < prev.data) {
                         return false;
                 }
                 prev = root;

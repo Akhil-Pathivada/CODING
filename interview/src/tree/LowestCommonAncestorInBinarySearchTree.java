@@ -11,10 +11,10 @@ public class LowestCommonAncestorInBinarySearchTree {
         
         private TreeNode getRecursiveLCA(TreeNode root, TreeNode n1, TreeNode n2) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return null;
                 }
-                if(root.data > n1.data && root.data > n2.data) { // If both n1 and n2 are smaller than root, then LCA lies in left
+                if (root.data > n1.data && root.data > n2.data) { // If both n1 and n2 are smaller than root, then LCA lies in left
                         return getRecursiveLCA(root.left, n1, n2);
                 } else if(root.data < n1.data && root.data < n2.data) { // If both n1 and n2 are greater than root, then LCA lies in right
                         return getRecursiveLCA(root.right, n1, n2);
@@ -23,8 +23,8 @@ public class LowestCommonAncestorInBinarySearchTree {
         }
         
         private TreeNode getIterativeLCA(TreeNode root, TreeNode n1, TreeNode n2) {
-                while(root != null) {
-                        if(root.data > n1.data && root.data > n2.data) { // If both n1 and n2 are smaller than root, then LCA lies in left
+                while (root != null) {
+                        if (root.data > n1.data && root.data > n2.data) { // If both n1 and n2 are smaller than root, then LCA lies in left
                                 root = root.left;
                         } else if(root.data < n1.data && root.data < n2.data) { // If both n1 and n2 are greater than root, then LCA lies in right
                                 root = root.right;

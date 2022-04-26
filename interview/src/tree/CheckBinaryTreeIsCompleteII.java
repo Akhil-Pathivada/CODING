@@ -13,9 +13,9 @@ import java.util.Queue;
 
 public class CheckBinaryTreeIsCompleteII {
         
-        private static boolean isCompleteBinaryTree(TreeNode root) {
+        private boolean isCompleteBinaryTree(TreeNode root) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return true;
                 }
                 Queue<TreeNode> queue = new LinkedList<>();
@@ -24,16 +24,15 @@ public class CheckBinaryTreeIsCompleteII {
                  when a leaf node is seen */
                 boolean leafEncountered = false;
                 // do the level order traversal
-                while(!queue.isEmpty()) {
+                while (!queue.isEmpty()) {
                         // poll the front
                         TreeNode node = queue.poll();
                         // if we have seen leaf node
-                        if(node == null) {
+                        if (node == null) {
                                 leafEncountered = true;
-                        }
-                        else {
+                        } else {
                                 // if the leaf node we have seen eariler is not last node
-                                if(leafEncountered) {
+                                if (leafEncountered) {
                                         return false;
                                 }
                                 // insert left and right children
@@ -45,14 +44,12 @@ public class CheckBinaryTreeIsCompleteII {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(1);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(3);
                 root.left.left = new TreeNode(4);
                 root.left.right = new TreeNode(5);
                 root.right.left = new TreeNode(6);
-                
-                System.out.println(isCompleteBinaryTree(root) ? "Complete Binary Tree" : "Not a Complete Binary Tree");
+                System.out.println(new CheckBinaryTreeIsCompleteII().isCompleteBinaryTree(root) ? "Complete Binary Tree" : "Not a Complete Binary Tree");
         }
 }

@@ -10,11 +10,11 @@ public class LeftViewOfBinaryTreeI {
         static int MAX_LEVEL = 0;
         private void printLeftView(TreeNode root, int level) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return;
                 }
                 // If this is the first node of current level
-                if(MAX_LEVEL < level) {
+                if (MAX_LEVEL < level) {
                         System.out.print(root.data + ", ");
                         MAX_LEVEL = level;
                 }

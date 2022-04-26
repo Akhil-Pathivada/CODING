@@ -22,7 +22,7 @@ public class TopViewOfBinaryTree {
         
         private void printTopView(TreeNode root) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return;
                 }
                 // to keep track of Level Order Traversal
@@ -31,22 +31,22 @@ public class TopViewOfBinaryTree {
                 TreeMap<Integer, TreeNode> map = new TreeMap<>();
                 // insert the root into Queue
                 queue.add(new QueueObj(root, 0));
-                while(!queue.isEmpty()) {
+                while (!queue.isEmpty()) {
                         QueueObj tempObj = queue.poll();
                         // if node is the first one with the horizontal distance
-                        if(!map.containsKey(tempObj.hd)) {
+                        if (!map.containsKey(tempObj.hd)) {
                                 map.put(tempObj.hd, tempObj.node);
                         }
                         // insert left and right children into Queue
-                        if(tempObj.node.left != null) {
+                        if (tempObj.node.left != null) {
                                 queue.add(new QueueObj(tempObj.node.left, tempObj.hd - 1));
                         }
-                        if(tempObj.node.right != null) {
+                        if (tempObj.node.right != null) {
                                 queue.add(new QueueObj(tempObj.node.right, tempObj.hd + 1));
                         }
                 }
                 // iterate over map values to print result
-                for(Map.Entry<Integer, TreeNode> entry : map.entrySet()) {
+                for (Map.Entry<Integer, TreeNode> entry : map.entrySet()) {
                         System.out.println(entry.getValue().data);
                 }
         }

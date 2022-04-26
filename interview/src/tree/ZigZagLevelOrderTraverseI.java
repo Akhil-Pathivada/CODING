@@ -16,7 +16,7 @@ public class ZigZagLevelOrderTraverseI {
         
         private List<List<Integer>> zigZagLevelOrder(TreeNode root) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return new ArrayList<>();
                 }
                 // store result
@@ -26,22 +26,19 @@ public class ZigZagLevelOrderTraverseI {
                 Stack<TreeNode> stack2 = new Stack<>();
                 // push root
                 stack1.push(root);
-                
-                while(!stack1.isEmpty() || !stack2.isEmpty()) {
-                        
+                while (!stack1.isEmpty() || !stack2.isEmpty()) {
                         TreeNode node;
                         // list to store result nodes at each level
                         List<Integer> list = new ArrayList<>();
                         // iterate till first stack is empty
-                        while(!stack1.isEmpty()) {
-                                
+                        while (!stack1.isEmpty()) {
                                 node = stack1.pop();
                                 list.add(node.data);
                                 // add left and right children
-                                if(node.left != null) {
+                                if (node.left != null) {
                                         stack2.push(node.left);
                                 }
-                                if(node.right != null) {
+                                if (node.right != null) {
                                         stack2.push(node.right);
                                 }
                         }
@@ -49,20 +46,19 @@ public class ZigZagLevelOrderTraverseI {
                         // store next level result nodes
                         list = new ArrayList<>();
                         // iterate till second stack is empty
-                        while(!stack2.isEmpty()) {
-                                
+                        while (!stack2.isEmpty()) {
                                 node = stack2.pop();
                                 list.add(node.data);
                                 // add right and left children
-                                if(node.right != null) {
+                                if (node.right != null) {
                                         stack1.push(node.right);
                                 }
-                                if(node.left != null) {
+                                if (node.left != null) {
                                         stack1.push(node.left);
                                 }
                         }
                         // avoid adding empty list to result
-                        if(!list.isEmpty()) {
+                        if (!list.isEmpty()) {
                                 resultList.add(list);
                         }
                 }
@@ -70,7 +66,6 @@ public class ZigZagLevelOrderTraverseI {
         }
         
         public static void main(String[] args) {
-                
                 TreeNode root = new TreeNode(4);
                 root.left = new TreeNode(2);
                 root.right = new TreeNode(7);
@@ -78,7 +73,6 @@ public class ZigZagLevelOrderTraverseI {
                 root.left.right = new TreeNode(3);
                 root.right.left = new TreeNode(6);
                 root.right.right = new TreeNode(9);
-                
                 System.out.println(new ZigZagLevelOrderTraverseI().zigZagLevelOrder(root));
         }
 }

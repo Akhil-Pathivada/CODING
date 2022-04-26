@@ -13,14 +13,14 @@ public class TreeIsomorphism {
         
         private boolean areIsomorphicTrees(TreeNode n1, TreeNode n2) {
                 // Both roots are NULL, trees isomorphic by definition
-                if(n1 == null && n2 == null) {
+                if (n1 == null && n2 == null) {
                         return true;
                 }
                 // Exactly one of the n1 and n2 is NULL, trees not isomorphic
-                if(n1 == null || n2 == null) {
+                if (n1 == null || n2 == null) {
                         return false;
                 }
-                if(n1.data != n2.data) {
+                if (n1.data != n2.data) {
                         return false;
                 }
                  /** There are two possible cases for n1 and n2 to be isomorphic

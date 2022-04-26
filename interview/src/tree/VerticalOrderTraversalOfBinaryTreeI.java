@@ -15,14 +15,14 @@ public class VerticalOrderTraversalOfBinaryTreeI {
         // find min and max distances with respect to root
         private void findMinMaxHorizontalDistance(TreeNode root, int hd) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return;
                 }
                 // update min and max
-                if(hd < MIN) {
+                if (hd < MIN) {
                         MIN = hd;
                 }
-                if(hd > MAX) {
+                if (hd > MAX) {
                         MAX = hd;
                 }
                 // Recur for left and right subtrees
@@ -32,11 +32,11 @@ public class VerticalOrderTraversalOfBinaryTreeI {
         
         private void printNodesOfHorizontalDistance(TreeNode root, int line_no, int hd) {
                 // base case
-                if(root == null) {
+                if (root == null) {
                         return;
                 }
                 // If this node is on the given line number
-                if(hd == line_no) {
+                if (hd == line_no) {
                         System.out.print(root.data + " ");
                 }
                 // Recur for left and right subtrees
@@ -49,7 +49,7 @@ public class VerticalOrderTraversalOfBinaryTreeI {
                 findMinMaxHorizontalDistance(root, 0);
                 // Iterate through all possible vertical lines starting
                 // from the leftmost line and print nodes line by line
-                for(int line_no = MIN; line_no <= MAX; ++line_no) {
+                for (int line_no = MIN; line_no <= MAX; ++line_no) {
                         printNodesOfHorizontalDistance(root, line_no, 0);
                         System.out.println();
                 }

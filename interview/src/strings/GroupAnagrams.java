@@ -23,16 +23,16 @@ public class GroupAnagrams {
                         return new ArrayList<>();
                 }
                 Map<String, List<String>> map = new HashMap<>();
-                for(String s : strs) {
+                for (String s : strs) {
                         // character array
                         char[] ca = new char[26];
-                        for(char ch : s.toCharArray()) {
+                        for (char ch : s.toCharArray()) {
                                 ca[ch - 'a']++;
                         }
                         // converting character array as a string for comparison
                         String keyStr = String.valueOf(ca);
                         // adding string as key for 1st time and allocating memory to store its anagrams
-                        if(!map.containsKey(keyStr)) {
+                        if (!map.containsKey(keyStr)) {
                                 map.put(keyStr, new ArrayList<>());
                         }
                         // adding the anagram
