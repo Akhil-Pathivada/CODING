@@ -19,7 +19,10 @@ public class UndirectedGraphNode {
                 label = _label;
                 neighbours = _neighbours;
         }
-        
+        // Add Edge into the Graph Node
+        protected void addEdge(UndirectedGraphNode w) {
+                this.neighbours.add(w);
+        }
         private void DFSUtil(UndirectedGraphNode node, Set<Integer> visited) {
                 System.out.print(node.label + ", ");
                 visited.add(node.label);
