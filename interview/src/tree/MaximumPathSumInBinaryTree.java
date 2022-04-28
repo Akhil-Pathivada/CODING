@@ -11,7 +11,7 @@
  */
 package tree;
 
-public class MaximumPathSumInABinaryTree {
+public class MaximumPathSumInBinaryTree {
         
         private static int MAX_PATH_SUM = Integer.MIN_VALUE;
         private int findMaxSum(TreeNode root) {
@@ -42,7 +42,7 @@ public class MaximumPathSumInABinaryTree {
                 root.right.right = new TreeNode(-25);
                 root.right.right.left = new TreeNode(3);
                 root.right.right.right = new TreeNode(4);
-                new MaximumPathSumInABinaryTree().findMaxSum(root);
+                new MaximumPathSumInBinaryTree().findMaxSum(root);
                 System.out.println("maximum path sum is : " + MAX_PATH_SUM);
         }
 }
