@@ -16,8 +16,7 @@ import java.util.List;
 
 public class MergeIntervals {
         
-        private static int[][] merge(int[][] intervals) {
-        
+        private int[][] merge(int[][] intervals) {
                 int n = intervals.length;
                 // Sort by ascending starting point
                 Arrays.sort(intervals, (i1, i2) -> Integer.compare(i1[0], i2[0]));
@@ -27,13 +26,12 @@ public class MergeIntervals {
                 // add the first interval
                 result.add(intervals[i]);
                 // iterate over all intervals
-                for(int j = 1; j < n; ++j) {
+                for (int j = 1; j < n; ++j) {
                         // overlapping interval found
-                        if(intervals[j][0] <= result.get(i)[1]) {
+                        if (intervals[j][0] <= result.get(i)[1]) {
                                 // Merge previous and current Intervals
                                 result.get(i)[1] = Math.max(result.get(i)[1], intervals[j][1]);
-                        }
-                        else {
+                        } else {
                                 result.add(intervals[j]);
                                 ++i;
                         }
@@ -43,14 +41,13 @@ public class MergeIntervals {
         }
         
         public static void main(String[] args) {
-        
                 int[][] intervals = {
                         {1, 3},
                         {2, 6},
                         {8, 10},
                         {15, 18}
                 };
-                System.out.println(Arrays.deepToString(merge(intervals)));
+                System.out.println(Arrays.deepToString(new MergeIntervals().merge(intervals)));
                 
         }
 }

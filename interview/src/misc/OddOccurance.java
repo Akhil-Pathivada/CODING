@@ -14,7 +14,7 @@ public class OddOccurance {
         
         private int oddOccurance(int[] nums) {
                 int result = 0;
-                for(int num : nums) {
+                for (int num : nums) {
                         result ^= num;
                 }
                 return result;
