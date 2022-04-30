@@ -11,7 +11,7 @@
 package linkedlist;
 
 public class ReorderList {
-        
+        // reverse the second half
         private LinkedListNode reverse(LinkedListNode head) {
                 LinkedListNode curr = head, prev = null;
                 while (curr != null) {
@@ -22,7 +22,7 @@ public class ReorderList {
                 }
                 return prev;
         }
-        
+        // get the middle node of list
         private LinkedListNode middle(LinkedListNode head) {
                 LinkedListNode slow = head, fast = head;
                 while (fast != null && fast.next != null) {
@@ -40,7 +40,7 @@ public class ReorderList {
                 LinkedListNode curr2 = reverse(middle(head));
                 // merge two lists alternatively
                 while (curr1 != null && curr2 != null) {
-                        // last node of list1 still points to list2, so remove it
+                        // last node of list1 still points to node in list2, so remove it
                         if (curr1.next == curr2) {
                                 curr1.next = null;
                         }
