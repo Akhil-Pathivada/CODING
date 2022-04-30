@@ -6,32 +6,50 @@
  * https://leetcode.com/problems/reorder-list/
  *
  * Time Complexity : O(N)
- * Space Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package linkedlist;
 
-import java.util.Stack;
-
 public class ReorderList {
+        
+        private LinkedListNode reverse(LinkedListNode head) {
+                LinkedListNode curr = head, prev = null;
+                while (curr != null) {
+                        LinkedListNode next = curr.next;
+                        curr.next = prev;
+                        prev = curr;
+                        curr = next;
+                }
+                return prev;
+        }
+        
+        private LinkedListNode middle(LinkedListNode head) {
+                LinkedListNode slow = head, fast = head;
+                while (fast != null && fast.next != null) {
+                        slow = slow.next;
+                        fast = fast.next.next;
+                }
+                return slow;
+        }
         
         private void reorderList(LinkedListNode head) {
                 if (head == null) {
                         return;
                 }
-                Stack<LinkedListNode> stack = new Stack<>();
-                LinkedListNode current = head;
-                while (current != null) {
-                        stack.push(current);
-                }
-                current = head;
-                LinkedListNode temp, node;
-                while (true) {
-                        node = stack.pop();
-                        if (node == current) {
-                                break;
+                LinkedListNode curr1 = head;
+                LinkedListNode curr2 = reverse(middle(head));
+                // merge two lists alternatively
+                while (curr1 != null && curr2 != null) {
+                        // last node of list1 still points to list2, so remove it
+                        if (curr1.next == curr2) {
+                                curr1.next = null;
                         }
-                        temp = current.next;
-                        current.next = node;
+                        LinkedListNode temp1 = curr1.next;
+                        LinkedListNode temp2 = curr2.next;
+                        curr1.next = curr2;
+                        curr2.next = temp1;
+                        curr1 = temp1;
+                        curr2 = temp2;
                 }
         }
         
