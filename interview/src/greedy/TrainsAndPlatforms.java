@@ -11,31 +11,35 @@
 package greedy;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-
 public class TrainsAndPlatforms {
         
-        private int minTrains(int[][] arr) {
-                Arrays.sort(arr, new Comparator<int[]>() {
-                                @Override
-                                public int compare(int[] o1, int[] o2) {
-                                        return o1[0] - o2[0];
-                                }
+        private int minTrains(int[]arr, int[] dep) {
+                // Sort arrival and departure arrays
+                Arrays.sort(arr);
+                Arrays.sort(dep);
+                // maxPlatformsInUse indicates number of platforms needed at a time
+                // platformsNeeded indicates the result
+                int maxPlatformsInUse = 1, platformsNeeded = 1;
+                // assume first train already took into consideration
+                int i = 1, j = 0;
+                while (i < arr.length && j < dep.length) {
+                        if (arr[i] <= dep[j]) {
+                                ++maxPlatformsInUse;
+                                ++i;
+                        } else if (arr[i] > dep[j]) {
+                                --maxPlatformsInUse;
+                                ++j;
                         }
-                );
-                int n = arr.length;
-                return n;
-                
+                        if (maxPlatformsInUse > platformsNeeded) {
+                                platformsNeeded = maxPlatformsInUse;
+                        }
+                }
+                return platformsNeeded;
         }
         
         public static void main(String[] args) {
-                int arr[][] = {
-                        { 120, 130 },
-                        { 130, 150 },
-                        { 125, 145 },
-                        { 150, 180 }
-                };
-                System.out.println("Minimum Number of Platforms Required =  "+ new TrainsAndPlatforms().minTrains(arr));
+                int arr[] = { 900, 940, 950, 1100, 1500, 1800 };
+                int dep[] = { 910, 1200, 1120, 1130, 1900, 2000 };
+                System.out.println("Minimum Number of Platforms Required =  "+ new TrainsAndPlatforms().minTrains(arr, dep));
         }
 }
