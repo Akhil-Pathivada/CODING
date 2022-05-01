@@ -10,7 +10,7 @@ public class SortedArrayToBST extends TreeNode {
         
         private TreeNode sortedArrayToBSTUtil(int[] nums, int start, int end) {
                 // base case
-                if(start > end) {
+                if (start > end) {
                         return null;
                 }
                 // get mid element and make as root
@@ -24,7 +24,7 @@ public class SortedArrayToBST extends TreeNode {
         
         private TreeNode sortedArrayToBST(int[] nums) {
                 // base case
-                if(nums.length == 0) {
+                if (nums.length == 0) {
                         return null;
                 }
                 return sortedArrayToBSTUtil(nums, 0, nums.length - 1);
