@@ -30,14 +30,11 @@ public class ImplementQueueUsingStackII {
                         // push elements from input stack to output
                         if (output.isEmpty()) {
                                 while (!input.isEmpty()) {
-                                        output.push(input.peek());
-                                        input.pop();
+                                        output.push(input.pop());
                                 }
                         }
                         // return the top item from the output stack
-                        T top = output.peek();
-                        output.pop();
-                        return top;
+                        return output.pop();
                 }
         }
         

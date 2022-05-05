@@ -29,8 +29,7 @@ public class ImplementStackUsingQueueII {
                         queue.add(data);
                         for (int i = 0; i < size; ++i) {
                                 // this will add front element into rear of queue
-                                T front = queue.remove();
-                                queue.add(front);
+                                queue.add(queue.remove());
                         }
                 }
                 // Remove the top item from the stack
@@ -40,9 +39,7 @@ public class ImplementStackUsingQueueII {
                                 System.out.println("Underflow!!");
                                 System.exit(0);
                         }
-                        T front = queue.peek();
-                        queue.poll();
-                        return front;
+                        return queue.poll();
                 }
         }
         

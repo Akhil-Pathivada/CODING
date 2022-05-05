@@ -26,15 +26,13 @@ public class ImplementStackUsingQueueI {
                 void push(T data) {
                         // Move all elements from the first queue to the second queue
                         while (!q1.isEmpty()) {
-                                q2.add(q1.peek());
-                                q1.poll();
+                                q2.add(q1.poll());
                         }
                         // Push the given item into the first queue
                         q1.add(data);
                         // Move all elements back to the first queue from the second queue
                         while (!q2.isEmpty()) {
-                                q1.add(q2.peek());
-                                q2.poll();
+                                q1.add(q2.poll());
                         }
                 }
                 // Remove the top item from the stack
@@ -45,9 +43,7 @@ public class ImplementStackUsingQueueI {
                                 System.exit(0);
                         }
                         // return the front item from the first queue
-                        T front = q1.peek();
-                        q1.poll();
-                        return front;
+                        return q1.poll();
                 }
         }
         

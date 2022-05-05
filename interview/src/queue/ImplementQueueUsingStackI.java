@@ -23,15 +23,14 @@ public class ImplementQueueUsingStackI {
                 void enqueue(T data) {
                         // Move all elements from the first stack to the second stack
                         while (!s1.isEmpty()) {
-                                s2.push(s1.peek());
-                                s1.pop();
+                                s2.push(s1.pop());
                         }
                         // push item into the first stack
                         s1.push(data);
                         // Move all elements back to the first stack from the second stack
                         while (!s2.isEmpty()) {
-                                s1.push(s2.peek());
-                                s2.pop();
+                                s1.push(s2.pop());
+                                
                         }
                 }
                 // Remove an item from the queue
@@ -41,11 +40,7 @@ public class ImplementQueueUsingStackI {
                                 System.out.println("Underflow!!");
                                 System.exit(0);
                         }
-                
-                        // return the top item from the first stack
-                        T top = s1.peek();
-                        s1.pop();
-                        return top;
+                        return s1.pop();
                 }
         }
         
