@@ -5,7 +5,7 @@ import java.util.*;
 public class GraphNode {
         public int label; // value of node
         public List<GraphNode> neighbours; // list of neighbours
-        // Constructor
+        // Constructors
         public GraphNode() {
         }
         public GraphNode(int _label) {
@@ -20,6 +20,7 @@ public class GraphNode {
         protected void addEdge(GraphNode w) {
                 this.neighbours.add(w);
         }
+        // Utility function for Depth First Traversal
         private void DFSUtil(GraphNode node, Set<Integer> visited) {
                 System.out.print(node.label + ", ");
                 visited.add(node.label);
@@ -35,6 +36,7 @@ public class GraphNode {
                 Set<Integer> visited = new HashSet<>();
                 DFSUtil(node, visited);
         }
+        // Utility function for Breadth First Traversal
         private void BFSUtil(GraphNode node) {
                 Set<Integer> visited = new HashSet<>();
                 Queue<GraphNode> queue = new LinkedList<>();
