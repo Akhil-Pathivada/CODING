@@ -23,28 +23,26 @@ public class MergeSort {
                 int L[] = new int[n1 + 1];
                 int R[] = new int[n2 + 1];
                 // copy data to temp arrays L[] and R[]
-                for(i = 0; i < n1; ++i) {
+                for (i = 0; i < n1; ++i) {
                         L[i] = arr[p + i];
                 }
-                for(j = 0; j < n2; ++j) {
+                for (j = 0; j < n2; ++j) {
                         R[j] = arr[q + 1 + j];
                 }
                 L[n1] = R[n2] = Integer.MAX_VALUE;
                 // initial indexes of first and second subarrays
                 i = j = 0;
                 // Merge the temp arrays back into arr[p..r]
-                for(int k = p; k <= r; ++k) {
-                        if(L[i] <= R[j]) {
+                for (int k = p; k <= r; ++k) {
+                        if (L[i] <= R[j]) {
                                 arr[k] = L[i++];
-                        }
-                        else {
+                        } else {
                                 arr[k] = R[j++];
                         }
                 }
         }
-        
         private void sort(int[] arr, int p, int r) {
-                if(p < r) {
+                if (p < r) {
                         int q = (p + r) / 2;
                         // call sort on first and second halves
                         sort(arr, p, q);
@@ -53,7 +51,6 @@ public class MergeSort {
                         merge(arr, p, q, r);
                 }
         }
-        
         public static void main(String args[]) {
                 int arr[] = { 12, 11, 13, 5, 6, 7 };
                 System.out.println("Given Array" + Arrays.toString(arr));

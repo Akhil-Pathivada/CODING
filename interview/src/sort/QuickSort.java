@@ -18,7 +18,6 @@ package sort;
 import java.util.Arrays;
 
 public class QuickSort {
-        
         private void swap(int[] arr, int i, int j) {
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -31,16 +30,15 @@ public class QuickSort {
         private int partition(int[] arr, int low, int high) {
                 int x = arr[high];
                 int i = low - 1;
-                for(int j = low; j < high; ++j) {
+                for (int j = low; j < high; ++j) {
                         // if current element is smaller than the pivot
-                        if(arr[j] <= x) {
+                        if (arr[j] <= x) {
                                 swap(arr, ++i, j);
                         }
                 }
                 swap(arr, ++i, high);
                 return i;
         }
-        
         private void sort(int[] arr, int low, int high) {
                 if(low < high) {
                         // pivot is partitioning index, arr[p] is now at right place
@@ -50,7 +48,6 @@ public class QuickSort {
                         sort(arr, pivot + 1, high);
                 }
         }
-        
         public static void main(String args[]) {
                 int arr[] = { 12, 11, 13, 5, 6, 7 };
                 System.out.println("Given Array" + Arrays.toString(arr));
