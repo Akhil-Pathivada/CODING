@@ -10,20 +10,18 @@ package graph;
 import java.util.HashSet;
 
 public class ConnectedComponentsInUndirectedGraph {
-        
-        private void DFS(UndirectedGraphNode node, HashSet<Integer> visited) {
+        private void DFS(GraphNode node, HashSet<Integer> visited) {
                 // Mark the current node as visited and print it
                 visited.add(node.label);
                 System.out.print(node.label + ", ");
                 // recur over all neighbours of a node recursively
-                for (UndirectedGraphNode _node : node.neighbours) {
+                for (GraphNode _node : node.neighbours) {
                         if (!visited.contains(_node.label)) {
                                 DFS(_node, visited);
                         }
                 }
         }
-        
-        private int connectedComponents(UndirectedGraphNode[] graph, int V) {
+        private int connectedComponents(GraphNode[] graph, int V) {
                 int components = 0;
                 HashSet<Integer> visited = new HashSet<>();
                 for (int v = 0; v < V; ++v) {
@@ -35,16 +33,15 @@ public class ConnectedComponentsInUndirectedGraph {
                 }
                 return components;
         }
-        
         public static void main(String[] args) {
                 // create graph with 5 nodes
                 int V = 5;
-                UndirectedGraphNode[] graph = new UndirectedGraphNode[V];
-                graph[0] = new UndirectedGraphNode(0);
-                graph[1] = new UndirectedGraphNode(1);
-                graph[2] = new UndirectedGraphNode(2);
-                graph[3] = new UndirectedGraphNode(3);
-                graph[4] = new UndirectedGraphNode(4);
+                GraphNode[] graph = new GraphNode[V];
+                graph[0] = new GraphNode(0);
+                graph[1] = new GraphNode(1);
+                graph[2] = new GraphNode(2);
+                graph[3] = new GraphNode(3);
+                graph[4] = new GraphNode(4);
                 // adding neighbours to nodes
                 graph[0].neighbours.add(graph[1]);
                 graph[1].neighbours.add(graph[0]);

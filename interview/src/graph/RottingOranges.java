@@ -11,7 +11,6 @@
 package graph;
 
 public class RottingOranges {
-        
         private void DFS(int[][] grid, int i, int j, int m, int n, int minutes) {
                 // anchor condition
                 if (i < 0 || i >= m || j < 0 || j >= n // out of bounds
@@ -26,7 +25,6 @@ public class RottingOranges {
                 DFS(grid, i, j + 1, m, n, minutes + 1);
                 DFS(grid, i , j - 1, m, n, minutes + 1);
         }
-        
         private int orangesRotting(int[][] grid) {
                 int m = grid.length, n = grid[0].length;
                 for (int i = 0; i < m; ++i) {
@@ -48,7 +46,6 @@ public class RottingOranges {
                 }
                 return minutes - 2;
         }
-        
         public static void main(String[] args) {
                 int[][] grid = {
                         { 2, 1, 1 },

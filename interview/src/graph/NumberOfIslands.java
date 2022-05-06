@@ -12,7 +12,6 @@
 package graph;
 
 public class NumberOfIslands {
-        
         private int m, n; // rows, columns
         private void DFS(char[][] grid, int i, int j) {
                 // base case
@@ -27,7 +26,6 @@ public class NumberOfIslands {
                 DFS(grid, i, j + 1);
                 DFS(grid, i, j - 1);
         }
-        
         private int numOfIslands(char[][] grid) {
                 m = grid.length;
                 if (m == 0) {
@@ -46,7 +44,6 @@ public class NumberOfIslands {
                 }
                 return countOfIslands;
         }
-        
         public static void main(String[] args) {
                 char grid[][] = new char[][] {
                         { '1', '1', '0', '0', '0' },

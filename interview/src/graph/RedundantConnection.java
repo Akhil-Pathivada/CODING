@@ -13,7 +13,6 @@ package graph;
 import java.util.Arrays;
 
 public class RedundantConnection {
-        
         // captures parent of each node
         int[] parent;
         private int[] findRedundantConnection(int[][] edges) {
@@ -46,7 +45,6 @@ public class RedundantConnection {
                         parent[jRoot] = iRoot;
                 }
         }
-        
         public static void main(String[] args) {
                 int[][] edges = {
                         { 1, 2 },

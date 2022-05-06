@@ -11,8 +11,7 @@
 package graph;
 
 public class DetectCycleInDirectedGraph {
-        
-        private boolean isCycleUtil(DirectedGraphNode node, boolean[] visited, boolean[] recStack) {
+        private boolean isCycleUtil(GraphNode node, boolean[] visited, boolean[] recStack) {
                 if (recStack[node.label]) {
                         return true;
                 }
@@ -23,7 +22,7 @@ public class DetectCycleInDirectedGraph {
                 // part of recursion stack
                 visited[node.label] = true;
                 recStack[node.label] = true;
-                for (DirectedGraphNode neighbour : node.neighbours) {
+                for (GraphNode neighbour : node.neighbours) {
                         if (isCycleUtil(neighbour, visited, recStack)) {
                                 return true;
                         }
@@ -31,8 +30,7 @@ public class DetectCycleInDirectedGraph {
                 recStack[node.label] = false;
                 return false;
         }
-        
-        private boolean isCycle(DirectedGraphNode[] graph) {
+        private boolean isCycle(GraphNode[] graph) {
                 // Mark all the vertices as not visited and
                 // not part of recursion stack
                 boolean[] visited = new boolean[graph.length];
@@ -44,13 +42,12 @@ public class DetectCycleInDirectedGraph {
                 }
                 return false;
         }
-        
         public static void main(String[] args) {
-                DirectedGraphNode[] graph = new DirectedGraphNode[4];
-                graph[0] = new DirectedGraphNode(0);
-                graph[1] = new DirectedGraphNode(1);
-                graph[2] = new DirectedGraphNode(2);
-                graph[3] = new DirectedGraphNode(3);
+                GraphNode[] graph = new GraphNode[4];
+                graph[0] = new GraphNode(0);
+                graph[1] = new GraphNode(1);
+                graph[2] = new GraphNode(2);
+                graph[3] = new GraphNode(3);
                 graph[0].addEdge(graph[1]);
                 graph[0].addEdge(graph[2]);
                 graph[1].addEdge(graph[2]);

@@ -13,7 +13,6 @@ package graph;
 import java.util.Stack;
 
 public class PathExists {
-        
         private boolean isPathExists(int[][] edges, int source, int destination) {
                 // base case
                 if (source == destination) {
@@ -21,9 +20,9 @@ public class PathExists {
                 }
                 int n = edges.length;
                 // creating a graph from the input
-                UndirectedGraphNode[] graph = new UndirectedGraphNode[n];
+                GraphNode[] graph = new GraphNode[n];
                 for (int i = 0; i < n; ++i) {
-                        graph[i] = new UndirectedGraphNode(i);
+                        graph[i] = new GraphNode(i);
                 }
                 // adding the edges
                 for (int[] edge : edges) {
@@ -41,7 +40,7 @@ public class PathExists {
                         if (current == destination) {
                                 return true;
                         }
-                        for (UndirectedGraphNode neighbour : graph[current].neighbours) {
+                        for (GraphNode neighbour : graph[current].neighbours) {
                                 int u = neighbour.label;
                                 if (!visited[u]) {
                                         visited[u] = true;
@@ -51,7 +50,6 @@ public class PathExists {
                 }
                 return false;
         }
-        
         public static void main(String[] args) {
                 int[][] edges = {
                         { 0, 1 },

@@ -1,25 +1,17 @@
-/**
- * Date 29/04/2022
- *
- * @author akhilpathivada
- */
 package graph;
 
 import java.util.*;
 
 public class GraphNode {
-        
         public int label; // value of node
         public List<GraphNode> neighbours; // list of neighbours
-        
+        // Constructor
         public GraphNode() {
         }
-        
         public GraphNode(int _label) {
                 label = _label;
                 neighbours = new ArrayList<GraphNode>();
         }
-        
         public GraphNode(int _label, ArrayList<GraphNode> _neighbours) {
                 label = _label;
                 neighbours = _neighbours;
@@ -43,7 +35,6 @@ public class GraphNode {
                 Set<Integer> visited = new HashSet<>();
                 DFSUtil(node, visited);
         }
-        
         private void BFSUtil(GraphNode node) {
                 Set<Integer> visited = new HashSet<>();
                 Queue<GraphNode> queue = new LinkedList<>();

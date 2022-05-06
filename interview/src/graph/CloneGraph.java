@@ -6,10 +6,10 @@ package graph;
 
 import java.util.HashMap;
 
-public class CloneGraph extends UndirectedGraphNode {
+public class CloneGraph extends GraphNode {
         // tracks whether node is already cloned
-        private HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
-        private UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        private HashMap<Integer, GraphNode> map = new HashMap<>();
+        private GraphNode cloneGraph(GraphNode node) {
                 if (node == null) {
                         return null;
                 }
@@ -18,23 +18,22 @@ public class CloneGraph extends UndirectedGraphNode {
                         return map.get(node.label);
                 }
                 // create new node into Clone graph
-                UndirectedGraphNode clone = new UndirectedGraphNode(node.label);
+                GraphNode clone = new GraphNode(node.label);
                 // add into map
                 map.put(clone.label, clone);
                 // iterate over all its neighbours
-                for (UndirectedGraphNode neighbour : node.neighbours) {
+                for (GraphNode neighbour : node.neighbours) {
                         clone.neighbours.add(cloneGraph(neighbour));
                 }
                 return clone;
         }
-        
         public static void main(String[] args) {
                 // create graph with 4 nodes
-                UndirectedGraphNode[] graph = new UndirectedGraphNode[4];
-                graph[0] = new UndirectedGraphNode(1);
-                graph[1] = new UndirectedGraphNode(2);
-                graph[2] = new UndirectedGraphNode(3);
-                graph[3] = new UndirectedGraphNode(4);
+                GraphNode[] graph = new GraphNode[4];
+                graph[0] = new GraphNode(1);
+                graph[1] = new GraphNode(2);
+                graph[2] = new GraphNode(3);
+                graph[3] = new GraphNode(4);
                 // adding neighbours to nodes
                 graph[0].neighbours.add(graph[1]);
                 graph[0].neighbours.add(graph[2]);
@@ -44,7 +43,7 @@ public class CloneGraph extends UndirectedGraphNode {
                 graph[2].neighbours.add(graph[3]);
                 graph[3].neighbours.add(graph[1]);
                 graph[3].neighbours.add(graph[2]);
-                System.out.print("Original Graph : "); new UndirectedGraphNode().DFS(graph[0]);
-                System.out.print("Cloned Graph : "); new UndirectedGraphNode().DFS(new CloneGraph().cloneGraph(graph[0]));
+                System.out.print("Original Graph : "); new GraphNode().DFS(graph[0]);
+                System.out.print("Cloned Graph : "); new GraphNode().DFS(new CloneGraph().cloneGraph(graph[0]));
         }
 }

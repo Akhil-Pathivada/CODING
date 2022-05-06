@@ -10,13 +10,10 @@
  */
 package graph;
 
-import java.util.Arrays;
-
 public class DetectCycleInUndirectedGraph {
-        
-        private boolean isCycleUtil(UndirectedGraphNode node, boolean[] visited, UndirectedGraphNode parent) {
+        private boolean isCycleUtil(GraphNode node, boolean[] visited, GraphNode parent) {
                 visited[node.label] = true;
-                for (UndirectedGraphNode neighbour : node.neighbours) {
+                for (GraphNode neighbour : node.neighbours) {
                         if (!visited[neighbour.label]) {
                                 if (isCycleUtil(neighbour, visited, node)) {
                                         return true;
@@ -28,10 +25,9 @@ public class DetectCycleInUndirectedGraph {
                 }
                 return false;
         }
-        
-        private boolean isCycle(UndirectedGraphNode[] graph) {
+        private boolean isCycle(GraphNode[] graph) {
                 boolean[] visited = new boolean[graph.length];
-                for (UndirectedGraphNode node : graph) {
+                for (GraphNode node : graph) {
                         if (!visited[node.label]) {
                                 if (isCycleUtil(node, visited, null)) {
                                         return true;
@@ -40,14 +36,13 @@ public class DetectCycleInUndirectedGraph {
                 }
                 return false;
         }
-        
         public static void main(String[] args) {
-                UndirectedGraphNode[] graph = new UndirectedGraphNode[5];
-                graph[0] = new UndirectedGraphNode(0);
-                graph[1] = new UndirectedGraphNode(1);
-                graph[2] = new UndirectedGraphNode(2);
-                graph[3] = new UndirectedGraphNode(3);
-                graph[4] = new UndirectedGraphNode(4);
+                GraphNode[] graph = new GraphNode[5];
+                graph[0] = new GraphNode(0);
+                graph[1] = new GraphNode(1);
+                graph[2] = new GraphNode(2);
+                graph[3] = new GraphNode(3);
+                graph[4] = new GraphNode(4);
                 graph[1].addEdge(graph[0]);
                 graph[0].addEdge(graph[2]);
                 graph[2].addEdge(graph[1]);

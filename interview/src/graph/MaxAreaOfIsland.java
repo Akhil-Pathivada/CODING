@@ -11,7 +11,6 @@
 package graph;
 
 public class MaxAreaOfIsland {
-        
         private int m, n; // rows, columns
         private int DFS(int[][] grid, int i, int j) {
                 // base case
@@ -23,7 +22,6 @@ public class MaxAreaOfIsland {
                 // recur on its neighbours
                 return 1 + DFS(grid, i + 1, j) + DFS(grid, i - 1, j) + DFS(grid, i, j + 1) + DFS(grid, i, j - 1);
         }
-        
         private int maxArea(int[][] grid) {
                 m = grid.length;
                 if (m == 0) {
@@ -41,7 +39,6 @@ public class MaxAreaOfIsland {
                 }
                 return area;
         }
-        
         public static void main(String[] args) {
                 int grid[][] = new int[][] {
                         { 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
