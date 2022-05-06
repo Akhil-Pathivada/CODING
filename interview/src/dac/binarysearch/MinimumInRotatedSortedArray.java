@@ -8,10 +8,9 @@
  * Time Complexity : O(log(N))
  * Space Complexity : O(1)
  */
-package binarysearch;
+package dac.binarysearch;
 
 public class MinimumInRotatedSortedArray {
-        
         private int findMinimum(int[] nums) {
                 int n = nums.length;
                 // base cases
@@ -35,7 +34,6 @@ public class MinimumInRotatedSortedArray {
                 }
                 return nums[left % n];
         }
-        
         public static void main(String[] args) {
                 int nums[] = { 4, 5, 6, 7, 0, 1, 2};
                 System.out.printf("Minimum in sorted rotated array = %d ", new MinimumInRotatedSortedArray().findMinimum(nums));

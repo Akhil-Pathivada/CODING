@@ -8,10 +8,9 @@
  * Time Complexity : O(log(N))
  * Space Complexity : O(1)
  */
-package binarysearch;
+package dac.binarysearch;
 
 public class MaximumElementFirstIncreasingAndThenDecreasing {
-        
         private int maxInBitonic(int[] arr) {
                 int low = 0, high = arr.length - 1;
                 while (low <= high) {
@@ -34,7 +33,6 @@ public class MaximumElementFirstIncreasingAndThenDecreasing {
                 }
                 return -1;
         }
-        
         public static void main(String[] args) {
                 int arr[] = { 1, 3, 50, 10, 9, 7, 6 };
                 System.out.println("The maximum element is " + new MaximumElementFirstIncreasingAndThenDecreasing().maxInBitonic(arr));

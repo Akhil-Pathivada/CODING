@@ -11,10 +11,9 @@
  * Time Complexity : O(N)
  * Space Complexity : O(1)
  */
-package binarysearch;
+package dac.binarysearch;
 
 public class FloorAndCeilingSortedArrayI {
-        
         private static int ceil(int[] arr, int x) {
                 
                 for(int ele : arr) {
@@ -26,9 +25,7 @@ public class FloorAndCeilingSortedArrayI {
                 last element of the array,  return -1 in this case */
                 return -1;
         }
-        
         private static int floor(int[] arr, int x) {
-                
                 for(int i = arr.length - 1; i >= 0; --i) {
                         if(arr[i] <= x) {
                                 return arr[i];
@@ -38,11 +35,8 @@ public class FloorAndCeilingSortedArrayI {
                 start element of the array,  return -1 in this case */
                 return -1;
         }
-        
         public static void main(String[] args) {
-                
                 int arr[] = {1, 2, 5, 6, 11, 15};
-                
                 System.out.println(floor(arr, 3));
                 System.out.println(ceil(arr, 7));
         }

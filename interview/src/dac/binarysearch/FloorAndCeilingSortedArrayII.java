@@ -11,22 +11,19 @@
  * Time Complexity : O(log(N))
  * Space Complexity : O(1)
  */
-package binarysearch;
+package dac.binarysearch;
 
 public class FloorAndCeilingSortedArrayII {
-        
         private static int floor(int[] arr, int x) {
-                
                 int low = 0;
                 int high = arr.length - 1;
-                
-                while(low <= high) {
+                while (low <= high) {
                         /* get the index of middle element
                         of arr[low..high]*/
                         int mid = low + ((high - low) / 2);
                         /* If x is same as middle element,
                         then return mid */
-                        if(arr[mid] == x) {
+                        if (arr[mid] == x) {
                                 return mid;
                         }
                         /* If x is smaller than arr[mid],
@@ -45,35 +42,31 @@ public class FloorAndCeilingSortedArrayII {
                         either arr[mid] is flooring of x or
                         ceiling lies in arr[mid+1...high] */
                         else {
-                                if(mid + 1 <= high && x <= arr[mid + 1]) {
+                                if (mid + 1 <= high && x <= arr[mid + 1]) {
                                         return mid;
-                                }
-                                else {
+                                } else {
                                         low = mid + 1;
                                 }
                         }
                 }
                 return -1;
         }
-        
         private static int ceil(int[] arr, int x) {
-                
                 int low = 0;
                 int high = arr.length - 1;
-                
-                while(low <= high) {
+                while (low <= high) {
                         /* get the index of middle element
                         of arr[low..high]*/
                         int mid = low + ((high - low) / 2);
                         /* If x is same as middle element,
                         then return mid */
-                        if(arr[mid] == x) {
+                        if (arr[mid] == x) {
                                 return mid;
                         }
                         /* If x is smaller than arr[mid],
                         then either arr[mid] is ceiling of x
                         or ceiling lies in arr[low...mid-1] */
-                        else if(x < arr[mid]) {
+                        else if (x < arr[mid]) {
                                 
                                 if(mid - 1 >= low && x >= arr[mid - 1]) {
                                         
@@ -92,8 +85,7 @@ public class FloorAndCeilingSortedArrayII {
                         else {
                                 if(mid + 1 <= high && x <= arr[mid + 1]) {
                                         return mid + 1;
-                                }
-                                else {
+                                } else {
                                         low = mid + 1;
                                 }
                         }
@@ -102,12 +94,9 @@ public class FloorAndCeilingSortedArrayII {
         }
         
         public static void main(String[] args) {
-                
                 int arr[] = {1, 2, 8, 10, 10, 12, 19};
-                
                 int index = ceil(arr, 3);
                 System.out.println((index != -1) ? arr[index] : "Ceil not exists");
-                
                 index = floor(arr, 7);
                 System.out.println((index != -1) ? arr[index] : "Floor not exists");
         }
