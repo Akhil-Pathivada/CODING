@@ -10,7 +10,6 @@ package stack;
 import java.util.Stack;
 
 public class SpecialStackForGetMaximum {
-        
         static int max = Integer.MIN_VALUE;
         private static void push(Stack<Integer> stack, int value) {
                 // push element if it is bigger than max
@@ -21,7 +20,6 @@ public class SpecialStackForGetMaximum {
                         max = value;
                 }
         }
-        
         private static int pop(Stack<Integer> stack) {
                 // base case
                 if (stack.isEmpty()) {
@@ -39,7 +37,6 @@ public class SpecialStackForGetMaximum {
         private static int getmaximum() {
                 return max;
         }
-        
         public static void main(String[] args) {
                 int[] nums = { 3, 2, 6, 1, 8, 5, 5, 5, 5 };
                 Stack<Integer> stack = new Stack<>();

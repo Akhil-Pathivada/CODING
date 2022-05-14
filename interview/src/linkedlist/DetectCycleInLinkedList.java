@@ -7,7 +7,6 @@
 package linkedlist;
 
 public class DetectCycleInLinkedList {
-        
         private boolean hasCycle(LinkedListNode head) {
                 // point both slow, fast pointers to head
                 LinkedListNode slowPtr, fastPtr;
@@ -23,7 +22,6 @@ public class DetectCycleInLinkedList {
                 }
                 return false;
         }
-        
         public static void main(String[] args) {
                 LinkedListNode head = new LinkedListNode(1);
                 head.next = new LinkedListNode(2);

@@ -10,7 +10,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class ThreeSumIII {
-        
         private static void printTriplets(int[] arr, int sum) {
                 int n = arr.length;
                 // Fix the first element as A[i]
@@ -28,7 +27,6 @@ public class ThreeSumIII {
                         }
                 }
         }
-        
         public static void main(String[] args) {
                 int[] arr = { 1, 4, 45, 6, 10, 8 };
                 int sum = 22;
