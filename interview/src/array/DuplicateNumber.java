@@ -11,7 +11,6 @@
 package array;
 
 public class DuplicateNumber {
-        
         private int findDuplicate(int[] nums) {
                 int slow = nums[0];
                 int fast = nums[0];
@@ -26,7 +25,6 @@ public class DuplicateNumber {
                 }
                 return slow;
         }
-        
         public static void main(String[] args) {
                 int[] nums = { 1, 3, 4, 2, 2 };
                 System.out.println(new DuplicateNumber().findDuplicate(nums));

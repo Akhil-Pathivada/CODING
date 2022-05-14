@@ -11,7 +11,6 @@
 package array;
 
 public class MissingElement {
-        
         private int find(int[] arr1, int[] arr2) {
                 int result = 0;
                 for (int num : arr1) {
@@ -22,7 +21,6 @@ public class MissingElement {
                 }
                 return result;
         }
-        
         public static void main(String[] args) {
                 int[] arr1 = { 4, 1, 0, 2, 9, 6, 8, 7, 5, 3 };
                 int[] arr2 = { 6, 4, 7, 2, 1, 0, 8, 3, 9 };

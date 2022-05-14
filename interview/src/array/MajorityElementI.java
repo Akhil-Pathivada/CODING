@@ -14,7 +14,6 @@
 package array;
 
 public class MajorityElementI {
-        
         private int getMajorityElement(int[] nums, int n) {
                 int voter = -1, votes = 0;
                 for (int num : nums) {
@@ -41,7 +40,6 @@ public class MajorityElementI {
                 }
                 return -1;
         }
-        
         public static void main(String[] args) {
                 int nums[] = { 1, 1, 1, 1, 2, 3, 4 };
                 System.out.println(" The majority element is : " + new MajorityElementI().getMajorityElement(nums, nums.length));

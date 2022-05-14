@@ -13,7 +13,6 @@ package array;
 import java.util.Arrays;
 
 public class ProductOfArrayExceptSelfI {
-        
         private int[] productExceptSelf(int[] nums) {
                 int n = nums.length;
                 int[] result = new int[n], right = new int[n];

@@ -13,7 +13,6 @@ package array;
 import java.util.HashMap;
 
 public class MaximumLengthOfSubarrayWithEqualZerosOnes {
-        
         private int findMaxLength(int[] nums, int n) {
                 // make all 0s to -1
                 for (int i = 0; i < n; ++i) {
@@ -36,7 +35,6 @@ public class MaximumLengthOfSubarrayWithEqualZerosOnes {
                 }
                 return max;
         }
-        
         public static void main(String[] args) {
                 int[] nums = { 0, 1, 0, 0, 1, 1, 0};
                 System.out.println("Length of largest subarray with equal 0s 1s = " + new MaximumLengthOfSubarrayWithEqualZerosOnes().findMaxLength(nums, nums.length));

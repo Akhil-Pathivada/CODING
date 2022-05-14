@@ -11,7 +11,6 @@
 package array;
 
 public class FindPivotIndex {
-        
         private int findPivotIndex(int[] nums) {
                 int n = nums.length, sum = 0, leftSum = 0;
                 // compute total sum of array
@@ -27,7 +26,6 @@ public class FindPivotIndex {
                 }
                 return -1;
         }
-        
         public static void main(String[] args) {
                 int[] nums = { 1, 7, 3, 6, 5, 6 };
                 System.out.printf("Pivot Index = %d ", new FindPivotIndex().findPivotIndex(nums));

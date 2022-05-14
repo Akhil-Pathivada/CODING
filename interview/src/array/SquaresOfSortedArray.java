@@ -13,7 +13,6 @@ package array;
 import java.util.Arrays;
 
 public class SquaresOfSortedArray {
-        
         private int[] sortedSquares(int[] nums) {
                 int n = nums.length;
                 int left = 0, right = n - 1, i = n - 1;

@@ -11,7 +11,6 @@
 package array;
 
 public class MaximumSumSubarrayIV {
-        
         private void maxSubArraySum(int[] arr) {
                 int n = arr.length, maxSumSoFar, currSum, start, end;
                 maxSumSoFar = currSum = arr[0];
@@ -31,7 +30,6 @@ public class MaximumSumSubarrayIV {
                 }
                 System.out.printf("Maximum sum in a contiguous Subarray is : %d, found between indexes %d and %d", maxSumSoFar, start + 1, end);
         }
-        
         public static void main(String[] args) {
                 int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3};
                 new MaximumSumSubarrayIV().maxSubArraySum(arr);

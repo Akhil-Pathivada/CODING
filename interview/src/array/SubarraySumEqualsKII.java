@@ -12,7 +12,6 @@
 package array;
 
 public class SubarraySumEqualsKII {
-        
         private void subarraySum(int[] nums, int k) {
                 int n = nums.length, left = 0, sum = nums[0];
                 for (int right = 1; right < n; ++right) {
@@ -27,7 +26,6 @@ public class SubarraySumEqualsKII {
                         }
                 }
         }
-        
         public static void main(String[] args) {
                 int nums[] = { 1, 5, 20, 3, 10, 4}, k = 33;
                 new SubarraySumEqualsKII().subarraySum(nums, k);

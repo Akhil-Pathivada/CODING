@@ -13,7 +13,6 @@ package array;
 import java.util.Arrays;
 
 public class RotateArray {
-        
         private void reverse(int[] nums, int left, int right) {
                 while (left <= right) {
                         int temp = nums[left];
@@ -22,7 +21,6 @@ public class RotateArray {
                         ++left; --right;
                 }
         }
-        
         private void rotateRight(int[] nums, int k, int n) {
                 k = k % n;
                 // if k == n
@@ -36,7 +34,6 @@ public class RotateArray {
                 // reverse the remaining elements upto n
                 reverse(nums, k, n - 1);
         }
-        
         public static void main(String[] args) {
                 int nums[] = { 1, 2, 3, 4, 5, 6, 7 }, k = 3;
                 new RotateArray().rotateRight(nums, k, nums.length);

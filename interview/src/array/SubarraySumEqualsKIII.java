@@ -14,7 +14,6 @@ package array;
 import java.util.HashMap;
 
 public class SubarraySumEqualsKIII {
-        
         private void subarraySum(int[] nums, int k) {
                 int n = nums.length, sum = 0;
                 HashMap<Integer, Integer> map = new HashMap<>();
@@ -28,7 +27,6 @@ public class SubarraySumEqualsKIII {
                         map.put(sum, i);
                 }
         }
-        
         public static void main(String[] args) {
                 int nums[] = { 1, 5, 20, 3, 10, 4}, k = 33;
                 new SubarraySumEqualsKIII().subarraySum(nums, k);

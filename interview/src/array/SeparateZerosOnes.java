@@ -9,7 +9,6 @@ package array;
 import java.util.Arrays;
 
 public class SeparateZerosOnes {
-        
         private void separateZerosOnes(int[] arr) {
                 int left = 0, right = arr.length - 1;
                 while (left < right) {
@@ -32,7 +31,6 @@ public class SeparateZerosOnes {
                         }
                 }
         }
-        
         public static void main(String[] args) {
                 int arr[] = {1, 0, 1, 0, 1, 0, 0, 1};
                 new SeparateZerosOnes().separateZerosOnes(arr);
