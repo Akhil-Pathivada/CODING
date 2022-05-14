@@ -13,10 +13,9 @@ package heap.base.maxheap;
 import java.util.Arrays;
 
 public class DecreaseKeyInMaxHeap {
-        
         private static void decreaseKey(int[] nums, int index, int newValue, int size) {
                 // base case
-                if(size < 1) {
+                if (size < 1) {
                         System.out.println("Error");
                 }
                 // replace key with new value
@@ -24,15 +23,10 @@ public class DecreaseKeyInMaxHeap {
                 // apply heapify on it
                 BuildMaxHeap.maxHeapify(nums, index, size);
         }
-        
         public static void main(String[] args) {
-                
                 int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-                
                 BuildMaxHeap.buildMaxHeap(nums, nums.length);
-                
                 System.out.printf("Initial MaxHeap : %s ", Arrays.toString(nums));
-                
                 int originalKeyIndex = 0; // index of the key to be increased
                 int newKey = -1; // new value
                 decreaseKey(nums, originalKeyIndex, newKey, nums.length);
