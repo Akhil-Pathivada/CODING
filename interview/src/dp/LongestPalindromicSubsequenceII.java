@@ -7,27 +7,24 @@
 package dp;
 
 public class LongestPalindromicSubsequenceII {
-        
-        private static int LPS(String s, int n) {
+        private int LPS(String s, int n) {
                 int[][] table = new int[n][n]; // table to store the sub problems result
-                for(int i = n - 1; i >= 0; --i) {
+                for (int i = n - 1; i >= 0; --i) {
                         table[i][i] = 1; // string of length 1 is always a palindrome
-                        for(int j = i + 1; j < n; ++j) {
+                        for (int j = i + 1; j < n; ++j) {
                                 // palindrome
-                                if(s.charAt(i) == s.charAt(j)) {
+                                if (s.charAt(i) == s.charAt(j)) {
                                         table[i][j] = table[i + 1][j - 1] + 2;
-                                }
-                                else {
+                                } else {
                                         table[i][j] = Math.max(table[i + 1][j], table[i][j - 1]);
                                 }
                         }
                 }
                 return table[0][n - 1];
         }
-        
         public static void main(String[] args) {
                 String str = "GEEKSFORGEEKS";
                 int n = str.length();
-                System.out.printf("The length of the LPS is %d", LPS(str, n));
+                System.out.printf("The length of the LPS is %d", new LongestPalindromicSubsequenceII().LPS(str, n));
         }
 }

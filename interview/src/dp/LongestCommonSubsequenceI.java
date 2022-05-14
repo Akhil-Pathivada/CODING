@@ -16,21 +16,18 @@
 package dp;
 
 public class LongestCommonSubsequenceI {
-        
-        private static int LCS(char[] X, char[] Y, int m, int n) {
-                if(m == 0 || n == 0) {
+        private int LCS(char[] X, char[] Y, int m, int n) {
+                if (m == 0 || n == 0) {
                         return 0;
                 }
-                if(X[m - 1] == Y[n - 1]) {
+                if (X[m - 1] == Y[n - 1]) {
                         return 1 + LCS(X, Y, m - 1, n - 1);
                 }
                 return Math.max(LCS(X, Y, m, n - 1), LCS(X, Y, m - 1, n));
         }
-        
         public static void main(String[] args) {
                 String X = "AGGTAB";
                 String Y = "GXTXAYB";
-        
-                System.out.printf("Longest Common Subsequence = %d ", LCS(X.toCharArray(), Y.toCharArray(), X.length(), Y.length()));
+                System.out.printf("Longest Common Subsequence = %d ", new LongestCommonSubsequenceI().LCS(X.toCharArray(), Y.toCharArray(), X.length(), Y.length()));
         }
 }
